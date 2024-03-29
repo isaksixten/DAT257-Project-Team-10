@@ -7,12 +7,15 @@ class FarmInterface(ABC):
 
     @staticmethod
     @abstractmethod
-    def create(name, location, description):
+    def create(name, location, description, latitude, longitude):
+        pass
+
+    def to_dict(self):
         pass
 
 class FarmFactory(ABC):
     @abstractmethod
-    def create_farm(self, name, location, description):
+    def create_farm(self, name, location, description, latitude, longitude):
         pass
 
     def render(self, name, location, description):
