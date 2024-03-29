@@ -6,6 +6,7 @@ def main():
     controller = LocalFoodMapController()
     controller.create_farm("vegetable", "Green Thumb", "Valley Region", "Specializes in organic vegetables")
     controller.create_farm("meat", "Meat Lovers", "Gothenburg", "Specializes in meat, that you love!")
+    controller.create_farm("meat", "Meat Dominators", "linköping", "Serves dominant meet such as snakes!")
     controller.display_farms()
 
 
