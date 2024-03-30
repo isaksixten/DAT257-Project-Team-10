@@ -11,6 +11,7 @@ class LocalFoodMapController:
         self.view = view
         self.farms = []  # This will store farm objects
         self.next_id = 1  # Initialize a counter for assigning IDs
+        self.geolocation_strategy = None
 
     def create_farm(self, farm_type, name, location, description, latitude, longitude):
         try:
@@ -42,3 +43,12 @@ class LocalFoodMapController:
         # Search through the list of farm dictionaries for the one with the matching id
         farm_dict = next((farm.to_dict() for farm in self.farms if farm.id == farm_id), None)
         return farm_dict
+
+    def set_geolocation_strategy(self, strategy):
+        self.geolocation_strategy = strategy
+
+    def get_coordinates_from_input(self, input_data):
+        if self.geolocation_strategy:
+            return self.geolocation_strategy.get_coordinates(input_data)
+        else:
+            raise ValueError("Geolocation strategy not set.")

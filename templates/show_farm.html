@@ -1,8 +1,9 @@
 <!-- templates/show_farm.html -->
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Farm Location</title>
+    <title>{{ farm['name'] }}</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <style>
@@ -11,6 +12,8 @@
 </head>
 <body>
     <h1>{{ farm['name'] }}</h1>
+    <!-- Display farm description -->
+    <p>{{ farm['description'] }}</p>
     <div id="map"></div>
     <script>
         var map = L.map('map').setView([{{ farm['latitude'] }}, {{ farm['longitude'] }}], 13);
@@ -19,7 +22,7 @@
             maxZoom: 18,
         }).addTo(map);
         L.marker([{{ farm['latitude'] }}, {{ farm['longitude'] }}]).addTo(map)
-            .bindPopup("<b>{{ farm['name'] }}</b>").openPopup();
+            .bindPopup("<b>{{ farm['name'] }}</b><br>{{ farm['description'] }}").openPopup();
     </script>
 </body>
 </html>
