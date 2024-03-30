@@ -1,5 +1,6 @@
 # model/farm_model.py
-from distance_calculator import DistanceCalculator
+from .distance_calculator import DistanceCalculator
+from .farm_factories import *
 
 class FarmModel:
     def __init__(self):

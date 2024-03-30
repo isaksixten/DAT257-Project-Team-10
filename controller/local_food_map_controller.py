@@ -4,6 +4,7 @@
 from model.farm_model import FarmModel
 from model.factory_registry import FactoryRegistry
 
+
 class LocalFoodMapController:
     def __init__(self, view):
         self.view = view
