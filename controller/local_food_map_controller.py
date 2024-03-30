@@ -4,36 +4,27 @@ from view.local_food_map_view import LocalFoodMapView
 import model.farm_factories  # Assuming all factories are defined here
 # controller/local_food_map_controller.py
 
+from model.farm_model import FarmModel
 from model.factory_registry import FactoryRegistry
 
 class LocalFoodMapController:
     def __init__(self, view):
         self.view = view
-        self.farms = []  # This will store farm objects
-        self.next_id = 1  # Initialize a counter for assigning IDs
+        self.model = FarmModel()  # Use FarmModel to manage farms
         self.geolocation_strategy = None
 
     def create_farm(self, farm_type, name, location, description, latitude, longitude):
         try:
-            factory = FactoryRegistry.get_factory(farm_type)
-            farm = factory.create_farm(name, location, description, latitude, longitude)
-            farm.id = self.next_id  # Assign an ID to the farm
-            self.next_id += 1  # Increment the ID counter for the next farm
-            self.farms.append(farm)
+            self.model.add_farm(farm_type, name, location, description, latitude, longitude, FactoryRegistry)
         except ValueError as e:
             print(e)
 
-    def get_all_farms(self):
-        # Assuming each farm object has a to_dict method to convert it to dictionary
-        return [farm.to_dict() for farm in self.farms]
-
     def display_home_page(self):
-        # Call the view to render the home page
-        return self.view.render_home_page(self.get_all_farms())
+        farms = self.model.get_all_farms()
+        return self.view.render_home_page(farms)
 
     def display_farm_page(self, farm_id):
-        # Fetch the specific farm, then call the view to render the farm page
-        farm = self.get_farm_by_id(farm_id)
+        farm = self.model.get_farm_by_id(farm_id)
         if farm:
             return self.view.render_farm_page(farm)
         else:
