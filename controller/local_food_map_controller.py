@@ -1,7 +1,4 @@
 # controller/local_food_map_controller.py
-
-from view.local_food_map_view import LocalFoodMapView
-import model.farm_factories  # Assuming all factories are defined here
 # controller/local_food_map_controller.py
 
 from model.farm_model import FarmModel
@@ -30,10 +27,6 @@ class LocalFoodMapController:
         else:
             return self.view.render_error("Farm not found")
 
-    def get_farm_by_id(self, farm_id):
-        # Search through the list of farm dictionaries for the one with the matching id
-        farm_dict = next((farm.to_dict() for farm in self.farms if farm.id == farm_id), None)
-        return farm_dict
 
     def set_geolocation_strategy(self, strategy):
         self.geolocation_strategy = strategy
