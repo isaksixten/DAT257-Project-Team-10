@@ -1,0 +1,1 @@
+from .local_food_map_view import LocalFoodMapView

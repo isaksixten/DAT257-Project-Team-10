@@ -1,0 +1,18 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select a Farm</title>
+</head>
+<body>
+    <h1>Select a Farm to Display</h1>
+    <form action="/show_farm" method="post">
+        <select name="farm_id">
+            {% for farm in farms %}
+            <option value="{{ farm['id'] }}">{{ farm['name'] }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Show Farm">
+    </form>
+</body>
+</html>
