@@ -1,0 +1,28 @@
+<!-- templates/show_farm.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ farm['name'] }}</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <style>
+        #map { height: 400px; width: 100%; }
+    </style>
+</head>
+<body>
+    <h1>{{ farm['name'] }}</h1>
+    <!-- Display farm description -->
+    <p>{{ farm['description'] }}</p>
+    <div id="map"></div>
+    <script>
+        var map = L.map('map').setView([{{ farm['latitude'] }}, {{ farm['longitude'] }}], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors',
+            maxZoom: 18,
+        }).addTo(map);
+        L.marker([{{ farm['latitude'] }}, {{ farm['longitude'] }}]).addTo(map)
+            .bindPopup("<b>{{ farm['name'] }}</b><br>{{ farm['description'] }}").openPopup();
+    </script>
+</body>
+</html>
