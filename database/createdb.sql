@@ -7,13 +7,10 @@ GRANT ALL ON SCHEMA public TO CURRENT_USER;
 -- This line makes psql stop on the first error it encounters
 -- You may want to remove this when running tests that are intended to fail
 
-CREATE TABLE Locations (
-    id INT,
-    name TEXT,
-    description TEXT,
-    latitude REAL,
-    longitude REAL,
-    PRIMARY KEY (id)
-);
 
+\ir tables.sql
 \ir exampleinserts.sql
+\ir views.sql
+
+SELECT * FROM Farms;
+SELECT * FROM Farm_Location;
