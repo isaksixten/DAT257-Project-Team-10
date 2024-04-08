@@ -10,7 +10,7 @@ class QueryMachine:
 
     def fetch_location(self, id):
         with self.conn.cursor() as cur:
-            sql = """ SELECT * FROM Locations WHERE Locations.id = %s"""
+            sql = """ SELECT * FROM Farms WHERE Farms.id = %s"""
             cur.execute(sql, (id,))
             res = cur.fetchone()
             if res:
@@ -21,7 +21,7 @@ class QueryMachine:
     def add_location(self, id, name, description, latitude, longitude):
         try:
             with self.conn.cursor() as cur:
-                sql = """INSERT INTO Locations VALUES (%s, %s, %s, %s, %s)"""
+                sql = """INSERT INTO Farms VALUES (%s, %s, %s, %s, %s)"""
                 cur.execute(sql, (id, name, description, latitude, longitude))
 
         except psycopg2.Error as e:
