@@ -3,25 +3,171 @@
 <html>
 
 <head>
-    <h1 style="text-align: center;">Search for Local Farms Today!</h1>
+    <h1 style="text-align: center; border: 2px outset black ; background-color: rgb(222, 222, 222); margin-top: 3px; margin-bottom: 3px;
+    font-weight: bold;">Search for Local Farms Today!</h1>
 </head>
 
-<head>
-    <title>Select a Farm</title>
-</head>
-<body style="text-align: center;">
-    <h1>Select a Farm to Display</h1>
-    <form action="/show_farm" method="post">
-        <select name="farm_id">
-            {% for farm in farms %}
-            <option value="{{ farm['id'] }}">{{ farm['name'] }}</option>
-            {% endfor %}
-        </select>
-        <input type="submit" value="Show Farm">
-    </form>
+<style>
+    html * {
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: normal;
+    }
 
-    <!-- Add a button below your form -->
-    <button onclick="location.href='find_farms.html'" style="margin-top: 20px;">Find the Closest Farms to You</button>
-    
-</body>
+    .leftSection {
+        position: absolute;
+        border: 2px outset black;
+        background-color: rgb(222, 222, 222);    
+        text-align: left;
+        width: 25%;
+        padding: 20px;
+        height: 655px;
+        z-index: 100; /* Behöver lägga över alla andra element i absolut positioning */
+    }
+
+    .middleSection {
+        position: absolute;
+        width: 100%;
+        height: 700px;
+    }
+
+    .rightSection {
+        position: absolute;
+        border: 2px outset black;
+        background-color: rgb(222, 222, 222);    
+        text-align: right;
+        width: calc(25% - 20px);
+        padding: 20px;
+        height: 655px;
+        right: 8px;
+        margin-top: 0;
+    }
+
+</style>
+
+<!-- Vänster Sektionen -->
+
+<div class="leftSection">
+
+
+    <div class="searchBar", style="text-align: center;">
+        <head>
+            <title>Select a Farm</title>
+        </head>
+        <body style="text-align: left;">
+            <h1>Select a Farm to Display</h1>
+            <form action="/show_farm" method="post">
+                <select name="farm_id">
+                    {% for farm in farms %}
+                    <option value="{{ farm['id'] }}">{{ farm['name'] }}</option>
+                    {% endfor %}
+                </select>
+                <input type="submit" value="Show Farm">
+            </form>
+
+            <!-- Add a button below your form -->
+            <button onclick="location.href='find_farms.html'" style="margin-top: 20px;">Find the Closest Farms to You</button>
+        </body>
+    </div>
+
+    <head>
+        <title>Filter</title>
+        <style>
+            .farmFilter{  
+                text-align: left;
+            }
+
+            .farmFilter ul {
+                list-style-type: none;
+                padding: 0%;
+            }
+
+            .farmFilter li {
+                margin-bottom: 10px; 
+                clear: both;
+            }
+
+            .farmFilter input[type="checkbox"] {
+                float: right;
+                margin-left: 10%;
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <h1 style="text-align: center; border: 2px outset black; background-color: rgb(193, 193, 193);">Filter</h1>
+
+        <div class="farmFilter">
+            <form id="filterForm">
+                <ul>
+                    <li><input type="checkbox" name="filter" value="animal_conditions"> Good Animal Conditions</li>
+                    <li><input type="checkbox" name="filter" value="farmer_conditions"> Good Farmer Conditions</li>
+                    <li><input type="checkbox" name="filter" value="climate_neutral"> Climate Neutral</li>
+                    <li><input type="checkbox" name="filter" value="no_pesticides"> No Pesticides</li>
+                </ul>
+                <input type="button" value="Apply Filter" onclick="applyFilter()">
+            </form>
+        </div>
+
+        <script>
+            function applyFilter() {
+                var checkedFilters = document.querySelectorAll('input[name="filter"]:checked');
+                var selectedFilters = Array.from(checkedFilters).map(function(checkbox) {
+                    return checkbox.value;
+                });
+                console.log("Selected Filters:", selectedFilters);
+            }
+        </script>
+
+    </body>
+</div>
+
+<!-- Mitten Sektionen -->
+
+<div class="middleSection">
+    <head>
+        <title>Farms</title>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+        <style>
+            #map { 
+                height: 700px;
+                width: 40%; 
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body style="text-align: center;">
+        <!-- Display farm description -->
+        <div id="map"></div>
+        <script>
+            var map = L.map('map').setView([63, 15], 5.4); /* Sverige koordinater 63 N, 15 E */
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors',
+                maxZoom: 18,
+            }).addTo(map);
+        </script>
+    </body>
+</div>
+
+<!-- Höger Sektionen -->
+
+<div class="rightSection">
+    <body>
+
+        <h1 style="text-align: center; border: 2px outset black; background-color: rgb(193, 193, 193);">Farm Name</h1>
+
+        <div class="farmInfo"> 
+            <style> /*
+                .farmInfo {
+                    background-color: rgb(240, 240, 240);
+                }*/
+            </style>
+            <p style="text-align: left;">Information and Metrics</p>
+        </div>
+
+    </body>
+</div>
+
 </html>
