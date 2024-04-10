@@ -1,7 +1,7 @@
 # controller/local_food_map_controller.py
 # controller/local_food_map_controller.py
 
-from query_machine import QueryMachine
+from controller.query_machine import QueryMachine
 from view.local_food_map_view import LocalFoodMapView
 
 
