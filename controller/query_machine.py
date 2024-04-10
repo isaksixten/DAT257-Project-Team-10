@@ -14,13 +14,20 @@ class QueryMachine:
             cur.execute(sql, (id,))
             res = cur.fetchone()
             if res:
-                return res
+                dict = {
+                    "id" : res[0],
+                    "name" : res[1],
+                    "description" : res[2],
+                    "latitude" : res[3],
+                    "longitude" : res[4],
+                }
+                return dict
             else:
                 return "Location does not exist"
             
     def fetch_all_locations(self):
         with self.conn.cursor() as cur:
-            sql = """ SELECT * FROM Farms WHERE Farms.id"""
+            sql = """ SELECT * FROM Farms"""
             cur.execute(sql)
             res = cur.fetchall()
             list = []
