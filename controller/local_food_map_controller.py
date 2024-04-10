@@ -2,11 +2,12 @@
 # controller/local_food_map_controller.py
 
 from query_machine import QueryMachine
+from view.local_food_map_view import LocalFoodMapView
 
 
 class LocalFoodMapController:
     def __init__(self, view):
-        self.view = view
+        self.view : LocalFoodMapView = view
         self.query_machine=QueryMachine()  # Use FarmModel to manage farms
         self.geolocation_strategy = None
 
@@ -17,15 +18,15 @@ class LocalFoodMapController:
             print(e)
 
     def display_home_page(self):
-        farms = self.model.get_all_farms()
+        farms = self.query_machine.fetch_all_locations()
         return self.view.render_home_page(farms)
 
     def display_farm_page(self, farm_id):
-        farm = self.model.get_farm_by_id(farm_id)
+        farm = self.query_machine.fetch_location(farm_id)
         if farm:
             return self.view.render_farm_page(farm)
         else:
-            return self.view.render_error("Farm not found")
+            return self.view.render_not_found("Farm not found")
 
 
     def set_geolocation_strategy(self, strategy):
