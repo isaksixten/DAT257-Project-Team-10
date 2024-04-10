@@ -1,7 +1,7 @@
 # app.py
 
 from flask import Flask, request, redirect, url_for
-from controller.local_food_map_controller import LocalFoodMapController
+from backend.local_food_map_controller import LocalFoodMapController
 from frontend.local_food_map_view import LocalFoodMapView
 
 app = Flask(__name__)
