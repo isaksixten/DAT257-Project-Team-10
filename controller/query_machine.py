@@ -18,6 +18,16 @@ class QueryMachine:
             else:
                 return "Location does not exist"
             
+    def fetch_all_locations(self):
+        with self.conn.cursor() as cur:
+            sql = """ SELECT * FROM Farms WHERE Farms.id"""
+            cur.execute(sql)
+            res = cur.fetchall()
+            if res:
+                return res
+            else:
+                return "No locations in database"
+            
     def add_location(self, id, name, description, latitude, longitude):
         try:
             with self.conn.cursor() as cur:
