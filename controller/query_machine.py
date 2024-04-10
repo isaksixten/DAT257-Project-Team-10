@@ -23,6 +23,7 @@ class QueryMachine:
             sql = """ SELECT * FROM Farms WHERE Farms.id"""
             cur.execute(sql)
             res = cur.fetchall()
+            list = []
             if res:
                 for location in res:
                     dict = {
@@ -32,7 +33,8 @@ class QueryMachine:
                         "latitude" : location[3],
                         "longitude" : location[4]
                     }
-                return dict
+                    list.append(dict)
+                return list
             else:
                 return "No locations in database"
             
