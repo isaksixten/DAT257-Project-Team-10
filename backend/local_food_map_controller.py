@@ -2,7 +2,7 @@
 # controller/local_food_map_controller.py
 
 from backend.query_machine import QueryMachine
-from ..view.local_food_map_view import LocalFoodMapView
+from frontend.local_food_map_view import LocalFoodMapView
 
 
 class LocalFoodMapController:
