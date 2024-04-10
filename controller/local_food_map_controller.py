@@ -1,19 +1,18 @@
 # controller/local_food_map_controller.py
 # controller/local_food_map_controller.py
 
-from model.farm_model import FarmModel
-from model.factory_registry import FactoryRegistry
+from query_machine import QueryMachine
 
 
 class LocalFoodMapController:
     def __init__(self, view):
         self.view = view
-        self.model = FarmModel()  # Use FarmModel to manage farms
+        self.query_machine=QueryMachine()  # Use FarmModel to manage farms
         self.geolocation_strategy = None
 
-    def create_farm(self, farm_type, name, location, description, latitude, longitude):
+    def create_farm(self, name, description, latitude, longitude):
         try:
-            self.model.add_farm(farm_type, name, location, description, latitude, longitude, FactoryRegistry)
+            self.query_machine.add_location(self.query_machine.id_generator(), name, description, latitude, longitude)
         except ValueError as e:
             print(e)
 

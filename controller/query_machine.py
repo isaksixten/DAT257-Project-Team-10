@@ -48,3 +48,7 @@ class QueryMachine:
         except psycopg2.Error as e:
             message = repr(e)
             return "failed: " + message
+
+    def id_generator(): #TODO: change this, very bad
+        import random
+        return random.randint(5,9487334)
