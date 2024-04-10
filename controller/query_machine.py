@@ -24,9 +24,18 @@ class QueryMachine:
             cur.execute(sql)
             res = cur.fetchall()
             if res:
-                return res
+                for location in res:
+                    dict = {
+                        "id" : location[0],
+                        "name" : location[1],
+                        "description" : location[2],
+                        "latitude" : location[3],
+                        "longitude" : location[4]
+                    }
+                return dict
             else:
                 return "No locations in database"
+            
             
     def add_location(self, id, name, description, latitude, longitude):
         try:
