@@ -11,9 +11,9 @@ view = LocalFoodMapView
 controller = LocalFoodMapController(view)
 
 # Create farms as specified
-controller.create_farm("vegetable", "Green Thumb", "Valley Region", "Specializes in organic vegetables", -37.33056, 48.64247)
-controller.create_farm("meat", "Meat Lovers", "Gothenburg", "Specializes in meat, that you love!", 44.91770, -122.68503)
-controller.create_farm("meat", "Meat Dominators", "Linköping", "Serves dominant meat such as snakes!", 23.63305, 147.51138)
+#controller.create_farm("vegetable", "Green Thumb", "Valley Region", "Specializes in organic vegetables", -37.33056, 48.64247)
+#controller.create_farm("meat", "Meat Lovers", "Gothenburg", "Specializes in meat, that you love!", 44.91770, -122.68503)
+#controller.create_farm("meat", "Meat Dominators", "Linköping", "Serves dominant meat such as snakes!", 23.63305, 147.51138)
 
 @app.route('/')
 def home():
