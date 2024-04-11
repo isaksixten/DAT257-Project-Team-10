@@ -63,8 +63,6 @@
                 </select>
                 <input type="submit" value="Show Farm">
             </form>
-
-            <!-- Add a button below your form -->
             <button onclick="location.href='find_farms.html'" style="margin-top: 20px;">Find the Closest Farms to You</button>
         </body>
     </div>
@@ -145,8 +143,18 @@
             var map = L.map('map').setView([63, 15], 5.4); /* Sverige koordinater 63 N, 15 E */
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors',
-                maxZoom: 18,
+                maxZoom: 18, noWrap: true
             }).addTo(map);
+
+            <!-- Tillagt för att visa nålar på kartan för alla rader i databas -->
+
+            {% for farm in farms %}
+                add_marker({{ farm.latitude }}, {{farm.longitude}}, "{{farm.name}}", "{{farm.description}}");
+            {% endfor %}
+
+            function add_marker(latitude, longitude, name, description) {
+                L.marker([latitude, longitude]).addTo(map).bindPopup("<b>" + name + "</b><br>" + description).openPopup();
+            }
         </script>
     </body>
 </div>
