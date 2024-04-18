@@ -29,16 +29,33 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
     }
 
-    .leftSection {
-        position: fixed;
-        left: 0;
-        width: 25%;
-        border: 10px ridge black; /* Plaque-like frame */
-        height: 95%;
-        background-color: rgb(222, 222, 222);
-        text-align: center;
-        align-items: left;
-    }
+ .upperLeftSection {
+    position: fixed;
+    left: 0;
+    width: 25%;
+    border: 10px ridge black; /* Plaque-like frame */
+    height: 45%; /* Set height to occupy 45% of the viewport */
+    background-color: rgb(222, 222, 222);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.lowerLeftSection {
+    position: fixed;
+    left: 0;
+    width: 25%;
+    top: 50%; /* Position at 50% from the top of the viewport */
+    border: 10px ridge black; /* Plaque-like frame */
+    height: 45%; /* Set height to occupy 45% of the viewport */
+    background-color: rgb(222, 222, 222);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 
     .rightSection {
         position: fixed;
@@ -70,7 +87,7 @@
 
 </head>
 <body>
-    <div class="leftSection">
+    <div class="upperLeftSection">
         <h1>Select a Farm to Display</h1>
         <select id="farmSelect" onchange="zoomToFarm()">
             <option value="">--Select a Farm--</option>
@@ -80,8 +97,9 @@
             </option>
             {% endfor %}
         </select>
-
-        <h1>Filter</h1>
+        </div>
+    <div class="lowerLeftSection">
+        <h1>Filters</h1>
         <form id="filterForm">
             <ul>
                 <li><input type="checkbox" name="filter" value="animal_conditions"> Good Animal Conditions</li>
