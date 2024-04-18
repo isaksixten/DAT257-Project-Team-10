@@ -117,7 +117,7 @@
         {% endfor %}
 
         function add_marker(latitude, longitude, name, description) {
-            return L.marker([latitude, longitude]).addTo(map).bindPopup("<b>" + name + "</b><br>" + description);
+            return L.marker([latitude, longitude]).addTo(map).bindPopup("<b>" + name);
         }
 
         function zoomToFarm() {
