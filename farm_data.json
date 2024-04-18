@@ -1,0 +1,110 @@
+{
+    "address_components": [
+        {
+            "long_name": "12 i",
+            "short_name": "12 i",
+            "types": [
+                "street_number"
+            ]
+        },
+        {
+            "long_name": "Skiffervägen",
+            "short_name": "Skiffervägen",
+            "types": [
+                "route"
+            ]
+        },
+        {
+            "long_name": "Mölnlycke Södra",
+            "short_name": "Mölnlycke Södra",
+            "types": [
+                "sublocality_level_1",
+                "sublocality",
+                "political"
+            ]
+        },
+        {
+            "long_name": "Mölnlycke",
+            "short_name": "Mölnlycke",
+            "types": [
+                "postal_town"
+            ]
+        },
+        {
+            "long_name": "Västra Götalands län",
+            "short_name": "Västra Götalands län",
+            "types": [
+                "administrative_area_level_1",
+                "political"
+            ]
+        },
+        {
+            "long_name": "Sweden",
+            "short_name": "SE",
+            "types": [
+                "country",
+                "political"
+            ]
+        },
+        {
+            "long_name": "435 42",
+            "short_name": "435 42",
+            "types": [
+                "postal_code"
+            ]
+        }
+    ],
+    "adr_address": "<span class=\"street-address\">Skiffervägen 12 i</span>, <span class=\"postal-code\">435 42</span> <span class=\"locality\">Mölnlycke</span>, <span class=\"country-name\">Sweden</span>",
+    "business_status": "OPERATIONAL",
+    "formatted_address": "Skiffervägen 12 i, 435 42 Mölnlycke, Sweden",
+    "formatted_phone_number": "031-88 38 77",
+    "geometry": {
+        "location": {
+            "lat": 57.6414204,
+            "lng": 12.1126687
+        },
+        "viewport": {
+            "northeast": {
+                "lat": 57.6428510302915,
+                "lng": 12.1139038802915
+            },
+            "southwest": {
+                "lat": 57.6401530697085,
+                "lng": 12.1112059197085
+            }
+        }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+    "icon_background_color": "#7B9EB0",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+    "international_phone_number": "+46 31 88 38 77",
+    "name": "Råda Bigårdar",
+    "place_id": "ChIJVVWR3k3wT0YRR-hr6DpwwNY",
+    "plus_code": {
+        "compound_code": "J4R7+H3 Mölnlycke, Sweden",
+        "global_code": "9F9JJ4R7+H3"
+    },
+    "rating": 5,
+    "reference": "ChIJVVWR3k3wT0YRR-hr6DpwwNY",
+    "reviews": [
+        {
+            "author_name": "Mustafa Elmi",
+            "author_url": "https://www.google.com/maps/contrib/110495260450341005269/reviews",
+            "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjWuYK7KKyLHEas0TI-W20cV9dVcz76naoUn9NHUW2OULd2wAH2i=s128-c0x00000000-cc-rp-mo",
+            "rating": 5,
+            "relative_time_description": "3 years ago",
+            "text": "",
+            "time": 1598617060,
+            "translated": false
+        }
+    ],
+    "types": [
+        "point_of_interest",
+        "establishment"
+    ],
+    "url": "https://maps.google.com/?cid=15474491717954824263",
+    "user_ratings_total": 1,
+    "utc_offset": 120,
+    "vicinity": "Skiffervägen 12 i, Mölnlycke",
+    "website": "http://www.radabigardar.se/produkter.htm"
+}

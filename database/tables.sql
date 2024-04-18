@@ -7,7 +7,7 @@ CREATE TABLE Farms (
 );
 
 CREATE TABLE Tags (
-    tag TEXT PRIMARY KEY;
+    tag TEXT PRIMARY KEY
 );
 
 CREATE TABLE Farm_Tags(
