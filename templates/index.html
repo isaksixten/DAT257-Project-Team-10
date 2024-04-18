@@ -21,49 +21,50 @@
         background-color: #f4f4f4; /* Light grey background for less strain on eyes */
     }
 
-    /* Style sections for a cleaner and more modern look */
     .section {
-        border: 1px solid #ccc; /* Subtle border */
-        background-color: white; /* Brighter background for better contrast */
-        padding: 20px;
-        overflow: auto;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    border-radius: 8px; /* Optional: Rounded corners for the sections */
+    background-color: white; /* Brighter background for better contrast */
+    padding: 20px;
+    overflow: auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
     }
 
     .leftSection {
-        position: fixed; /* Changed from absolute to fixed to remain visible */
-        left: 0; /* Align to the left edge */
-        width: 25%; /* Consistent width */
-        padding: 20px;
-        height: 100%; /* Full height */
+        position: fixed;
+        left: 0;
+        width: 25%;
+        border: 10px ridge black; /* Plaque-like frame */
+        height: 95%;
         background-color: rgb(222, 222, 222);
-        text-align: left;
+        text-align: center;
+        align-items: left;
     }
+
     .rightSection {
-        position: fixed; /* Changed from absolute to fixed to remain visible */
-        right: 0; /* Align to the right edge */
-        width: 25%; /* Consistent width minus padding */
-        padding: 20px;
-        height: 100%; /* Full height */
+        position: fixed;
+        right: 0;
+        width: 25%;
+        border: 10px ridge black; /* Plaque-like frame */
+        height: 95%;
         background-color: rgb(222, 222, 222);
         text-align: center;
     }
 
     .middleSection {
         position: absolute;
-        left: 27%; /* Start from the end of the left section */
-        right: 27%; /* End before the right section starts */
-        height: 100%; /* Full height */
+        left: 27%;
+        right: 27%;
+        border: 10px ridge black; /* Plaque-like frame */
+        height: 95%;
         display: flex;
-        align-items: center; /* Center content vertically */
-        justify-content: center; /* Center content horizontally */
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px; /* Rounded corners for the map */
     }
 
     #map {
         height: 100%; /* Adjusted height */
         width: 100%; /* Full width of the middle section */
-        border: 1px solid #ddd; /* Subtle border around the map */
-        border-radius: 8px; /* Rounded corners for the map */
     }
 </style>
 
@@ -117,8 +118,14 @@
         {% endfor %}
 
         function add_marker(latitude, longitude, name, description) {
-            return L.marker([latitude, longitude]).addTo(map).bindPopup("<b>" + name);
-        }
+        var marker = L.marker([latitude, longitude]).addTo(map).bindPopup("<b>" + name);
+
+        marker.on('click', function() {
+            updateInfo(name, description);
+        });
+
+        return marker;
+    }
 
         function zoomToFarm() {
             var select = document.getElementById('farmSelect');
