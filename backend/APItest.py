@@ -50,7 +50,7 @@ if response_nearby.status_code == 200:
             # Extract additional information about the farm
             farm_details = data_details['result']
             print("Farm Details:", farm_details)  # Print the details of the farm
-            with open('farm_data.json', 'w', encoding = 'utf-8') as json_file:
+            with open('farm_data_temp.json', 'w', encoding = 'utf-8') as json_file:
                 json.dump(farm_details, json_file, indent=4, ensure_ascii=False)
         else:
             print('Error:', response_details.status_code)
