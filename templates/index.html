@@ -1,181 +1,172 @@
-<!-- templates/index.html -->
 <!DOCTYPE html>
 <html>
-
 <head>
-    <h1 style="text-align: center; border: 2px outset black ; background-color: rgb(222, 222, 222); margin-top: 3px; margin-bottom: 3px;
-    font-weight: bold;">Search for Local Farms Today!</h1>
-</head>
-
-<style>
+    <title>Local Farms</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <style>
+    /* Set a more modern font family */
     html * {
-        font-family: 'Times New Roman', Times, serif;
+        font-family: 'Times New Roman', Times, serif; /* Classic and formal font style */
         font-weight: normal;
     }
 
-    .leftSection {
-        position: absolute;
-        border: 2px outset black;
-        background-color: rgb(222, 222, 222);    
-        text-align: left;
+    /* Refine the body layout */
+    body {
+        display: flex;
+        justify-content: space-between;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4; /* Light grey background for less strain on eyes */
+    }
+
+    .section {
+    border-radius: 8px; /* Optional: Rounded corners for the sections */
+    background-color: white; /* Brighter background for better contrast */
+    padding: 20px;
+    overflow: auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    }
+
+ .upperLeftSection {
+    position: fixed;
+    left: 0;
+    width: 25%;
+    border: 10px ridge black; /* Plaque-like frame */
+    height: 45%; /* Set height to occupy 45% of the viewport */
+    background-color: rgb(222, 222, 222);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.lowerLeftSection {
+    position: fixed;
+    left: 0;
+    width: 25%;
+    top: 50%; /* Position at 50% from the top of the viewport */
+    border: 10px ridge black; /* Plaque-like frame */
+    height: 45%; /* Set height to occupy 45% of the viewport */
+    background-color: rgb(222, 222, 222);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+    .rightSection {
+        position: fixed;
+        right: 0;
         width: 25%;
-        padding: 20px;
-        height: 655px;
-        z-index: 100; /* Behöver lägga över alla andra element i absolut positioning */
+        border: 10px ridge black; /* Plaque-like frame */
+        height: 95%;
+        background-color: rgb(222, 222, 222);
+        text-align: center;
     }
 
     .middleSection {
         position: absolute;
-        width: 100%;
-        height: 700px;
+        left: 27%;
+        right: 27%;
+        border: 10px ridge black; /* Plaque-like frame */
+        height: 95%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px; /* Rounded corners for the map */
     }
 
-    .rightSection {
-        position: absolute;
-        border: 2px outset black;
-        background-color: rgb(222, 222, 222);    
-        text-align: right;
-        width: calc(25% - 20px);
-        padding: 20px;
-        height: 655px;
-        right: 8px;
-        margin-top: 0;
+    #map {
+        height: 100%; /* Adjusted height */
+        width: 100%; /* Full width of the middle section */
     }
-
 </style>
 
-<!-- Vänster Sektionen -->
-
-<div class="leftSection">
-
-
-    <div class="searchBar", style="text-align: center;">
-        <head>
-            <title>Select a Farm</title>
-        </head>
-        <body style="text-align: left;">
-            <h1>Select a Farm to Display</h1>
-            <form action="/show_farm" method="post">
-                <select name="farm_id">
-                    {% for farm in farms %}
-                    <option value="{{ farm['id'] }}">{{ farm['name'] }}</option>
-                    {% endfor %}
-                </select>
-                <input type="submit" value="Show Farm">
-            </form>
-            <button onclick="location.href='find_farms.html'" style="margin-top: 20px;">Find the Closest Farms to You</button>
-        </body>
+</head>
+<body>
+    <div class="upperLeftSection">
+        <h1>Select a Farm to Display</h1>
+        <select id="farmSelect" onchange="zoomToFarm()">
+            <option value="">--Select a Farm--</option>
+            {% for farm in farms %}
+            <option value="{{ farm['id'] }}" data-lat="{{ farm.latitude }}" data-lng="{{ farm.longitude }}" data-description="{{ farm.description }}">
+            {{ farm['name'] }}
+            </option>
+            {% endfor %}
+        </select>
+        </div>
+    <div class="lowerLeftSection">
+        <h1>Filters</h1>
+        <form id="filterForm">
+            <ul>
+                <li><input type="checkbox" name="filter" value="animal_conditions"> Good Animal Conditions</li>
+                <li><input type="checkbox" name="filter" value="farmer_conditions"> Good Farmer Conditions</li>
+                <li><input type="checkbox" name="filter" value="climate_neutral"> Climate Neutral</li>
+                <li><input type="checkbox" name="filter" value="no_pesticides"> No Pesticides</li>
+            </ul>
+            <button type="button" onclick="applyFilter()">Apply Filter</button>
+        </form>
     </div>
 
-    <head>
-        <title>Filter</title>
-        <style>
-            .farmFilter{  
-                text-align: left;
+    <div class="middleSection">
+    <div id="map"></div>
+    <script>
+        var map = L.map('map', {
+            minZoom: 3,  // Minimum zoom level
+            maxZoom: 18, // Maximum zoom level
+            maxBounds: [  // Define the geographical boundaries to restrict the map panning
+                [-100, -160],  // SouthWest corner of the boundary
+                [150, 180]    // NorthEast corner of the boundary
+            ],
+            maxBoundsViscosity: 1.0  // Makes the bounds fully rigid
+        }).setView([63, 15], 5.4);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors',
+            noWrap: true
+        }).addTo(map);
+
+        var markers = {};
+
+        {% for farm in farms %}
+        markers['{{ farm['id'] }}'] = add_marker({{ farm.latitude }}, {{ farm.longitude }}, "{{ farm.name }}", "{{ farm.description }}");
+        {% endfor %}
+
+        function add_marker(latitude, longitude, name, description) {
+        var marker = L.marker([latitude, longitude]).addTo(map).bindPopup("<b>" + name);
+
+        marker.on('click', function() {
+            updateInfo(name, description);
+        });
+
+        return marker;
+    }
+
+        function zoomToFarm() {
+            var select = document.getElementById('farmSelect');
+            var selectedOption = select.options[select.selectedIndex];
+            var lat = selectedOption.getAttribute('data-lat');
+            var lng = selectedOption.getAttribute('data-lng');
+            if(lat && lng) {
+                map.setView([lat, lng], 12);
+                markers[selectedOption.value].openPopup();
+                updateInfo(selectedOption.text, selectedOption.getAttribute('data-description'));
             }
-
-            .farmFilter ul {
-                list-style-type: none;
-                padding: 0%;
-            }
-
-            .farmFilter li {
-                margin-bottom: 10px; 
-                clear: both;
-            }
-
-            .farmFilter input[type="checkbox"] {
-                float: right;
-                margin-left: 10%;
-            }
-
-        </style>
-    </head>
-
-    <body>
-
-        <h1 style="text-align: center; border: 2px outset black; background-color: rgb(193, 193, 193);">Filter</h1>
-
-        <div class="farmFilter">
-            <form id="filterForm">
-                <ul>
-                    <li><input type="checkbox" name="filter" value="animal_conditions"> Good Animal Conditions</li>
-                    <li><input type="checkbox" name="filter" value="farmer_conditions"> Good Farmer Conditions</li>
-                    <li><input type="checkbox" name="filter" value="climate_neutral"> Climate Neutral</li>
-                    <li><input type="checkbox" name="filter" value="no_pesticides"> No Pesticides</li>
-                </ul>
-                <input type="button" value="Apply Filter" onclick="applyFilter()">
-            </form>
+        }
+        function updateInfo(name, description) {
+            document.getElementById('farmName').textContent = name;
+            document.getElementById('farmDescription').textContent = description;
+        }
+    </script>
+</div>
+    <div class="rightSection">
+        <h1 id="farmName">Farm Name</h1>
+        <div class="farmInfo">
+            <p id="farmDescription">Information and Metrics</p>
         </div>
-
-        <script>
-            function applyFilter() {
-                var checkedFilters = document.querySelectorAll('input[name="filter"]:checked');
-                var selectedFilters = Array.from(checkedFilters).map(function(checkbox) {
-                    return checkbox.value;
-                });
-                console.log("Selected Filters:", selectedFilters);
-            }
-        </script>
-
-    </body>
-</div>
-
-<!-- Mitten Sektionen -->
-
-<div class="middleSection">
-    <head>
-        <title>Farms</title>
-        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-        <style>
-            #map { 
-                height: 700px;
-                width: 40%; 
-                margin: 0 auto;
-            }
-        </style>
-    </head>
-    <body style="text-align: center;">
-        <!-- Display farm description -->
-        <div id="map"></div>
-        <script>
-            var map = L.map('map').setView([63, 15], 5.4); /* Sverige koordinater 63 N, 15 E */
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors',
-                maxZoom: 18, noWrap: true
-            }).addTo(map);
-
-            <!-- Tillagt för att visa nålar på kartan för alla rader i databas -->
-
-            {% for farm in farms %}
-                add_marker({{ farm.latitude }}, {{farm.longitude}}, "{{farm.name}}", "{{farm.description}}");
-            {% endfor %}
-
-            function add_marker(latitude, longitude, name, description) {
-                L.marker([latitude, longitude]).addTo(map).bindPopup("<b>" + name + "</b><br>" + description).openPopup();
-            }
-        </script>
-    </body>
-</div>
-
-<!-- Höger Sektionen -->
-
-<div class="rightSection">
-    <body>
-
-        <h1 style="text-align: center; border: 2px outset black; background-color: rgb(193, 193, 193);">Farm Name</h1>
-
-        <div class="farmInfo"> 
-            <style> /*
-                .farmInfo {
-                    background-color: rgb(240, 240, 240);
-                }*/
-            </style>
-            <p style="text-align: left;">Information and Metrics</p>
-        </div>
-
-    </body>
-</div>
-
+    </div>
+</body>
 </html>
