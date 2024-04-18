@@ -1,7 +1,7 @@
 import requests
 import json
 
-API_KEY = 'AIzaSyBrVEi0F4Taz3Z80w5xgcYvKbeq5lJ53kw'
+API_KEY = ''    #PUSHA EJ TILL GIT
 
 # Places API 
 base_url_nearby = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json'
