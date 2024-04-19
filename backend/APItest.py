@@ -32,7 +32,7 @@ def local_farms_sweden(longitude, latitude):
         
         for place in data_nearby['results']:
             place_id = place['place_id']
-
+            print(place_id)
             params_details = {
                 'key': API_KEY,
                 'place_id': place_id
@@ -50,8 +50,7 @@ def local_farms_sweden(longitude, latitude):
                 farm_name = included_farm_details.get('name', 'Unnamed Farm')
                 all_farms[farm_name] = included_farm_details    #onödigt bara under develop-fasen
 
-                import random       #Behöver ändras till något rimligt
-                query.add_location(random.randint(0,100),included_farm_details['name'],'empty',included_farm_details['geometry']['location']['lat'],
+                query.add_location(place_id,included_farm_details['name'],'empty',included_farm_details['geometry']['location']['lat'],
                 included_farm_details['geometry']['location']['lng'],)
             else:
                 print('Error:', response_details.status_code)

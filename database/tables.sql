@@ -1,5 +1,5 @@
 CREATE TABLE Farms (
-    id INT PRIMARY KEY,
+    id TEXT PRIMARY KEY,
     name TEXT,
     description TEXT,
     latitude REAL,
