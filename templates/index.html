@@ -43,18 +43,26 @@
 }
 
 .lowerLeftSection {
-    position: fixed;
-    left: 0;
-    width: 25%;
-    top: 50%; /* Position at 50% from the top of the viewport */
-    border: 10px ridge black; /* Plaque-like frame */
-    height: 45%; /* Set height to occupy 45% of the viewport */
-    background-color: rgb(222, 222, 222);
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
+            position: fixed;
+            left: 0;
+            width: 25%;
+            top: 50%; /* Position at 50% from the top of the viewport */
+            border: 10px ridge black; /* Plaque-like frame */
+            height: 45%; /* Set height to occupy 45% of the viewport */
+            background-color: rgb(222, 222, 222);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+        #tags-list {
+            list-style-type: none;
+            padding: 0; 
+            margin: 0;
+        }
+        #tags-list li {
+            word-wrap: break-word; /* Allow words to break if necessary */
+        }
 
 
     .rightSection {
@@ -99,7 +107,7 @@
         </select>
         </div>
     <div class="lowerLeftSection">
-        <h1>Available Tags</h1>
+        <h2 style="margin:0">Available Tags</h2>
         <form id="tagselection">
             <ul id="tags-list"></ul>
             <button type="button" onclick="applyFilter()">Apply Filters</button>
@@ -133,7 +141,7 @@
             fetchTags(); 
     
             function applyFilter() {
-                const form = document.getElementById('tagForm');
+                const form = document.getElementById('tagselection');
                 const selectedTags = Array.from(form.elements.tags).filter(tag => tag.checked).map(tag => tag.value);
                 console.log('Selected tags:', selectedTags);
                 //Vet ej hur vi vill göra här, nu väntar den tills användaren klickar på apply filters och då lagrar den alla tags, vill vi göra så?
