@@ -28,7 +28,7 @@ class QueryMachine:
                 return dict
             else:
                 return "Location does not exist"
-                
+
     def fetch_all_locations(self):
         with self.conn.cursor() as cur:
             sql = """ SELECT * FROM Farms"""
@@ -72,3 +72,15 @@ class QueryMachine:
             message = repr(e)
             return "failed: " + message
 
+    def fetch_tags(self):
+        with self.conn.cursor() as cur:
+            sql = """ SELECT * FROM Tags"""
+            cur.execute(sql)
+            res = cur.fetchall()
+            list = []
+            if res:
+                for location in res:
+                    list.append(location[0])
+                return list
+            else:
+                return "No locations in database"        

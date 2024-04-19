@@ -33,7 +33,9 @@ def local_farms_sweden(longitude: float, latitude: float, radius: float):
         'key': API_KEY,
         'location': f"{longitude},{latitude}",
         'radius': f'{radius}',  # Meter
-        'keyword': 'bondgård'  
+        'keyword': 'bondgård'
+        #'keyword': 'gårdsbutik' funkar rätt bra, byta?
+
     }
 
     include_fields = ["name", "business_status", "formatted_address", "international_phone_number", "geometry", "rating", "url", "website", "wheelchair_accessible_entrance","open_now"]
@@ -77,5 +79,5 @@ def local_farms_sweden(longitude: float, latitude: float, radius: float):
         json.dump(all_farms, json_file, indent=4, ensure_ascii=False)
 
     #print(query.fetch_all_locations())         Kör denna rad för att se nuvarande content i databasen
-    
+
 local_farms_sweden(59.334591, 18.063240, 5000)
