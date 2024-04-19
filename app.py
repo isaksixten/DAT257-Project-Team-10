@@ -3,6 +3,7 @@
 from flask import Flask, request, redirect, url_for
 from backend.local_food_map_controller import LocalFoodMapController
 from frontend.local_food_map_view import LocalFoodMapView
+from backend.query_machine import QueryMachine
 
 app = Flask(__name__)
 
@@ -26,6 +27,11 @@ def show_farm():
     farm_id = request.form.get('farm_id', type=int)
     # Call controller to display the farm page
     return controller.display_farm_page(farm_id)
+
+@app.route('/fetch-tags') 
+def fetch_tags(): 
+    return controller.get_farm_tags() 
+
 
 if __name__ == "__main__":
     app.run(debug=True)

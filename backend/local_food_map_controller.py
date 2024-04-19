@@ -41,3 +41,7 @@ class LocalFoodMapController:
     def display_farms_sorted_by_proximity(self, user_lat, user_lon):
         sorted_farms = self.model.get_farms_sorted_by_distance(user_lat, user_lon)
         return self.view.render_farms_sorted_page(sorted_farms)
+
+    def get_farm_tags(self):
+        tags=self.query_machine.fetch_tags()
+        return tags

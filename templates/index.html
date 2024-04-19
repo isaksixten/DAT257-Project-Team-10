@@ -99,16 +99,47 @@
         </select>
         </div>
     <div class="lowerLeftSection">
-        <h1>Filters</h1>
-        <form id="filterForm">
-            <ul>
-                <li><input type="checkbox" name="filter" value="animal_conditions"> Good Animal Conditions</li>
-                <li><input type="checkbox" name="filter" value="farmer_conditions"> Good Farmer Conditions</li>
-                <li><input type="checkbox" name="filter" value="climate_neutral"> Climate Neutral</li>
-                <li><input type="checkbox" name="filter" value="no_pesticides"> No Pesticides</li>
-            </ul>
-            <button type="button" onclick="applyFilter()">Apply Filter</button>
+        <h1>Available Tags</h1>
+        <form id="tagselection">
+            <ul id="tags-list"></ul>
+            <button type="button" onclick="applyFilter()">Apply Filters</button>
         </form>
+        <script>
+            function fetchTags() {
+                fetch('/fetch-tags')
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Hittade ej fetch-tags');
+                        }
+                        return response.json();
+                    })
+                    .then(tags => {
+                        const tagsList = document.getElementById('tags-list');
+                        tags.forEach(tag => {
+                            const li = document.createElement('li');
+                            const checkbox = document.createElement('input');
+                            checkbox.type = 'checkbox';
+                            checkbox.name = 'tags';
+                            checkbox.value = tag;
+                            li.appendChild(checkbox);
+                            li.appendChild(document.createTextNode(tag));
+                            tagsList.appendChild(li);
+                        });
+                    })
+                    .catch(error => {
+                        console.error('Fetch not successful', error);
+                    });
+            }
+            fetchTags(); 
+    
+            function applyFilter() {
+                const form = document.getElementById('tagForm');
+                const selectedTags = Array.from(form.elements.tags).filter(tag => tag.checked).map(tag => tag.value);
+                console.log('Selected tags:', selectedTags);
+                //Vet ej hur vi vill göra här, nu väntar den tills användaren klickar på apply filters och då lagrar den alla tags, vill vi göra så?
+            }
+        </script>
+    </div>
     </div>
 
     <div class="middleSection">
