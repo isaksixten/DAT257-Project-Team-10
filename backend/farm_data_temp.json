@@ -3,7 +3,7 @@
         "name": "Augustendals 4H-Klubb",
         "business_status": "OPERATIONAL",
         "formatted_address": "Huvudsta Allé 1, 171 73 Solna, Sweden",
-        "formatted_phone_number": "070-019 43 75",
+        "international_phone_number": "+46 70 019 43 75",
         "geometry": {
             "location": {
                 "lat": 59.3446922,
@@ -23,65 +23,14 @@
         "rating": 4.4,
         "url": "https://maps.google.com/?cid=10920293150272315396",
         "website": "http://www.augustendals4h.se/",
-        "wheelchair_accessible_entrance": true
-    },
-    "Bodals gård": {
-        "name": "Bodals gård",
-        "business_status": "OPERATIONAL",
-        "formatted_address": "Larsbergsvägen 8, 181 39 Lidingö, Sweden",
-        "formatted_phone_number": null,
-        "geometry": {
-            "location": {
-                "lat": 59.3506984,
-                "lng": 18.1430345
-            },
-            "viewport": {
-                "northeast": {
-                    "lat": 59.35184013029149,
-                    "lng": 18.14482923029151
-                },
-                "southwest": {
-                    "lat": 59.34914216970849,
-                    "lng": 18.1421312697085
-                }
-            }
-        },
-        "rating": null,
-        "url": "https://maps.google.com/?cid=14098098870684666686",
-        "website": null,
-        "wheelchair_accessible_entrance": null
-    },
-    "Dokal AB": {
-        "name": "Dokal AB",
-        "business_status": "OPERATIONAL",
-        "formatted_address": "Hälsingegatan 7, 113 23 Stockholm, Sweden",
-        "formatted_phone_number": "076-777 99 79",
-        "geometry": {
-            "location": {
-                "lat": 59.34182430000001,
-                "lng": 18.043072
-            },
-            "viewport": {
-                "northeast": {
-                    "lat": 59.3432051302915,
-                    "lng": 18.0445419302915
-                },
-                "southwest": {
-                    "lat": 59.34050716970849,
-                    "lng": 18.0418439697085
-                }
-            }
-        },
-        "rating": null,
-        "url": "https://maps.google.com/?cid=14053376270120437354",
-        "website": null,
-        "wheelchair_accessible_entrance": null
+        "wheelchair_accessible_entrance": true,
+        "open_now": null
     },
     "Hammarby Gård": {
         "name": "Hammarby Gård",
         "business_status": "OPERATIONAL",
         "formatted_address": "Textilgatan 25, 120 30 Stockholm, Sweden",
-        "formatted_phone_number": null,
+        "international_phone_number": null,
         "geometry": {
             "location": {
                 "lat": 59.303268,
@@ -101,13 +50,68 @@
         "rating": null,
         "url": "https://maps.google.com/?cid=3064522296856140495",
         "website": null,
-        "wheelchair_accessible_entrance": null
+        "wheelchair_accessible_entrance": null,
+        "open_now": null
+    },
+    "Dokal AB": {
+        "name": "Dokal AB",
+        "business_status": "OPERATIONAL",
+        "formatted_address": "Hälsingegatan 7, 113 23 Stockholm, Sweden",
+        "international_phone_number": "+46 76 777 99 79",
+        "geometry": {
+            "location": {
+                "lat": 59.34182430000001,
+                "lng": 18.043072
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 59.3432051302915,
+                    "lng": 18.0445419302915
+                },
+                "southwest": {
+                    "lat": 59.34050716970849,
+                    "lng": 18.0418439697085
+                }
+            }
+        },
+        "rating": null,
+        "url": "https://maps.google.com/?cid=14053376270120437354",
+        "website": null,
+        "wheelchair_accessible_entrance": null,
+        "open_now": null
+    },
+    "Bodals gård": {
+        "name": "Bodals gård",
+        "business_status": "OPERATIONAL",
+        "formatted_address": "Larsbergsvägen 8, 181 39 Lidingö, Sweden",
+        "international_phone_number": null,
+        "geometry": {
+            "location": {
+                "lat": 59.3506984,
+                "lng": 18.1430345
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 59.35184013029149,
+                    "lng": 18.14482923029151
+                },
+                "southwest": {
+                    "lat": 59.34914216970849,
+                    "lng": 18.1421312697085
+                }
+            }
+        },
+        "rating": null,
+        "url": "https://maps.google.com/?cid=14098098870684666686",
+        "website": null,
+        "wheelchair_accessible_entrance": null,
+        "open_now": null
     },
     "Estate JKCN": {
         "name": "Estate JKCN",
         "business_status": "OPERATIONAL",
         "formatted_address": "Stigbergsgatan 26-28, 116 28 Stockholm, Sweden",
-        "formatted_phone_number": null,
+        "international_phone_number": null,
         "geometry": {
             "location": {
                 "lat": 59.3168385,
@@ -127,13 +131,14 @@
         "rating": null,
         "url": "https://maps.google.com/?cid=17172205372606383844",
         "website": null,
-        "wheelchair_accessible_entrance": null
+        "wheelchair_accessible_entrance": null,
+        "open_now": null
     },
     "Drottning Silvias Stiftelse": {
         "name": "Drottning Silvias Stiftelse",
         "business_status": "OPERATIONAL",
         "formatted_address": "Högvaktsterrassen, 111 30 Stockholm, Sweden",
-        "formatted_phone_number": "08-402 06 00",
+        "international_phone_number": "+46 8 402 06 00",
         "geometry": {
             "location": {
                 "lat": 59.3263331,
@@ -153,13 +158,14 @@
         "rating": null,
         "url": "https://maps.google.com/?cid=2463152715890153533",
         "website": "http://drottningsilviasstiftelse.se/kontakt/",
-        "wheelchair_accessible_entrance": null
+        "wheelchair_accessible_entrance": null,
+        "open_now": null
     },
     "Sju Gårdar": {
         "name": "Sju Gårdar",
         "business_status": "OPERATIONAL",
         "formatted_address": "Kräftriket 14A, 114 19 Stockholm, Sweden",
-        "formatted_phone_number": "018-10 66 33",
+        "international_phone_number": "+46 18 10 66 33",
         "geometry": {
             "location": {
                 "lat": 59.3568864,
@@ -179,39 +185,14 @@
         "rating": null,
         "url": "https://maps.google.com/?cid=3525188008583761604",
         "website": null,
-        "wheelchair_accessible_entrance": null
-    },
-    "Brunnsvikens Trädgård": {
-        "name": "Brunnsvikens Trädgård",
-        "business_status": "OPERATIONAL",
-        "formatted_address": "Ulriksdalsvägen 2, 170 79 Solna, Sweden",
-        "formatted_phone_number": null,
-        "geometry": {
-            "location": {
-                "lat": 59.38022929999999,
-                "lng": 18.0191239
-            },
-            "viewport": {
-                "northeast": {
-                    "lat": 59.3814213302915,
-                    "lng": 18.0200432802915
-                },
-                "southwest": {
-                    "lat": 59.37872336970849,
-                    "lng": 18.0173453197085
-                }
-            }
-        },
-        "rating": 4.2,
-        "url": "https://maps.google.com/?cid=17578574218961731543",
-        "website": "http://www.brunnsvikenstradgard.se/",
-        "wheelchair_accessible_entrance": true
+        "wheelchair_accessible_entrance": null,
+        "open_now": null
     },
     "Konsultpartner": {
         "name": "Konsultpartner",
         "business_status": "OPERATIONAL",
         "formatted_address": "Gjuteribacken 6B, 172 65 Sundbyberg, Sweden",
-        "formatted_phone_number": "070-719 24 13",
+        "international_phone_number": "+46 70 719 24 13",
         "geometry": {
             "location": {
                 "lat": 59.35895189999999,
@@ -231,6 +212,7 @@
         "rating": null,
         "url": "https://maps.google.com/?cid=11982508948665925663",
         "website": "https://konsultpartner.com/kontakta-oss/",
-        "wheelchair_accessible_entrance": null
+        "wheelchair_accessible_entrance": null,
+        "open_now": null
     }
 }
