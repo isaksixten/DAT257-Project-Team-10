@@ -37,3 +37,17 @@ CREATE TABLE Opening_Hours(
     FOREIGN KEY (farm) REFERENCES Farms(id),
     FOREIGN KEY (weekday) REFERENCES Weekdays(weekday)    
 );
+
+--Och här under finns en bas för att kunna lägga in produkter--
+
+CREATE TABLE Products(
+    product TEXT PRIMARY KEY
+);
+
+CREATE TABLE Farm_Products(
+    farm TEXT,
+    product TEXT,
+    PRIMARY KEY (farm,product),
+    FOREIGN KEY (farm) REFERENCES Farms(id),
+    FOREIGN KEY (product) REFERENCES Products(product)
+);
