@@ -55,7 +55,23 @@ class QueryMachine:
         except psycopg2.Error as e:
             message = repr(e)
             return "failed: " + message
+    
+    def add_farmtag(self, id, tag):
+        try:
+            with self.conn.cursor() as cur:
+                sql = """INSERT INTO Farm_Tags VALUES (%s, %s)"""
+                cur.execute(sql, (id, tag))
 
-    def id_generator(): #TODO: change this, very bad
-        import random
-        return random.randint(5,9487334)
+        except psycopg2.Error as e:
+            message = repr(e)
+            return "failed: " + message
+    
+    def add_farm_info(self, id, adress, phone_nr, rating, website):
+        try:
+            with self.conn.cursor() as cur:
+                sql = """INSERT INTO Farm_Information VALUES (%s, %s, %s, %s, %s)"""
+                cur.execute(sql, (id, adress, phone_nr, rating, website))
+
+        except psycopg2.Error as e:
+            message = repr(e)
+            return "failed: " + message
