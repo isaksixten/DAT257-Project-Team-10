@@ -2,7 +2,7 @@ import requests
 import json
 from query_machine import QueryMachine
 
-API_KEY = 'AIzaSyD7Cig0vx07muhSrCE2Fo4EOcGpWvKH4Hk'    #PUSHA EJ TILL GIT
+API_KEY = ''    #PUSHA EJ TILL GIT
 
 # Places API 
 base_url_nearby = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json'
