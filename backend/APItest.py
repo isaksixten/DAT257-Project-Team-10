@@ -13,22 +13,16 @@ base_url_details = 'https://maps.googleapis.com/maps/api/place/details/json'
 query=QueryMachine()
 
 def farms_to_database(id, dict):
-    query.add_location(id,dict['name'],'empty',dict['geometry']['location']['lat'],
-        dict['geometry']['location']['lng'],)
-
-    if dict['website'] != None:
-        query.add_farmtag(id, 'website')
-    if dict['wheelchair_accessible_entrance'] != None:
-        query.add_farmtag(id, 'wheelchair')
-    if dict['rating'] != None:
-        query.add_farmtag(id, 'rating')
     if dict['business_status'] == 'OPERATIONAL':
-        query.add_farmtag(id, 'open')
-                
-    query.add_farm_info(id, dict['formatted_address']
-                        , dict['international_phone_number']
-                        , dict['rating']
-                        , dict['website'])
+
+        #finns ingen description i API-resultatet troligtvis, har dock kvar den så länge
+        query.add_location(id,dict['name'],'empty',dict['rating'],dict['geometry']['location']['lat'],
+            dict['geometry']['location']['lng'],dict['formatted_address'],dict['website'],dict['international_phone_number'])
+        
+        if dict['wheelchair_accessible_entrance'] != None:
+            query.add_farmtag(id, 'wheelchair')
+        if dict['open_now'] != None:
+            query.add_farmtag(id, 'open_now')
 
 
 
@@ -44,6 +38,7 @@ def local_farms_sweden(longitude: float, latitude: float, radius: float):
 
     include_fields = ["name", "business_status", "formatted_address", "international_phone_number", "geometry", "rating", "url", "website", "wheelchair_accessible_entrance","open_now"]
     #periods? (öppettider)
+    
     all_farms = {}  #Onödig, bara under develop-fas
 
     response_nearby = requests.get(base_url_nearby, params=params_nearby)
@@ -68,7 +63,7 @@ def local_farms_sweden(longitude: float, latitude: float, radius: float):
                 included_farm_details = {field: farm_details.get(field, None) for field in include_fields}
                     
                 farm_name = included_farm_details.get('name', 'Unnamed Farm')
-                all_farms[farm_name] = included_farm_details    #onödigt bara under develop-fasen
+                all_farms[farm_name] = farm_details    #onödigt bara under develop-fasen  
 
                 farms_to_database(place_id, included_farm_details)
                 
@@ -78,6 +73,9 @@ def local_farms_sweden(longitude: float, latitude: float, radius: float):
     else:
         print('Error:', response_nearby.status_code)
 
-    with open('farm_data_temp.json', 'w', encoding='utf-8') as json_file:
+    with open('all_API_data_temp.json', 'w', encoding='utf-8') as json_file:    #Denna JSON innehåller ALL info från API-resultatet
         json.dump(all_farms, json_file, indent=4, ensure_ascii=False)
+
+    #print(query.fetch_all_locations())         Kör denna rad för att se nuvarande content i databasen
+    
 local_farms_sweden(59.334591, 18.063240, 5000)

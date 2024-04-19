@@ -2,8 +2,12 @@ CREATE TABLE Farms (
     id TEXT PRIMARY KEY,
     name TEXT,
     description TEXT,
+    rating FLOAT, 
     latitude REAL,
-    longitude REAL
+    longitude REAL,
+    address TEXT,
+    website TEXT,
+    phonenumber TEXT
 );
 
 CREATE TABLE Tags (
@@ -18,11 +22,18 @@ CREATE TABLE Farm_Tags(
     FOREIGN KEY (tag) REFERENCES Tags(tag)
 );
 
-CREATE TABLE Farm_Information(
-    farm TEXT PRIMARY KEY,
-    adress TEXT,
-    phone_nr TEXT,
-    rating FLOAT,
-    website TEXT,
-    FOREIGN KEY (farm) REFERENCES Farms(id)
+--Här under finns en bas för att senare kunna lägga in öppettider--
+
+CREATE TABLE Weekdays(
+    weekday INT PRIMARY KEY
+);
+
+CREATE TABLE Opening_Hours(
+    farm TEXT,
+    weekday INT,
+    open_time INT,
+    close_time INT,
+    PRIMARY KEY (farm,weekday),
+    FOREIGN KEY (farm) REFERENCES Farms(id),
+    FOREIGN KEY (weekday) REFERENCES Weekdays(weekday)    
 );
