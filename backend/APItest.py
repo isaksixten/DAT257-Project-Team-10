@@ -16,7 +16,7 @@ def farms_to_database(id, dict):
     if dict['business_status'] == 'OPERATIONAL':
 
         #finns ingen description i API-resultatet troligtvis, har dock kvar den så länge
-        query.add_location(id,dict['name'],'empty',dict['rating'],dict['geometry']['location']['lat'],
+        query.add_location(id,dict['name'],'No description available',dict['rating'],dict['geometry']['location']['lat'],
             dict['geometry']['location']['lng'],dict['formatted_address'],dict['website'],dict['international_phone_number'])
         
         if dict['wheelchair_accessible_entrance'] != None:

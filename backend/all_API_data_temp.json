@@ -1,146 +1,23 @@
 {
-    "Orchis - Gårdsbutiken i Stan": {
+    "Augustendals 4H-Klubb": {
         "address_components": [
             {
-                "long_name": "7",
-                "short_name": "7",
+                "long_name": "1",
+                "short_name": "1",
                 "types": [
                     "street_number"
                 ]
             },
             {
-                "long_name": "Hälsingegatan",
-                "short_name": "Hälsingegatan",
+                "long_name": "Huvudsta Allé",
+                "short_name": "Huvudsta Allé",
                 "types": [
                     "route"
                 ]
             },
             {
-                "long_name": "Stockholm",
-                "short_name": "Stockholm",
-                "types": [
-                    "postal_town"
-                ]
-            },
-            {
-                "long_name": "Stockholms län",
-                "short_name": "Stockholms län",
-                "types": [
-                    "administrative_area_level_1",
-                    "political"
-                ]
-            },
-            {
-                "long_name": "Sweden",
-                "short_name": "SE",
-                "types": [
-                    "country",
-                    "political"
-                ]
-            },
-            {
-                "long_name": "113 23",
-                "short_name": "113 23",
-                "types": [
-                    "postal_code"
-                ]
-            }
-        ],
-        "adr_address": "<span class=\"street-address\">Hälsingegatan 7</span>, <span class=\"postal-code\">113 23</span> <span class=\"locality\">Stockholm</span>, <span class=\"country-name\">Sweden</span>",
-        "business_status": "OPERATIONAL",
-        "formatted_address": "Hälsingegatan 7, 113 23 Stockholm, Sweden",
-        "formatted_phone_number": "08-31 04 50",
-        "geometry": {
-            "location": {
-                "lat": 59.3418253,
-                "lng": 18.0431519
-            },
-            "viewport": {
-                "northeast": {
-                    "lat": 59.3431983802915,
-                    "lng": 18.0445914302915
-                },
-                "southwest": {
-                    "lat": 59.34050041970849,
-                    "lng": 18.0418934697085
-                }
-            }
-        },
-        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
-        "icon_background_color": "#4B96F3",
-        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
-        "international_phone_number": "+46 8 31 04 50",
-        "name": "Orchis - Gårdsbutiken i Stan",
-        "photos": [
-            {
-                "height": 5488,
-                "html_attributions": [
-                    "<a href=\"https://maps.google.com/maps/contrib/115090841130542812023\">Magnus S</a>"
-                ],
-                "photo_reference": "ATplDJZ8qWb1XEubanQU9EHVE5jH864fI-yE697Ruv0scnhPW-QxI1oU8zcMuKEtMkVYaEc5a6MYyh4NrmIAEn6if43iAR-SFlFLZ6-wvyIN71Aoyx79ufTsw7_-EsctOKC1PVNkpcT1nA7Wgx_xHKahyjRkgRIlc7j4LrB0LitAkZtLw3Mz",
-                "width": 3664
-            },
-            {
-                "height": 3664,
-                "html_attributions": [
-                    "<a href=\"https://maps.google.com/maps/contrib/115090841130542812023\">Magnus S</a>"
-                ],
-                "photo_reference": "ATplDJYCJgYIFUjzGeZyiWBT1_Xk5pTCcrbPjYax70bB-MQIkX-GTkzpsVGOB2unVSMB-JG0Yg4opsyNYM-2lNn75KcZ_uBJ_ISPhT9Bx-Su6Ze5O9SzJkUOU8oOkDJGHvhBraR_UrMILvsYutIhMEtsU4gzTBIUTUjybsrWx7jAVsSLe-vs",
-                "width": 5488
-            }
-        ],
-        "place_id": "ChIJZdI5t6CdX0YRewKWGkh52RU",
-        "plus_code": {
-            "compound_code": "82RV+P7 Stockholm, Sweden",
-            "global_code": "9FFW82RV+P7"
-        },
-        "rating": 3,
-        "reference": "ChIJZdI5t6CdX0YRewKWGkh52RU",
-        "reviews": [
-            {
-                "author_name": "Tony S",
-                "author_url": "https://www.google.com/maps/contrib/111672777422946037385/reviews",
-                "language": "en",
-                "original_language": "en",
-                "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocLwY5V6kZSQRagoAuLb5TxL7gUw2_F9J_lXGcmMfK2NmQ9p_PuA=s128-c0x00000000-cc-rp-mo-ba5",
-                "rating": 3,
-                "relative_time_description": "a year ago",
-                "text": "Organic food and products",
-                "time": 1669326853,
-                "translated": false
-            }
-        ],
-        "types": [
-            "point_of_interest",
-            "food",
-            "store",
-            "establishment"
-        ],
-        "url": "https://maps.google.com/?cid=1574422895333343867",
-        "user_ratings_total": 1,
-        "utc_offset": 120,
-        "vicinity": "Hälsingegatan 7, Stockholm",
-        "website": "http://www.orchis.se/"
-    },
-    "Husa Jordbruk Gårdsbutik": {
-        "address_components": [
-            {
-                "long_name": "22",
-                "short_name": "22",
-                "types": [
-                    "street_number"
-                ]
-            },
-            {
-                "long_name": "Herserudsvägen",
-                "short_name": "Herserudsvägen",
-                "types": [
-                    "route"
-                ]
-            },
-            {
-                "long_name": "Mosstorp",
-                "short_name": "Mosstorp",
+                "long_name": "Huvudsta",
+                "short_name": "Huvudsta",
                 "types": [
                     "sublocality_level_1",
                     "sublocality",
@@ -148,8 +25,8 @@
                 ]
             },
             {
-                "long_name": "Lidingö",
-                "short_name": "Lidingö",
+                "long_name": "Solna",
+                "short_name": "Solna",
                 "types": [
                     "postal_town"
                 ]
@@ -171,237 +48,199 @@
                 ]
             },
             {
-                "long_name": "181 50",
-                "short_name": "181 50",
+                "long_name": "171 73",
+                "short_name": "171 73",
                 "types": [
                     "postal_code"
                 ]
             }
         ],
-        "adr_address": "<span class=\"street-address\">Herserudsvägen 22</span>, <span class=\"postal-code\">181 50</span> <span class=\"locality\">Lidingö</span>, <span class=\"country-name\">Sweden</span>",
+        "adr_address": "<span class=\"street-address\">Huvudsta Allé 1</span>, <span class=\"postal-code\">171 73</span> <span class=\"locality\">Solna</span>, <span class=\"country-name\">Sweden</span>",
         "business_status": "OPERATIONAL",
-        "current_opening_hours": {
-            "open_now": false,
-            "periods": [
-                {
-                    "close": {
-                        "date": "2024-04-25",
-                        "day": 4,
-                        "time": "1800"
-                    },
-                    "open": {
-                        "date": "2024-04-25",
-                        "day": 4,
-                        "time": "1500"
-                    }
-                },
-                {
-                    "close": {
-                        "date": "2024-04-19",
-                        "day": 5,
-                        "time": "1800"
-                    },
-                    "open": {
-                        "date": "2024-04-19",
-                        "day": 5,
-                        "time": "1500"
-                    }
-                },
-                {
-                    "close": {
-                        "date": "2024-04-20",
-                        "day": 6,
-                        "time": "1500"
-                    },
-                    "open": {
-                        "date": "2024-04-20",
-                        "day": 6,
-                        "time": "1130"
-                    }
-                }
-            ],
-            "weekday_text": [
-                "Monday: Closed",
-                "Tuesday: Closed",
-                "Wednesday: Closed",
-                "Thursday: 3:00 – 6:00 PM",
-                "Friday: 3:00 – 6:00 PM",
-                "Saturday: 11:30 AM – 3:00 PM",
-                "Sunday: Closed"
-            ]
-        },
-        "formatted_address": "Herserudsvägen 22, 181 50 Lidingö, Sweden",
-        "formatted_phone_number": "073-422 23 69",
+        "formatted_address": "Huvudsta Allé 1, 171 73 Solna, Sweden",
+        "formatted_phone_number": "070-019 43 75",
         "geometry": {
             "location": {
-                "lat": 59.3595655,
-                "lng": 18.1195897
+                "lat": 59.3446922,
+                "lng": 17.9971465
             },
             "viewport": {
                 "northeast": {
-                    "lat": 59.3609605802915,
-                    "lng": 18.1211245302915
+                    "lat": 59.3458053302915,
+                    "lng": 17.99932345
                 },
                 "southwest": {
-                    "lat": 59.35826261970849,
-                    "lng": 18.1184265697085
+                    "lat": 59.34310736970848,
+                    "lng": 17.99642085
                 }
             }
         },
         "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
         "icon_background_color": "#7B9EB0",
         "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
-        "international_phone_number": "+46 73 422 23 69",
-        "name": "Husa Jordbruk Gårdsbutik",
-        "opening_hours": {
-            "open_now": false,
-            "periods": [
-                {
-                    "close": {
-                        "day": 4,
-                        "time": "1800"
-                    },
-                    "open": {
-                        "day": 4,
-                        "time": "1500"
-                    }
-                },
-                {
-                    "close": {
-                        "day": 5,
-                        "time": "1800"
-                    },
-                    "open": {
-                        "day": 5,
-                        "time": "1500"
-                    }
-                },
-                {
-                    "close": {
-                        "day": 6,
-                        "time": "1500"
-                    },
-                    "open": {
-                        "day": 6,
-                        "time": "1130"
-                    }
-                }
-            ],
-            "weekday_text": [
-                "Monday: Closed",
-                "Tuesday: Closed",
-                "Wednesday: Closed",
-                "Thursday: 3:00 – 6:00 PM",
-                "Friday: 3:00 – 6:00 PM",
-                "Saturday: 11:30 AM – 3:00 PM",
-                "Sunday: Closed"
-            ]
-        },
+        "international_phone_number": "+46 70 019 43 75",
+        "name": "Augustendals 4H-Klubb",
         "photos": [
             {
-                "height": 771,
+                "height": 3008,
                 "html_attributions": [
-                    "<a href=\"https://maps.google.com/maps/contrib/104342080350030069656\">Husa Jordbruk Gårdsbutik</a>"
+                    "<a href=\"https://maps.google.com/maps/contrib/111770408599191832642\">Daniel Grönjord</a>"
                 ],
-                "photo_reference": "ATplDJaYZyde28qUpp9VQ1TOztDvhxvRGYJQLfWrCyuOE-UdIAK00Jvb3enpYwaCtUZBFooE101PBP4ZKciIrMcT6PZa1IscyQDOLpS7BlAMKXaSzTJG0IwFdE_x713nsQUTfTt66gC_G2KaxsV8z1UM8AguJekoMBrN0mkMrr9RmBqM1W7h",
-                "width": 1372
+                "photo_reference": "ATplDJau2BulEeZYr0fKW0jEkp2ARon60YmUBh0vjF7LjyW_CExQbBYVOM24_pO3NPFNxpCrEU-wBAKBhjjj4VnyEeJGYhzWHmApT6N8DOS_I9yoNL7Wbr4DNDSXdi13YKmcFQvMlGJ4xO2dDvlyI8CeLR5gg4sHr6REqUBsGRC5vSvWBHYz",
+                "width": 4000
             },
             {
-                "height": 360,
+                "height": 2268,
                 "html_attributions": [
-                    "<a href=\"https://maps.google.com/maps/contrib/104342080350030069656\">Husa Jordbruk Gårdsbutik</a>"
+                    "<a href=\"https://maps.google.com/maps/contrib/104139809392997425643\">Henrik S</a>"
                 ],
-                "photo_reference": "ATplDJb60D_hHGFbpe8emDj70hL-6b4_1S1yhwBylEIYuXU0OWVIXD8oTvI_XrEZjuuNbn46dp2lDzyd5yMVsVP7sugaJhfp-z-LXm3EccWOn_Aacq-oLHXlUfGDO6YmcDz2qoaDkX9jrTKQkcMsMGbQqBK12hShRXEJt0bFkpWOsJ4WoLeO",
-                "width": 640
+                "photo_reference": "ATplDJZ7f3IwPDos84gN7vEjsO4PUZxJDZ0LreQwkufgmlDabqtM7BHqp89n1f5nZEaeaAWFECvILBLr0mD9G4Hh0ODE7rglcvGz_RGEjcqAg2mXnH0pF9fEIESW5N5z_W3QNzA4lpbsrj9uwyZciR5xV3locXFaJON7R5PAJYAgVa4Knrlv",
+                "width": 2258
             },
             {
-                "height": 1536,
+                "height": 4032,
                 "html_attributions": [
-                    "<a href=\"https://maps.google.com/maps/contrib/108292092559504199168\">Husa Jordbruk</a>"
+                    "<a href=\"https://maps.google.com/maps/contrib/117275994447817512056\">Janne Olofsson</a>"
                 ],
-                "photo_reference": "ATplDJZ5zI591KF7jNrXowcyQh9GiQreWpOjrNhM4UU8izcekIFB1-8VLiSl_Nb5LI9YsP2mfAJxKE5yxDJ7v1tRJIiibxDu30Ara73VuLnsu0zItg1Ut7FYb9Zh9SEWaIi34eoLMhmriI-fI9Pfs4oppEZCDP7tcXn1-ZSVkJTs4_u-Rz18",
-                "width": 2048
+                "photo_reference": "ATplDJbk75b0WP1I_p2of5FGqF3vwe8q96bZwDmABL39ILX4oN-388s-I1bqVcsQe2kMJ-2h6dlEZ9obXDcRzaQY_YD2Iu2xI0C6DD5rH0NOECwZsToNb1f16s5ttfb6MLHRZ8Jv_bM8mz1XuI7tnsGB5UQ3Ind8WP4g6enoYvZOuSlBoqqX",
+                "width": 3024
             },
             {
-                "height": 3168,
+                "height": 1662,
                 "html_attributions": [
-                    "<a href=\"https://maps.google.com/maps/contrib/107423812242089230067\">J. Broeders</a>"
+                    "<a href=\"https://maps.google.com/maps/contrib/113566732614341811891\">Andrew Szymanski</a>"
                 ],
-                "photo_reference": "ATplDJYspvs3T3wAs9joclxKwvULP4TTV2x8YUo4GEm1FxqRfLKrGL1bcaHSMsuwu9Vgtl-cb05QHolrsl2BGlrUEhXMa1TfO_HUGM-5qJgJ9ojU7Fs8Z9bDJuk6o3DRrftSCBFXle5fsAxPjDZu2EjIADPNrS8VnIwtH9OLRD_53jb-j9fz",
-                "width": 4752
+                "photo_reference": "ATplDJa-3s6Nbwu6IUEWmCO0YNGJij26jC0Uf9OGLvw29KDi_kxu10snRzialHses_jeXRmRbBBF51SEGXWjpwyRVmqerYwp1HK7IrxK-kTM0f1whvb0oTN4ozmxxl9sEc72YcOziXuTpKsJFHOE1s8VamTPd4r1iXQaQC_wndHDcEDkhlo",
+                "width": 2225
             },
             {
-                "height": 1536,
+                "height": 3024,
                 "html_attributions": [
-                    "<a href=\"https://maps.google.com/maps/contrib/108292092559504199168\">Husa Jordbruk</a>"
+                    "<a href=\"https://maps.google.com/maps/contrib/115030474835713693448\">Cliff Sam</a>"
                 ],
-                "photo_reference": "ATplDJafkWCSklkDUfBe87rsSdk7xUP11dUo1mB3fWv57qn3yrYhUizlrgpvyhop6cTRdT6W2FhQJsqmihbMY7nhxHNZvRR39FBfhMmKMZD1Ezxvp4iDOynNI6UKYkV48CgJtZYufpWRgOxxwhWWPvg0jN9tl6h6B4b8e2xd5R8xHo-xzTiY",
-                "width": 2048
+                "photo_reference": "ATplDJZHs4p_9geHp6TBh3wKgncaePrPolKb-aQQsDQW8BPLaN4jJR1qZqhD0pLCOeZZZCD7mV6KKvtywER8ULujlqWOBAsgLwbNPWGuHg1x_2xTL9yO6AtkrSyK9Lz9tibYlDa1OfGq20g6YX80b2QNbD7dmdUlaVr6W3z9DQxhDf-Ob-Jy",
+                "width": 4032
             },
             {
-                "height": 1080,
+                "height": 3024,
                 "html_attributions": [
-                    "<a href=\"https://maps.google.com/maps/contrib/108292092559504199168\">Husa Jordbruk</a>"
+                    "<a href=\"https://maps.google.com/maps/contrib/102420656675018503402\">Mehdi Khoshnoodi</a>"
                 ],
-                "photo_reference": "ATplDJaDmEomooHjqCj5b_K43ibFxmeQcLMRC6xn5mqNf6Fz1qX3JAYww68SlRg3SXSXE4Gw4ty3t9kQ8eoL98j587SPxG9wRrDrCk18NLOF2PD3jXQ2eq2Dv9bjPBpgxi6bfMYeJTnmhTf6C6xTJ0w_zooIaP-xY-I4axgJbG5EPjfyqAYp",
-                "width": 1920
+                "photo_reference": "ATplDJZbmkkQBf7ooWpa_2iID10G-ZzI-pec9kLPHLW8UoJuTViNG8QlCXpNQ7YlvXxKn1aPZ3-ptCI1nqTs6UcvZYM1QSUTAwuRlVKI6e3eEe7uyVdpk-tiVT-PW1441u_iNfDndrdaikO0R0lSvG9sRLj_rqz2yPXrBQMc1yjGBOPlSVBW",
+                "width": 4032
             },
             {
-                "height": 1536,
+                "height": 3087,
                 "html_attributions": [
-                    "<a href=\"https://maps.google.com/maps/contrib/108292092559504199168\">Husa Jordbruk</a>"
+                    "<a href=\"https://maps.google.com/maps/contrib/103529558415288953826\">Joanna Carab</a>"
                 ],
-                "photo_reference": "ATplDJYkk1TBryfYHxZpVNNzZw1mNnfrhE2UGoXR1NuDI5eHX7QD4bCXemcoMWOGTRzmTnTUoNJj7WFqoWqrxEOHequMHlwKVfmj0N42Tn3f_UaHUYP3fNyrMU_BOVyuKMDfgvQF21-DsQTqXDnHkcJyaUBFPeqvTWJZAK6HDjV2QGulJPPY",
-                "width": 2048
+                "photo_reference": "ATplDJaTXrgcvY8P4wozfYEyyCVQMW5g6wqSYaytkTzpphA2JjsZA4MZQ6bs_Vg0-6QJoOSbrOt_9Dc3YYMIrRQr3YFGz4Fd6bsY5z-plVnEqH1S8ZcuD8WRsv9XJ8rBHVw4hjUh4Zmhj3BjMbhNcNLxd3-6zD2omY381BzSiloJCykZHkeB",
+                "width": 3087
             },
             {
-                "height": 2673,
+                "height": 4032,
                 "html_attributions": [
-                    "<a href=\"https://maps.google.com/maps/contrib/107423812242089230067\">J. Broeders</a>"
+                    "<a href=\"https://maps.google.com/maps/contrib/105677090076489036940\">Lady White</a>"
                 ],
-                "photo_reference": "ATplDJZXsol36xniLOCAuGQL4YxTfsFypOothaHXWrBecRX_ZXcqTq5OPLnP3UxPQrBOiJQGI9UkopRIvwupN0Yxu6-CgWcUV7GNBg4Vo3nid7utjqzNeuPSUEXIjURhAKVYS3KnguorxSGczk9NzFdvLQ-4YqWtjHjFsfEGs5l5VY7YQk74",
-                "width": 4751
+                "photo_reference": "ATplDJZ640RtvowDhyGfzqq-zuRrQ8VWQmBXFk9Jdk1jDXIWH-ajQszYOsukUKJmL50ePx5NiV56n9aOxrdvIv4fuhNm28AWDI1jTjFtaxZLrC2ClmktG1qu3ipYzdmBG1eGdxD1dqn9kb9Qvj7PVjuCzxNxtncMs7ZMBKCwD0my51e0Blr5",
+                "width": 1960
             },
             {
-                "height": 800,
+                "height": 2268,
                 "html_attributions": [
-                    "<a href=\"https://maps.google.com/maps/contrib/104342080350030069656\">Husa Jordbruk Gårdsbutik</a>"
+                    "<a href=\"https://maps.google.com/maps/contrib/113566732614341811891\">Andrew Szymanski</a>"
                 ],
-                "photo_reference": "ATplDJYt_Y9g7aFrJW6ZnMnizY8M_csdlj_7qwoMjR49r9_xz7og15w_euXAGbYZcd16WeRNkNUzpnvHpt4b1oZZeykUHsdUkUwyjexYmxUEC2-IrZW1uZE45Z9IACKjeQjYra-gF4qdLrhtAHmPYUUj1YY_DNr6hFOSc_11lPrWSqIKJrs0",
-                "width": 800
+                "photo_reference": "ATplDJaYxu4iccgOc_euxrjVhCIQNBDmG0q3IkrzR4A5tE5ZhTxDLbm3ByBb9WrelXBAUIhpM1Bhvu_r4eo8nbQoa-3n3n_gGuTBZDRuR8F169WhtaUExOjwshyfL09RjQiJQ0mwRIztoHK-KznFsUkCO1xDnMoILDQ2EDrHOZYsFjGs9Yk",
+                "width": 4032
+            },
+            {
+                "height": 4032,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/104437311665196915816\">Nami</a>"
+                ],
+                "photo_reference": "ATplDJZTa0xYmfeuB2uVJvS1FeOV7XVvLOnJ310KnBya2XukuRHCBz4ktaUlkWuUz5-CKmT7xCHJieuDvVqYIWxKGLTL9XPKL9Q74hfOp_rghFxCbk6LgfrCpuH3RYUUc44kbWYoutkq_vt7Ssx3Smz831oQxwDG8fSvwnBvR7IRQFdyEiOq",
+                "width": 3024
             }
         ],
-        "place_id": "ChIJh6YolBadX0YR0tBAcarjpqs",
+        "place_id": "ChIJnc6BG42dX0YRBOAcEcOsjJc",
         "plus_code": {
-            "compound_code": "9459+RR Lidingö, Sweden",
-            "global_code": "9FFW9459+RR"
+            "compound_code": "8XVW+VV Solna, Sweden",
+            "global_code": "9FFV8XVW+VV"
         },
-        "rating": 5,
-        "reference": "ChIJh6YolBadX0YR0tBAcarjpqs",
+        "rating": 4.4,
+        "reference": "ChIJnc6BG42dX0YRBOAcEcOsjJc",
         "reviews": [
             {
-                "author_name": "Torsten Muhrbeck",
-                "author_url": "https://www.google.com/maps/contrib/106427069008296747614/reviews",
-                "language": "en-US",
-                "original_language": "sv",
-                "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocKfXAhjbcFu1qWeEmqxFKMJjwC12-Vw6jAex4T-ZrJpapmDlA=s128-c0x00000000-cc-rp-mo",
+                "author_name": "Chetan",
+                "author_url": "https://www.google.com/maps/contrib/112530534604200731049/reviews",
+                "language": "en",
+                "original_language": "en",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjVsQ2vFLImoSihMVu9AfW326hM7OsVXSsVvVfLsgmFFFQoBGy07dw=s128-c0x00000000-cc-rp-mo-ba5",
                 "rating": 5,
+                "relative_time_description": "a year ago",
+                "text": "Amazing place and a must visit for those with younger ones.\nGood place right beside the lake, nice open play area suitable for little and young ones. 7 min from the nearest bus stop.\n\nFind this useful? Hit Like and follow for more reviews :)",
+                "time": 1650909079,
+                "translated": false
+            },
+            {
+                "author_name": "Joanna Carab",
+                "author_url": "https://www.google.com/maps/contrib/103529558415288953826/reviews",
+                "language": "en",
+                "original_language": "en",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocJLJ4l_-9-Dn-wpQ6THP2_oryKDnPFVmpLtu8u2d1aUzwQP2w=s128-c0x00000000-cc-rp-mo-ba5",
+                "rating": 5,
+                "relative_time_description": "2 years ago",
+                "text": "It's nice to have the chance to visit some animals in the city. It can be fun to go there, especially with children. Nice place to walk all the way to Sundbyberg!",
+                "time": 1627041920,
+                "translated": false
+            },
+            {
+                "author_name": "Linn Vidalve",
+                "author_url": "https://www.google.com/maps/contrib/113395552807496214186/reviews",
+                "language": "en",
+                "original_language": "en",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocIFh3ycbz9DZULjn8YXPNK_gaMzxOka4Kf81bdgLSe8TuJ01Q=s128-c0x00000000-cc-rp-mo-ba5",
+                "rating": 3,
                 "relative_time_description": "8 months ago",
-                "text": "Fantastic meat straight from the farmer. The sausages are of very high quality.\nFair price.",
-                "time": 1691258078,
-                "translated": true
+                "text": "It didn't seem organised in the same way as other petting zoo I've been to but we also visited on the first day open after summer and the cafe was closed so maybe we would have got a better experience another day. Healthy looking animals :)",
+                "time": 1691433748,
+                "translated": false
+            },
+            {
+                "author_name": "Olga Ignatova",
+                "author_url": "https://www.google.com/maps/contrib/103754191841686149370/reviews",
+                "language": "en",
+                "original_language": "en",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjXALCBVZIFffxhLp-UeZi98_lH9r1bwZ_OwgoCo_1Qh63AD9JCt=s128-c0x00000000-cc-rp-mo-ba4",
+                "rating": 5,
+                "relative_time_description": "3 years ago",
+                "text": "Perfect calm and beautiful place for both kids and adults",
+                "time": 1600979874,
+                "translated": false
+            },
+            {
+                "author_name": "Kirill",
+                "author_url": "https://www.google.com/maps/contrib/108191216887738106907/reviews",
+                "language": "en",
+                "original_language": "en",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjXgzKWjW8vpRzjhwe8OpbQjm2AOUIts7DlzVfIz7py6-1zeve-i=s128-c0x00000000-cc-rp-mo",
+                "rating": 4,
+                "relative_time_description": "a year ago",
+                "text": "Very nice farm where you can take a look on horses, goats, chickens for free.  I would strongly recommend to visit this place before skansen, in order to compare.  From animal perspective almost the same.",
+                "time": 1680967871,
+                "translated": false
             }
         ],
         "types": [
             "point_of_interest",
-            "food",
             "establishment"
         ],
-        "url": "https://maps.google.com/?cid=12368823747803664594",
-        "user_ratings_total": 1,
+        "url": "https://maps.google.com/?cid=10920293150272315396",
+        "user_ratings_total": 472,
         "utc_offset": 120,
-        "vicinity": "Herserudsvägen 22, Lidingö",
-        "website": "https://www.husajordbruk.se/g%C3%A5rdsbutik"
+        "vicinity": "Huvudsta Allé 1, Solna",
+        "website": "http://www.augustendals4h.se/",
+        "wheelchair_accessible_entrance": true
     },
     "Sju Gårdar": {
         "address_components": [
@@ -497,5 +336,569 @@
         "url": "https://maps.google.com/?cid=3525188008583761604",
         "utc_offset": 120,
         "vicinity": "Kräftriket 14A, Stockholm"
+    },
+    "Dokal AB": {
+        "address_components": [
+            {
+                "long_name": "7",
+                "short_name": "7",
+                "types": [
+                    "street_number"
+                ]
+            },
+            {
+                "long_name": "Hälsingegatan",
+                "short_name": "Hälsingegatan",
+                "types": [
+                    "route"
+                ]
+            },
+            {
+                "long_name": "Stockholm",
+                "short_name": "Stockholm",
+                "types": [
+                    "postal_town"
+                ]
+            },
+            {
+                "long_name": "Stockholms län",
+                "short_name": "Stockholms län",
+                "types": [
+                    "administrative_area_level_1",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "Sweden",
+                "short_name": "SE",
+                "types": [
+                    "country",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "113 23",
+                "short_name": "113 23",
+                "types": [
+                    "postal_code"
+                ]
+            }
+        ],
+        "adr_address": "<span class=\"street-address\">Hälsingegatan 7</span>, <span class=\"postal-code\">113 23</span> <span class=\"locality\">Stockholm</span>, <span class=\"country-name\">Sweden</span>",
+        "business_status": "OPERATIONAL",
+        "formatted_address": "Hälsingegatan 7, 113 23 Stockholm, Sweden",
+        "formatted_phone_number": "076-777 99 79",
+        "geometry": {
+            "location": {
+                "lat": 59.34182430000001,
+                "lng": 18.043072
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 59.3432051302915,
+                    "lng": 18.0445419302915
+                },
+                "southwest": {
+                    "lat": 59.34050716970849,
+                    "lng": 18.0418439697085
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+        "icon_background_color": "#7B9EB0",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+        "international_phone_number": "+46 76 777 99 79",
+        "name": "Dokal AB",
+        "place_id": "ChIJAwTygnqdX0YRasZue0KfB8M",
+        "plus_code": {
+            "compound_code": "82RV+P6 Stockholm, Sweden",
+            "global_code": "9FFW82RV+P6"
+        },
+        "reference": "ChIJAwTygnqdX0YRasZue0KfB8M",
+        "types": [
+            "point_of_interest",
+            "establishment"
+        ],
+        "url": "https://maps.google.com/?cid=14053376270120437354",
+        "utc_offset": 120,
+        "vicinity": "Hälsingegatan 7, Stockholm"
+    },
+    "Estate JKCN": {
+        "address_components": [
+            {
+                "long_name": "26-28",
+                "short_name": "26-28",
+                "types": [
+                    "street_number"
+                ]
+            },
+            {
+                "long_name": "Stigbergsgatan",
+                "short_name": "Stigbergsgatan",
+                "types": [
+                    "route"
+                ]
+            },
+            {
+                "long_name": "Södermalm",
+                "short_name": "Södermalm",
+                "types": [
+                    "sublocality_level_1",
+                    "sublocality",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "Stockholm",
+                "short_name": "Stockholm",
+                "types": [
+                    "postal_town"
+                ]
+            },
+            {
+                "long_name": "Stockholms län",
+                "short_name": "Stockholms län",
+                "types": [
+                    "administrative_area_level_1",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "Sweden",
+                "short_name": "SE",
+                "types": [
+                    "country",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "116 28",
+                "short_name": "116 28",
+                "types": [
+                    "postal_code"
+                ]
+            }
+        ],
+        "adr_address": "<span class=\"street-address\">Stigbergsgatan 26-28</span>, <span class=\"postal-code\">116 28</span> <span class=\"locality\">Stockholm</span>, <span class=\"country-name\">Sweden</span>",
+        "business_status": "OPERATIONAL",
+        "formatted_address": "Stigbergsgatan 26-28, 116 28 Stockholm, Sweden",
+        "geometry": {
+            "location": {
+                "lat": 59.3168385,
+                "lng": 18.08511799999999
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 59.3182180802915,
+                    "lng": 18.0864671302915
+                },
+                "southwest": {
+                    "lat": 59.31552011970849,
+                    "lng": 18.08376916970849
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+        "icon_background_color": "#7B9EB0",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+        "name": "Estate JKCN",
+        "photos": [
+            {
+                "height": 4284,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/115985217478948765750\">Artur Perek</a>"
+                ],
+                "photo_reference": "ATplDJYMxaSeAH-ENBx-uLhWEwgwUakcj_Q3_N58AATDvk9mhiSzsrXZg3ZwkxUtEcsmtcSFjmBwOOsJLWSs4EyVhHgQm5bab6nIFeTuOtYoHdw7C7FHDp5nICCsj97HdFA4CQWMN6vQ1R5ZzuK1X4vaTJdH5NUUITL438scLsEYiNHV72jM",
+                "width": 5712
+            },
+            {
+                "height": 1513,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/113687555742441495764\">Björn Kjellberg</a>"
+                ],
+                "photo_reference": "ATplDJafWwiu782FKvvFyEkFsB3BjJyKjn70mF3m2DOrkccvKfzpzEzx7MjaikOura_3oRVW0-4T_1e_DyjnqspX6ujqwMi2lKi3ApphcwBhdY_q4Yk8qNv7WUn407HKfAS-KPt2HE5giH-pQPVv3mOm-NWto72qdqER4CZChKfyIM_ZCIYG",
+                "width": 975
+            }
+        ],
+        "place_id": "ChIJwzhArfd3X0YR5AZC3M3tT-4",
+        "plus_code": {
+            "compound_code": "838P+P2 Stockholm, Sweden",
+            "global_code": "9FFW838P+P2"
+        },
+        "reference": "ChIJwzhArfd3X0YR5AZC3M3tT-4",
+        "types": [
+            "point_of_interest",
+            "establishment"
+        ],
+        "url": "https://maps.google.com/?cid=17172205372606383844",
+        "utc_offset": 120,
+        "vicinity": "Stigbergsgatan 26-28, Stockholm"
+    },
+    "Hammarby Gård": {
+        "address_components": [
+            {
+                "long_name": "25",
+                "short_name": "25",
+                "types": [
+                    "street_number"
+                ]
+            },
+            {
+                "long_name": "Textilgatan",
+                "short_name": "Textilgatan",
+                "types": [
+                    "route"
+                ]
+            },
+            {
+                "long_name": "Södermalm",
+                "short_name": "Södermalm",
+                "types": [
+                    "sublocality_level_1",
+                    "sublocality",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "Stockholm",
+                "short_name": "Stockholm",
+                "types": [
+                    "postal_town"
+                ]
+            },
+            {
+                "long_name": "Stockholms län",
+                "short_name": "Stockholms län",
+                "types": [
+                    "administrative_area_level_1",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "Sweden",
+                "short_name": "SE",
+                "types": [
+                    "country",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "120 30",
+                "short_name": "120 30",
+                "types": [
+                    "postal_code"
+                ]
+            }
+        ],
+        "adr_address": "<span class=\"street-address\">Textilgatan 25</span>, <span class=\"postal-code\">120 30</span> <span class=\"locality\">Stockholm</span>, <span class=\"country-name\">Sweden</span>",
+        "business_status": "OPERATIONAL",
+        "formatted_address": "Textilgatan 25, 120 30 Stockholm, Sweden",
+        "geometry": {
+            "location": {
+                "lat": 59.303268,
+                "lng": 18.0886206
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 59.3046050802915,
+                    "lng": 18.0898881302915
+                },
+                "southwest": {
+                    "lat": 59.3019071197085,
+                    "lng": 18.0871901697085
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+        "icon_background_color": "#7B9EB0",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+        "name": "Hammarby Gård",
+        "place_id": "ChIJAzL23B54X0YRz9pf3spehyo",
+        "plus_code": {
+            "compound_code": "833Q+8C Stockholm, Sweden",
+            "global_code": "9FFW833Q+8C"
+        },
+        "reference": "ChIJAzL23B54X0YRz9pf3spehyo",
+        "types": [
+            "point_of_interest",
+            "establishment"
+        ],
+        "url": "https://maps.google.com/?cid=3064522296856140495",
+        "utc_offset": 120,
+        "vicinity": "Textilgatan 25, Stockholm"
+    },
+    "Drottning Silvias Stiftelse": {
+        "address_components": [
+            {
+                "long_name": "Högvaktsterrassen",
+                "short_name": "Högvaktsterrassen",
+                "types": [
+                    "route"
+                ]
+            },
+            {
+                "long_name": "Södermalm",
+                "short_name": "Södermalm",
+                "types": [
+                    "sublocality_level_1",
+                    "sublocality",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "Stockholm",
+                "short_name": "Stockholm",
+                "types": [
+                    "postal_town"
+                ]
+            },
+            {
+                "long_name": "Stockholms län",
+                "short_name": "Stockholms län",
+                "types": [
+                    "administrative_area_level_1",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "Sweden",
+                "short_name": "SE",
+                "types": [
+                    "country",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "111 30",
+                "short_name": "111 30",
+                "types": [
+                    "postal_code"
+                ]
+            }
+        ],
+        "adr_address": "<span class=\"street-address\">Högvaktsterrassen</span>, <span class=\"postal-code\">111 30</span> <span class=\"locality\">Stockholm</span>, <span class=\"country-name\">Sweden</span>",
+        "business_status": "OPERATIONAL",
+        "formatted_address": "Högvaktsterrassen, 111 30 Stockholm, Sweden",
+        "formatted_phone_number": "08-402 06 00",
+        "geometry": {
+            "location": {
+                "lat": 59.3263331,
+                "lng": 18.0696834
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 59.3276912802915,
+                    "lng": 18.0710914302915
+                },
+                "southwest": {
+                    "lat": 59.32499331970849,
+                    "lng": 18.0683934697085
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+        "icon_background_color": "#7B9EB0",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+        "international_phone_number": "+46 8 402 06 00",
+        "name": "Drottning Silvias Stiftelse",
+        "place_id": "ChIJ7XSpdeJ3X0YRPdgrQljgLiI",
+        "reference": "ChIJ7XSpdeJ3X0YRPdgrQljgLiI",
+        "types": [
+            "point_of_interest",
+            "establishment"
+        ],
+        "url": "https://maps.google.com/?cid=2463152715890153533",
+        "utc_offset": 120,
+        "vicinity": "Högvaktsterrassen, Stockholm",
+        "website": "http://drottningsilviasstiftelse.se/kontakt/"
+    },
+    "Bodals gård": {
+        "address_components": [
+            {
+                "long_name": "8",
+                "short_name": "8",
+                "types": [
+                    "street_number"
+                ]
+            },
+            {
+                "long_name": "Larsbergsvägen",
+                "short_name": "Larsbergsvägen",
+                "types": [
+                    "route"
+                ]
+            },
+            {
+                "long_name": "Baggeby-Larsberg",
+                "short_name": "Baggeby-Larsberg",
+                "types": [
+                    "sublocality_level_1",
+                    "sublocality",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "Lidingö",
+                "short_name": "Lidingö",
+                "types": [
+                    "postal_town"
+                ]
+            },
+            {
+                "long_name": "Stockholms län",
+                "short_name": "Stockholms län",
+                "types": [
+                    "administrative_area_level_1",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "Sweden",
+                "short_name": "SE",
+                "types": [
+                    "country",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "181 39",
+                "short_name": "181 39",
+                "types": [
+                    "postal_code"
+                ]
+            }
+        ],
+        "adr_address": "<span class=\"street-address\">Larsbergsvägen 8</span>, <span class=\"postal-code\">181 39</span> <span class=\"locality\">Lidingö</span>, <span class=\"country-name\">Sweden</span>",
+        "business_status": "OPERATIONAL",
+        "formatted_address": "Larsbergsvägen 8, 181 39 Lidingö, Sweden",
+        "geometry": {
+            "location": {
+                "lat": 59.3506984,
+                "lng": 18.1430345
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 59.35184013029149,
+                    "lng": 18.14482923029151
+                },
+                "southwest": {
+                    "lat": 59.34914216970849,
+                    "lng": 18.1421312697085
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+        "icon_background_color": "#7B9EB0",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+        "name": "Bodals gård",
+        "place_id": "ChIJwVRmxcSCX0YRPst-WzqCpsM",
+        "plus_code": {
+            "compound_code": "942V+76 Lidingö, Sweden",
+            "global_code": "9FFW942V+76"
+        },
+        "reference": "ChIJwVRmxcSCX0YRPst-WzqCpsM",
+        "types": [
+            "point_of_interest",
+            "establishment"
+        ],
+        "url": "https://maps.google.com/?cid=14098098870684666686",
+        "utc_offset": 120,
+        "vicinity": "Larsbergsvägen 8, Lidingö"
+    },
+    "Konsultpartner": {
+        "address_components": [
+            {
+                "long_name": "6B",
+                "short_name": "6B",
+                "types": [
+                    "street_number"
+                ]
+            },
+            {
+                "long_name": "Gjuteribacken",
+                "short_name": "Gjuteribacken",
+                "types": [
+                    "route"
+                ]
+            },
+            {
+                "long_name": "Huvudsta",
+                "short_name": "Huvudsta",
+                "types": [
+                    "sublocality_level_1",
+                    "sublocality",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "Sundbyberg",
+                "short_name": "Sundbyberg",
+                "types": [
+                    "postal_town"
+                ]
+            },
+            {
+                "long_name": "Stockholms län",
+                "short_name": "Stockholms län",
+                "types": [
+                    "administrative_area_level_1",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "Sweden",
+                "short_name": "SE",
+                "types": [
+                    "country",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "172 65",
+                "short_name": "172 65",
+                "types": [
+                    "postal_code"
+                ]
+            }
+        ],
+        "adr_address": "<span class=\"street-address\">Gjuteribacken 6B</span>, <span class=\"postal-code\">172 65</span> <span class=\"locality\">Sundbyberg</span>, <span class=\"country-name\">Sweden</span>",
+        "business_status": "OPERATIONAL",
+        "formatted_address": "Gjuteribacken 6B, 172 65 Sundbyberg, Sweden",
+        "formatted_phone_number": "070-719 24 13",
+        "geometry": {
+            "location": {
+                "lat": 59.35895189999999,
+                "lng": 17.9731774
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 59.3602143302915,
+                    "lng": 17.9743747302915
+                },
+                "southwest": {
+                    "lat": 59.35751636970848,
+                    "lng": 17.97167676970849
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+        "icon_background_color": "#7B9EB0",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+        "international_phone_number": "+46 70 719 24 13",
+        "name": "Konsultpartner",
+        "place_id": "ChIJyzkQZOadX0YRHwAsG2dsSqY",
+        "plus_code": {
+            "compound_code": "9X5F+H7 Solna, Sweden",
+            "global_code": "9FFV9X5F+H7"
+        },
+        "reference": "ChIJyzkQZOadX0YRHwAsG2dsSqY",
+        "types": [
+            "point_of_interest",
+            "establishment"
+        ],
+        "url": "https://maps.google.com/?cid=11982508948665925663",
+        "utc_offset": 120,
+        "vicinity": "Gjuteribacken 6B, Sundbyberg",
+        "website": "https://konsultpartner.com/kontakta-oss/"
     }
 }

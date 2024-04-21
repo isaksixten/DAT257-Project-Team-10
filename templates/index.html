@@ -106,7 +106,7 @@
         <select id="farmSelect" onchange="zoomToFarm()">
             <option value="">--Select a Farm--</option>
             {% for farm in farms %}
-            <option value="{{ farm['id'] }}" data-lat="{{ farm.latitude }}" data-lng="{{ farm.longitude }}" data-description="{{ farm.description }}">
+            <option value="{{ farm['id'] }}" data-lat="{{ farm['latitude'] }}" data-lng="{{ farm['longitude'] }}" data-description="{{ farm['description'] }}" data-rating="{{ farm['rating'] }}" data-address="{{ farm['address'] }}" data-website="{{ farm['website'] }}" data-phonenumber="{{ farm['phonenumber'] }}">
             {{ farm['name'] }}
             </option>
             {% endfor %}
@@ -198,18 +198,39 @@
             if(lat && lng) {
                 map.setView([lat, lng], 12);
                 markers[selectedOption.value].openPopup();
-                updateInfo(selectedOption.text, selectedOption.getAttribute('data-description'));
+                updateInfo(selectedOption.text, selectedOption.getAttribute('data-description'),selectedOption.getAttribute('data-rating'),selectedOption.getAttribute('data-address'),selectedOption.getAttribute('data-website'),selectedOption.getAttribute('data-phonenumber'));
             }
         }
-        function updateInfo(name, description) {
+        function updateInfo(name, description,rating,address,website,phonenumber) {
             document.getElementById('farmName').textContent = name;
             document.getElementById('farmDescription').textContent = description;
+
+            /*Gör farmInfo till en container nu, kan behöva ändras */
+
+            var infoContainer = document.getElementById('farmInfo');
+            infoContainer.innerHTML = '';
+
+            var ratingElement = document.createElement('p');
+            ratingElement.textContent = 'Rating: ' + rating;
+            infoContainer.appendChild(ratingElement);
+
+            var addressElement = document.createElement('p');
+            addressElement.textContent = 'Address: ' + address;
+            infoContainer.appendChild(addressElement);
+
+            var websiteElement = document.createElement('p');
+            websiteElement.textContent = 'Website: ' + website;
+            infoContainer.appendChild(websiteElement);
+
+            var phonenumberElement = document.createElement('p');
+            phonenumberElement.textContent = 'Phone Number: ' + phonenumber;
+            infoContainer.appendChild(phonenumberElement);
         }
     </script>
 </div>
     <div class="rightSection">
         <h1 id="farmName">Farm Name</h1>
-        <div class="farmInfo">
+        <div id="farmInfo" class="farmInfo"></div>
             <p id="farmDescription">Information and Metrics</p>
         </div>
     </div>
