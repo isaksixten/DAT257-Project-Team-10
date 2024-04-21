@@ -30,17 +30,24 @@
     }
 
  .upperLeftSection {
-    position: fixed;
-    left: 0;
-    width: 25%;
-    border: 10px ridge black; /* Plaque-like frame */
-    height: 45%; /* Set height to occupy 45% of the viewport */
-    background-color: rgb(222, 222, 222);
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
+            position: fixed;
+            left: 0;
+            width: 25%;
+            border: 10px ridge black; /* Plaque-like frame */
+            height: 45%; /* Set height to occupy 45% of the viewport */
+            background-color: rgb(222, 222, 222);
+            align-items: center;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        #upperLeftHeader{
+            padding: 0%;
+            margin: 0%;
+        }
+        #farmSelect{
+            margin: 0%;
+        }
 
 .lowerLeftSection {
             position: fixed;
@@ -53,7 +60,6 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: space-between;
         }
         #tags-list {
             list-style-type: none;
@@ -61,7 +67,7 @@
             margin: 0;
         }
         #tags-list li {
-            word-wrap: break-word; /* Allow words to break if necessary */
+            word-wrap: break-word; /* Låter tag-namn byta rad om de är för långa */
         }
 
 
@@ -96,7 +102,7 @@
 </head>
 <body>
     <div class="upperLeftSection">
-        <h1>Select a Farm to Display</h1>
+        <h1 id="upperLeftHeader"> Select a Farm to Display</h1>
         <select id="farmSelect" onchange="zoomToFarm()">
             <option value="">--Select a Farm--</option>
             {% for farm in farms %}
