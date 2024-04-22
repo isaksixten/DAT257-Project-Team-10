@@ -4,6 +4,7 @@ from query_machine import QueryMachine
 
 API_KEY = ''    #PUSHA EJ TILL GIT
 
+
 # Places API 
 base_url_nearby = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json'
 
@@ -11,6 +12,20 @@ base_url_nearby = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json'
 base_url_details = 'https://maps.googleapis.com/maps/api/place/details/json'
 
 query=QueryMachine()
+
+#list of countries to show data in
+COUNTRIES = ['Sweden', 'US', 'UK', 'Spain', 'Italy', 'Germany', 'France']
+
+#List of keywords in local languages
+KEYWORDS1 = {
+    'Sweden': 'Gårdsbutik',
+    'US': 'Farm shop',
+    'UK': 'Farm shop',
+    'Spain': 'Tienda de la granja',
+    'Italy': 'Negozio di fattoria',
+    'Germany': 'Hofladen',
+    'France': 'Magasin de la ferme'
+}
 
 def farms_to_database(id, dict):
     if dict['business_status'] == 'OPERATIONAL':
