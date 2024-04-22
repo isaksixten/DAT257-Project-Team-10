@@ -48,7 +48,8 @@ def local_farms_sweden(longitude: float, latitude: float, radius: float):
         'key': API_KEY,
         'location': f"{longitude},{latitude}",
         'radius': f'{radius}',  # Meter
-        'keyword': 'bondgård'
+        'keyword': 'gårdsbutik',
+        'region': 'SE'
         #'keyword': 'gårdsbutik' funkar rätt bra, byta?
 
     }
@@ -95,4 +96,4 @@ def local_farms_sweden(longitude: float, latitude: float, radius: float):
 
     #print(query.fetch_all_locations())         Kör denna rad för att se nuvarande content i databasen
 
-local_farms_sweden(59.334591, 18.063240, 5000)
+local_farms_sweden(59.175709, 11.775670, 1000000)
