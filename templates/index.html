@@ -235,13 +235,17 @@
             addressElement.textContent = 'Address: ' + address;
             infoContainer.appendChild(addressElement);
 
-            var websiteElement = document.createElement('p');
-            websiteElement.textContent = 'Website: ' + website;
-            infoContainer.appendChild(websiteElement);
-
             var phonenumberElement = document.createElement('p');
             phonenumberElement.textContent = 'Phone Number: ' + phonenumber;
             infoContainer.appendChild(phonenumberElement);
+
+            if (website && website.trim() !== "" && website !== "None"){
+                var websiteLink = document.createElement('a'); 
+                websiteLink.href = website; // Denna gör länken till en faktisk länk
+                websiteLink.textContent = 'Link to Farm Website'; 
+                websiteLink.target = "_blank"; //Ser till att länken öppnas i nytt fönster
+                infoContainer.appendChild(websiteLink);
+            }
         }
     </script>
 </div>
