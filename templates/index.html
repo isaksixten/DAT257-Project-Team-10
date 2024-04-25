@@ -92,6 +92,11 @@
         text-align: center;
         margin-top: 80px;
     }
+    .contactBox {
+    border: 10px ridge black; /* Border for the contact box */
+    padding: 10px; /* Padding for the contact box content */
+    margin-top: 20px; /* Margin from the farm information */
+    }
 
     .middleSection {
         position: absolute;
@@ -220,8 +225,6 @@
         }
         function updateInfo(name, description,rating,address,website,phonenumber) {
             document.getElementById('farmName').textContent = name;
-            document.getElementById('farmDescription').textContent = description;
-
             /*Gör farmInfo till en container nu, kan behöva ändras */
 
             var infoContainer = document.getElementById('farmInfo');
@@ -231,28 +234,46 @@
             ratingElement.textContent = 'Rating: ' + rating;
             infoContainer.appendChild(ratingElement);
 
+            var descriptionElement = document.createElement('p');
+            descriptionElement.textContent = 'Description: ' + description;
+            infoContainer.appendChild(descriptionElement);
+
             var addressElement = document.createElement('p');
             addressElement.textContent = 'Address: ' + address;
             infoContainer.appendChild(addressElement);
 
-            var phonenumberElement = document.createElement('p');
-            phonenumberElement.textContent = 'Phone Number: ' + phonenumber;
-            infoContainer.appendChild(phonenumberElement);
+            var contactInfoContainer = document.getElementById('contactInfo');
+            contactInfoContainer.innerHTML = '';
+
 
             if (website && website.trim() !== "" && website !== "None"){
                 var websiteLink = document.createElement('a'); 
                 websiteLink.href = website; // Denna gör länken till en faktisk länk
                 websiteLink.textContent = 'Link to Farm Website'; 
                 websiteLink.target = "_blank"; //Ser till att länken öppnas i nytt fönster
-                infoContainer.appendChild(websiteLink);
+            } else {
+                websiteLink = document.createElement('p');
+                websiteLink.textContent = 'Website not available';
             }
+            contactInfoContainer.appendChild(websiteLink);
+
+            var phoneNumberElement = document.createElement('p');
+            if (phonenumber && phonenumber.trim() !== "" && phonenumber !== "None") { 
+                phoneNumberElement.textContent = 'Phone Number: ' + phonenumber;
+            } else  {
+                phoneNumberElement.textContent = 'Phone number not available';
+            }
+            contactInfoContainer.appendChild(phoneNumberElement);
         }
     </script>
 </div>
     <div class="rightSection">
         <h1 id="farmName">Farm Name</h1>
         <div id="farmInfo" class="farmInfo"></div>
-            <p id="farmDescription">Information and Metrics</p>
+        <div class="contactBox">
+            <h2>Contact Farm</h2>
+            <div id="contactInfo" class="contactInfo"></div>
+        </div>
         </div>
     </div>
 </body>
