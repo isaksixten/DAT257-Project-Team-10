@@ -84,3 +84,17 @@ class QueryMachine:
                 return list
             else:
                 return "No locations in database"        
+            
+    def fetch_by_search(self, term): # Can search for both name and address. Only returns name and adress to search bar as of now....
+        with self.conn.cursor() as cur:
+            sql = """SELECT name, address FROM Farms WHERE Farms.name ILIKE %s OR Farms.address ILIKE %s"""
+            cur.execute(sql, (term + '%', term + '%'))
+            res = cur.fetchall()
+            list = []
+            if res:
+                for location in res:
+                    list.append(location)
+                list.sort()
+                return list
+            else:
+                return "No results for your search"

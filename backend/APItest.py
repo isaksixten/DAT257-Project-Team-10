@@ -27,6 +27,16 @@ KEYWORDS1 = {
     'France': 'Magasin de la ferme'
 }
 
+def json_file_to_database(path):
+    with open(path, encoding="utf-8") as file:
+        data = json.load(file)
+    for place in data.values():
+        place_id = place["place_id"]
+        farms_to_database(place_id, place)
+
+
+        
+
 def farms_to_database(id, dict):
     if dict['business_status'] == 'OPERATIONAL':
 
