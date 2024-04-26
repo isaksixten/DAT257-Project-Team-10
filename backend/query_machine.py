@@ -98,3 +98,16 @@ class QueryMachine:
                 return list
             else:
                 return "No results for your search"
+
+    def fetch_opening_hours(self, id): # Fetches location opening hours based on id and returns them in the form of a dictionary.
+        with self.conn.cursor() as cur:
+            sql = """SELECT * FROM Opening_Hours WHERE Opening_Hours.farm = %s"""
+            cur.execute(sql, (id))
+            res = cur.fetchall()
+            dict = {}
+            if res:
+                for location in res:
+                    dict[location[0]] = [location[1], location[2], location[3]]
+                return dict # Bör returnera en dict med key som är farm ID och value som är en lista av [Weekday, opening_time, closing_time].
+            else:
+                return "No location with that ID"
