@@ -1,21 +1,285 @@
-<!-- templates/index.html -->
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Select a Farm</title>
+    <title>Local Farms</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <style>
+        /* Set a more modern font family */
+        html * {
+            font-family: 'Times New Roman', Times, serif; /* Classic and formal font style */
+            font-weight: normal;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column; 
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            background-color: #4b6636; 
+        }
+
+        .banner {
+            width: 100%;
+            height: 80px;
+            background-color: rgb(230,223, 218); 
+            color: #383736;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .banner2 {
+            width: 100%;
+            height: 20px;
+            background-color: #4b6636;
+            color: rgb(230,223, 218);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 20px; 
+        }
+
+        #map {
+            width: 100%;
+            height: 100%;
+            position: relative; 
+            z-index: 0; 
+        }
+
+        .mainSection {
+            flex: 1; 
+            display: flex;
+        }
+
+        .middleSection {
+            flex: 2; 
+            justify-content: center;
+            align-items: center;
+        }
+
+        .rightSection {
+            flex: 1; 
+            padding: 20px;
+            background-color: rgb(230,223, 218);
+            color: #383736;
+        }
+
+        .contactBox {
+            border: 3px solid #383736; /* Border for the contact box */
+            padding: 10px; /* Padding for the contact box content */
+            margin-top: 20px; /* Margin from the farm information */
+        }
+
+        /* Här har jag trollat lite fritt, försökte få listan att synas framför kartan*/
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgb(230,223, 218);
+            min-width: 150px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            z-index: 9999;
+            top: 100%; 
+            color: black;
+        }
+
+        .dropdown-content label {
+            display: block;
+            margin: 3px 0;
+        }
+
+        .dropdown-content input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+
+    </style>
+
 </head>
 <body>
-    <h1>Select a Farm to Display</h1>
-    <form action="/show_farm" method="post">
-        <select name="farm_id">
-            {% for farm in farms %}
-            <option value="{{ farm['id'] }}">{{ farm['name'] }}</option>
-            {% endfor %}
-        </select>
-        <input type="submit" value="Show Farm">
-    </form>
+    <div class="banner">
+        <h1>Welcome to Team 10:s Local Farms!</h1>
+    </div>
+    <div class="banner2">
+        <div class="upperLeftSection">
+            <select id="farmSelect" onchange="zoomToFarm()">
+                <option value="">--Select a Farm--</option>
+                {% for farm in farms %}
+                <option value="{{ farm['id'] }}" data-lat="{{ farm['latitude'] }}" data-lng="{{ farm['longitude'] }}" data-description="{{ farm['description'] }}" data-rating="{{ farm['rating'] }}" data-address="{{ farm['address'] }}" data-website="{{ farm['website'] }}" data-phonenumber="{{ farm['phonenumber'] }}">
+                    {{ farm['name'] }}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="lowerLeftSection">
+            <div class="dropdown">
+                <button class="dropbtn">Apply Filters</button>
+                <div class="dropdown-content" id="tagDropdown">
+                </div>
+            </div>
+        </div>        
+    </div>
 
-    <!-- Add a button below your form -->
-    <button onclick="location.href='find_farms.html'" style="margin-top: 20px;">Find the Closest Farms to You</button>
+    <div class="mainSection">
+        <div class="middleSection">
+            <div id="map"></div>
+        </div>
+
+        <div class="rightSection">
+            <h1 id="farmName">Farm Name</h1>
+            <div id="farmInfo" class="farmInfo"></div>
+            <div class="contactBox">
+                <h2>Contact Farm</h2>
+                <div id="contactInfo" class="contactInfo"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var map = L.map('map', {
+            minZoom: 3,  // Minimum zoom level
+            maxZoom: 18, // Maximum zoom level
+            maxBounds: [  // Define the geographical boundaries to restrict the map panning
+                [-100, -160],  // SouthWest corner of the boundary
+                [150, 180]    // NorthEast corner of the boundary
+            ],
+            maxBoundsViscosity: 1.0  // Makes the bounds fully rigid
+        }).setView([63, 15], 5.4);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors',
+            noWrap: true
+        }).addTo(map);
+
+        var markers = {};
+
+        {% for farm in farms %}
+        markers['{{ farm['id'] }}'] = add_marker({{ farm.latitude }}, {{ farm.longitude }}, "{{ farm.name }}", "{{ farm.description }}");
+        {% endfor %}
+
+        function add_marker(latitude, longitude, name, description) {
+            var marker = L.marker([latitude, longitude]).addTo(map).bindPopup("<b>" + name);
+
+            marker.on('click', function() {
+                updateInfo(name, description);
+            });
+
+            return marker;
+        }
+
+        function zoomToFarm() {
+            var select = document.getElementById('farmSelect');
+            var selectedOption = select.options[select.selectedIndex];
+            var lat = selectedOption.getAttribute('data-lat');
+            var lng = selectedOption.getAttribute('data-lng');
+            if(lat && lng) {
+                map.setView([lat, lng], 12);
+                markers[selectedOption.value].openPopup();
+                updateInfo(selectedOption.text, selectedOption.getAttribute('data-description'),selectedOption.getAttribute('data-rating'),selectedOption.getAttribute('data-address'),selectedOption.getAttribute('data-website'),selectedOption.getAttribute('data-phonenumber'));
+            }
+        }
+        
+        function updateInfo(name, description, rating, address, website, phonenumber) {
+            document.getElementById('farmName').textContent = name;
+            var infoContainer = document.getElementById('farmInfo');
+            infoContainer.innerHTML = '';
+
+            var ratingElement = document.createElement('p');
+            ratingElement.textContent = 'Rating: ' + rating;
+            infoContainer.appendChild(ratingElement);
+
+            var descriptionElement = document.createElement('p');
+            descriptionElement.textContent = 'Description: ' + description;
+            infoContainer.appendChild(descriptionElement);
+
+            var addressElement = document.createElement('p');
+            addressElement.textContent = 'Address: ' + address;
+            infoContainer.appendChild(addressElement);
+
+            var contactInfoContainer = document.getElementById('contactInfo');
+            contactInfoContainer.innerHTML = '';
+
+            if (website && website.trim() !== "" && website !== "None"){
+                var websiteLink = document.createElement('a'); 
+                websiteLink.href = website; // Denna gör länken till en faktisk länk
+                websiteLink.textContent = 'Link to Farm Website'; 
+                websiteLink.target = "_blank"; //Ser till att länken öppnas i nytt fönster
+            } else {
+                websiteLink = document.createElement('p');
+                websiteLink.textContent = 'Website not available';
+            }
+            contactInfoContainer.appendChild(websiteLink);
+
+            var phoneNumberElement = document.createElement('p');
+            if (phonenumber && phonenumber.trim() !== "" && phonenumber !== "None") { 
+                phoneNumberElement.textContent = 'Phone Number: ' + phonenumber;
+            } else  {
+                phoneNumberElement.textContent = 'Phone number not available';
+            }
+            contactInfoContainer.appendChild(phoneNumberElement);
+        }
+
+        // Här läggs checkboxes in 
+        function populateCheckboxes(tags) {
+            const tagDropdown = document.getElementById('tagDropdown');
+            tagDropdown.innerHTML = "";
+            tags.forEach(tag => {
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.id = tag; 
+                checkbox.name = 'tag';
+                checkbox.value = tag;
+                
+                const label = document.createElement('label');
+                label.setAttribute('for', tag); 
+                label.textContent = tag; 
+
+                tagDropdown.appendChild(checkbox);
+                tagDropdown.appendChild(label);
+                tagDropdown.appendChild(document.createElement('br'));
+            });
+        }
+
+
+
+
+
+        // Här lägger vi in filtrering
+        function applyFilter() {
+            var selectedTags = [];
+            var checkboxes = document.querySelectorAll('#tagDropdown input[type="checkbox"]');
+            checkboxes.forEach(function(checkbox) {
+                if (checkbox.checked) {
+                    selectedTags.push(checkbox.value);
+                }
+            });
+            console.log(selectedTags);
+        }
+
+        fetch('/fetch-tags')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to fetch tags');
+                }
+                return response.json();
+            })
+            .then(tags => {
+                populateCheckboxes(tags);
+            })
+            .catch(error => {
+                console.error('Fetch tags error:', error);
+            });
+    </script>
 </body>
 </html>

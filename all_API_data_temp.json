@@ -1,0 +1,2681 @@
+{
+    "Larsson's Farm Shop": {
+        "address_components": [
+            {
+                "long_name": "403",
+                "short_name": "403",
+                "types": [
+                    "street_number"
+                ]
+            },
+            {
+                "long_name": "GYLTUNGEBYN",
+                "short_name": "GYLTUNGEBYN",
+                "types": [
+                    "route"
+                ]
+            },
+            {
+                "long_name": "Ånimskog",
+                "short_name": "Ånimskog",
+                "types": [
+                    "postal_town"
+                ]
+            },
+            {
+                "long_name": "Västra Götalands län",
+                "short_name": "Västra Götalands län",
+                "types": [
+                    "administrative_area_level_1",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "Sweden",
+                "short_name": "SE",
+                "types": [
+                    "country",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "662 97",
+                "short_name": "662 97",
+                "types": [
+                    "postal_code"
+                ]
+            }
+        ],
+        "adr_address": "<span class=\"street-address\">GYLTUNGEBYN 403</span>, <span class=\"postal-code\">662 97</span> <span class=\"locality\">Ånimskog</span>, <span class=\"country-name\">Sweden</span>",
+        "business_status": "OPERATIONAL",
+        "current_opening_hours": {
+            "open_now": false,
+            "periods": [
+                {
+                    "close": {
+                        "date": "2024-04-28",
+                        "day": 0,
+                        "time": "1600"
+                    },
+                    "open": {
+                        "date": "2024-04-28",
+                        "day": 0,
+                        "time": "1100"
+                    }
+                }
+            ],
+            "weekday_text": [
+                "Monday: Closed",
+                "Tuesday: Closed",
+                "Wednesday: Closed",
+                "Thursday: Closed",
+                "Friday: Closed",
+                "Saturday: Closed",
+                "Sunday: 11:00 AM – 4:00 PM"
+            ]
+        },
+        "delivery": false,
+        "dine_in": true,
+        "formatted_address": "GYLTUNGEBYN 403, 662 97 Ånimskog, Sweden",
+        "geometry": {
+            "location": {
+                "lat": 58.90891990000001,
+                "lng": 12.5415645
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 58.91021973029151,
+                    "lng": 12.5427194302915
+                },
+                "southwest": {
+                    "lat": 58.9075217697085,
+                    "lng": 12.5400214697085
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+        "icon_background_color": "#FF9E67",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+        "name": "Larsson's Farm Shop",
+        "opening_hours": {
+            "open_now": false,
+            "periods": [
+                {
+                    "close": {
+                        "day": 0,
+                        "time": "1600"
+                    },
+                    "open": {
+                        "day": 0,
+                        "time": "1100"
+                    }
+                }
+            ],
+            "weekday_text": [
+                "Monday: Closed",
+                "Tuesday: Closed",
+                "Wednesday: Closed",
+                "Thursday: Closed",
+                "Friday: Closed",
+                "Saturday: Closed",
+                "Sunday: 11:00 AM – 4:00 PM"
+            ]
+        },
+        "photos": [
+            {
+                "height": 2128,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/109237372001461955662\">Livia</a>"
+                ],
+                "photo_reference": "ATplDJa4OYBO7dTCkR5EcGKskrMhlTaFIYLW2el5VDdl9Erqz6iTJkYgT_bPbH3BKNLHHL66w_AIx2rWpHE9r51S3HlFk_HEw71qy97fWlQMpkCD2e3ez98bptRmLcT7NpsUMH4yLn6aOf7tUFREBz5qchuWP_ZSYCXVKG_z-xoh3yoVawJt",
+                "width": 4608
+            },
+            {
+                "height": 1960,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/113771357409484608939\">Martin Nilsson</a>"
+                ],
+                "photo_reference": "ATplDJalCxxOMUBQ73fI0D_icLK2fLPwj1PZKYxJFztZ1vJG4a8qTVkAHMPkI2-j51gty3t0hGU9tQ5AZVGxhi5P6_nb-tqt0kdTLe8HXoYi8jpBUBD_zLv-9yD5Ka1ospLCsFj9EaipOK-hRxK48wXYkj8-BaFioTnmj8FZ5xXHtHHLCN34",
+                "width": 4032
+            },
+            {
+                "height": 3024,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/115490789951682126181\">H W</a>"
+                ],
+                "photo_reference": "ATplDJaelZxpifjt6KymdSfkCbIJzo03WWcay73qDdXnZq6XJgPpe4mejsfCB78X4bANLzsFmD52NkfJKiKPya9Wg-N8S_GCK568EpDdV-KwXI-r8CPvZSKV74dwG8Gzmrqw8c37aGAjsoOb4HhhxtffOBk1g35P4-6Ei6XDeejDnTSaTmFI",
+                "width": 4032
+            },
+            {
+                "height": 3024,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/112936767753076022065\">Hanna Jäger</a>"
+                ],
+                "photo_reference": "ATplDJafGbNMVb6OPrRa77qcHQ2U6wXIfu5K_YzYIQoAuT_x00-m_XLvYrXbGG8Jyg2_-gzOaMFs8FfJ9NrwTSIjk62XOJXIWRyNaMwiet_zn6XnAxDMi6pUCTZ1Pgqi2sNLBIDo6SenotTAOFibYsIEbaYgoNa6wuxYdCakU27dmw5PjsKl",
+                "width": 4032
+            },
+            {
+                "height": 4032,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/112936767753076022065\">Hanna Jäger</a>"
+                ],
+                "photo_reference": "ATplDJYsvOQUCYj1GeYlV3HBomU_tzfNtk16Lx6nCYAXfkvWAqHHryNvAo0NdDmp2ADVU3Kpl7XyLDckw6S0l8RLj1u67mHFHgaoY19YC_ClBmzvHqVXScFMKChxxr_4sLZfumg1srmSNtcX9S-TqCrxaohlhnzzX-XJfWF2HYmepgQGGoch",
+                "width": 3024
+            },
+            {
+                "height": 4032,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/112936767753076022065\">Hanna Jäger</a>"
+                ],
+                "photo_reference": "ATplDJZFt9dRWHQCJrFCuZH9LtGDnaxH9EjKVfEBzTHCNCMz-eGlBhUSqPCtRZJ2EaNMvGJRDo1K5sbol7JefKCzwoIhS70w8tpVgtO45DP3qYXMahEPxP4fTwMVA3ncvZrJIoUaORYlal7_TFi2LtQo737kHCQRyg6qTFVOkQIEJMyNWjid",
+                "width": 3024
+            },
+            {
+                "height": 4000,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/109237372001461955662\">Livia</a>"
+                ],
+                "photo_reference": "ATplDJY7s-gsXD-iIbD7m_pl8rGvu18H3uMunIso_zNa6XWircah4rLmLISJ-cOHbYD0mh5RmYoy-uCrclQ2WO-YpzbqFw3H94ACBLtBAzkC-3E_qcVi8XNt1x-cNMhWyCSgQ2hX0o39iGMdEZk0MLeQxxR_BZJzoDTynsz40THm36cw-bE6",
+                "width": 3000
+            },
+            {
+                "height": 4000,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/109237372001461955662\">Livia</a>"
+                ],
+                "photo_reference": "ATplDJYbMcWFe6Cf2IPMOo3oqlu46UPpfEPmHCVCfX5o5fL5aI50624GTV0qQ9c0KAI9mh-5Vri-TIL4FgOTbPBYFIKkCrprnsUNPiRghKnMjVvILOvmF7IDgVvOYH6xp2steAbIAGakBYi5ux1i7NEFSVB5oOwPCYTwNvYb8lbkXubuBZwM",
+                "width": 3000
+            },
+            {
+                "height": 4032,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/114036731387802330613\">Christoffer Lindelöf</a>"
+                ],
+                "photo_reference": "ATplDJZqssdXohhb7UO_ief41LOGPfwLoPayQ8nYk-EUXdpBzDMeyqqN2iP3CzjnHMCh-1BhM6KvDxYBVGTHXFCsqpXB9BVnge6giHGYhJqUPf9Clhqi3NuUFbdIfHaaKsOuk6PPeyTDy02A5ecM5Q1rhiD0XyYqKXUfQlatG-Ady6szL8ZH",
+                "width": 3024
+            },
+            {
+                "height": 4275,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/117378376791115780171\">Gunvor Edling</a>"
+                ],
+                "photo_reference": "ATplDJaB7lbOWJjrCCsRVUL_R_94IY2xc_46D2MMZ8MAXggPhsaMdbNwXz4XxJnqdh3RchFq4lyYt-e52tDuetQHH6qTZKkOui7p67npcdkZknW_UTJC8j5A4DhZflXD5YEeWWP7Ppl_BBI2NiFBFtXdyyE2_NO2_QII32vKCsZ4kS0uTQK3",
+                "width": 2338
+            }
+        ],
+        "place_id": "ChIJ48HmRX2_REYRcNbQYEoYXQo",
+        "plus_code": {
+            "compound_code": "WG5R+HJ Lilla Bräcke, Sweden",
+            "global_code": "9FCJWG5R+HJ"
+        },
+        "price_level": 2,
+        "rating": 4.8,
+        "reference": "ChIJ48HmRX2_REYRcNbQYEoYXQo",
+        "reviews": [
+            {
+                "author_name": "Marcus Ek",
+                "author_url": "https://www.google.com/maps/contrib/111071749436071776442/reviews",
+                "language": "en-US",
+                "original_language": "sv",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjUJI6EF41VDl0wd81c_LuhYwkCGdm86UFocn9nompxzSCP6EiAC=s128-c0x00000000-cc-rp-mo-ba5",
+                "rating": 5,
+                "relative_time_description": "4 months ago",
+                "text": "Cozy local farm shop. Christmas market in December.",
+                "time": 1700909701,
+                "translated": true
+            },
+            {
+                "author_name": "H W",
+                "author_url": "https://www.google.com/maps/contrib/115490789951682126181/reviews",
+                "language": "en-US",
+                "original_language": "nl",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocKt3bpUmRDTKSX0MSL81lb8UfyVxzIZYqpkP5--1Zq3nlNoBg=s128-c0x00000000-cc-rp-mo-ba2",
+                "rating": 5,
+                "relative_time_description": "8 months ago",
+                "text": "Nice location, beautiful view. Delicious homemade pastries. Nice shop, both upstairs and Ingela's small flower shop. Also take a look at the garden!\nWhat makes it a great place is that it is atmospheric and personal. Attention has been paid to everything. If we could give a 6 out of 5, we would.",
+                "time": 1690643752,
+                "translated": true
+            },
+            {
+                "author_name": "Pontus Nordwall",
+                "author_url": "https://www.google.com/maps/contrib/101691587456631863870/reviews",
+                "language": "en-US",
+                "original_language": "sv",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocJYw7u5qbG6kTxforVPvE2KD1nZnNuTNxVjlPYt3H70xhqKRg=s128-c0x00000000-cc-rp-mo",
+                "rating": 5,
+                "relative_time_description": "8 months ago",
+                "text": "Fantastic place, with good coffee and a great view. Go there.",
+                "time": 1690825317,
+                "translated": true
+            },
+            {
+                "author_name": "Maria Öhrn",
+                "author_url": "https://www.google.com/maps/contrib/100485046569427290490/reviews",
+                "language": "en-US",
+                "original_language": "sv",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocLLl_iGocjr1CG_ULz5IGeoltB7HB6Yz2gIANuvNOH9VzSicA=s128-c0x00000000-cc-rp-mo",
+                "rating": 5,
+                "relative_time_description": "3 years ago",
+                "text": "Incredibly beautiful to sit outside and have a home-baked coffee with a view of the Ånimmen. Very affordable cafe and small nice interior design shop with nice things and good prices! Highly recommend!",
+                "time": 1595684106,
+                "translated": true
+            },
+            {
+                "author_name": "Livia",
+                "author_url": "https://www.google.com/maps/contrib/109237372001461955662/reviews",
+                "language": "en-US",
+                "original_language": "sv",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjUH2S4sPloT7FwGw_H9_s8RW7g6QYdtbujMzfNpm-vlz7gOksfX=s128-c0x00000000-cc-rp-mo",
+                "rating": 5,
+                "relative_time_description": "2 years ago",
+                "text": "Fantastic place with shop and cafe. Good sandwiches and good pastries.",
+                "time": 1632661033,
+                "translated": true
+            }
+        ],
+        "serves_beer": false,
+        "serves_wine": false,
+        "types": [
+            "cafe",
+            "point_of_interest",
+            "food",
+            "establishment"
+        ],
+        "url": "https://maps.google.com/?cid=746779820944316016",
+        "user_ratings_total": 50,
+        "utc_offset": 120,
+        "vicinity": "GYLTUNGEBYN 403, Ånimskog",
+        "wheelchair_accessible_entrance": false
+    },
+    "Hjärtebo Farm": {
+        "address_components": [
+            {
+                "long_name": "5",
+                "short_name": "5",
+                "types": [
+                    "street_number"
+                ]
+            },
+            {
+                "long_name": "BLIGAN",
+                "short_name": "BLIGAN",
+                "types": [
+                    "route"
+                ]
+            },
+            {
+                "long_name": "Dals Långed",
+                "short_name": "Dals Långed",
+                "types": [
+                    "postal_town"
+                ]
+            },
+            {
+                "long_name": "Västra Götalands län",
+                "short_name": "Västra Götalands län",
+                "types": [
+                    "administrative_area_level_1",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "Sweden",
+                "short_name": "SE",
+                "types": [
+                    "country",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "666 94",
+                "short_name": "666 94",
+                "types": [
+                    "postal_code"
+                ]
+            }
+        ],
+        "adr_address": "<span class=\"street-address\">BLIGAN 5</span>, <span class=\"postal-code\">666 94</span> <span class=\"locality\">Dals Långed</span>, <span class=\"country-name\">Sweden</span>",
+        "business_status": "OPERATIONAL",
+        "formatted_address": "BLIGAN 5, 666 94 Dals Långed, Sweden",
+        "formatted_phone_number": "070-634 30 54",
+        "geometry": {
+            "location": {
+                "lat": 58.9355989,
+                "lng": 12.1447925
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 58.9369808802915,
+                    "lng": 12.1462935802915
+                },
+                "southwest": {
+                    "lat": 58.93428291970849,
+                    "lng": 12.1435956197085
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+        "icon_background_color": "#7B9EB0",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+        "international_phone_number": "+46 70 634 30 54",
+        "name": "Hjärtebo Farm",
+        "photos": [
+            {
+                "height": 1800,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/111886462628898886874\">Hjärtebo Gård</a>"
+                ],
+                "photo_reference": "ATplDJYAwB1gQF1xPXJEa2syiM-vTvTidfwScqdlDYozRaWusOrnwNqaZMclodJv1SZ9BH1BVgKyLApQbwYQkY5_eBmKEYrIVZag2s1Yw202mFJRUC8JH8akNyABgQXx4mi34oAyCSmf-EQWkCOWi_Syx_IRmv3o90R3LFE0y-wLzh6MAh9Y",
+                "width": 1440
+            },
+            {
+                "height": 4032,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/111886462628898886874\">Hjärtebo Gård</a>"
+                ],
+                "photo_reference": "ATplDJbQZjHeW-_0AEqYLKNb2NTSSl97-A160VO-x9N4wZ4bcog04zT5So8nMISPWVzktj_JjMlNOM_sk9RJZMY98ZExoMgQ6CHUaVwXOSabyt7UiuoFY23R10YWD4f59v58_F-K08UW7a3-78F234IAs4z2x1PGygQkc-DOwVdW9EV1A_g-",
+                "width": 3024
+            },
+            {
+                "height": 4032,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/111886462628898886874\">Hjärtebo Gård</a>"
+                ],
+                "photo_reference": "ATplDJZYzpbAhONCffA7HzvVjb79_mddNg4vc3BLDsNyAyetLNq_YRzV-fZ7a6WkkTVTWjhLXOYfSmva1sxyL1nBDBKxVmf1XsUpxtK1AbKmlyyKK4HFBms67DCgGtqDmFqI1uhzOS7AtJ1rcxBR4wP3aj6qE4kY1D6Fju4iqP3otgEMOl2o",
+                "width": 3024
+            },
+            {
+                "height": 3490,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/111886462628898886874\">Hjärtebo Gård</a>"
+                ],
+                "photo_reference": "ATplDJZfQHhM4ZZ1mMSMifi-rbv1FQE_wyANOYzOXmsZHb0ncWElGZZvRuaPczx2dGKmTJGBfTwf3PaUyJlzKkdxnDfqeG8rEA2S-7vzLTxiB_UfaVWyRqxyXJXmG1Aau-48io6eOfWWmRaDGATo4Wv0w1UMgr7L4-L0qKUgYyRUyGEoGafc",
+                "width": 2775
+            },
+            {
+                "height": 4032,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/111886462628898886874\">Hjärtebo Gård</a>"
+                ],
+                "photo_reference": "ATplDJbi4TmXm-3j1h4rBQpMGCNq46emcgKNQYpVILS7qXAlR7nsJQFFzATV_3n3gXsSPcOSArFMcs3eUnZEw5VGC9zowVokcunOH5UIjUbi46yCa40Vv2mhbl5H17psv7MlKsqQPq1otui2UxDWNQn3qrRmTSA9KgpVSTXDkX6QCSQUYUv6",
+                "width": 3024
+            },
+            {
+                "height": 2592,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/102202652382927257906\">Britt-Marie Gustafsson</a>"
+                ],
+                "photo_reference": "ATplDJZ9g7uv3bbaTNvdFSklRMPXkOtAa2TGvo6cvK8M0628kTYvOoFRHxtqIoDwVXqaBJElK6RwItBg5Gm6WrfIgKs1jo5bdzdzf9irA_6qIg4Ipqzs1mxYE3WgEoxwf758Q2aEiFxQd0p1WpTV9EaUqCu_rPJNDnbDMIvdxNrnPYnhAy5i",
+                "width": 1936
+            },
+            {
+                "height": 1800,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/111886462628898886874\">Hjärtebo Gård</a>"
+                ],
+                "photo_reference": "ATplDJZSLSTWgWMEJO6A8AV_ZzpZetiJQd0IUuLuTqS2KVaCTegOVCwVQiVG9gr7-Ac1k6Bz1mrcOLD7TPDHbNYnuyJJJyYasQJf2G9i86aivPINygBSPO2_X-Yi47uTfONMiuso3oD6u2PscXsWBOcoeYlwaVRn04vvsmfU2Qfzru8xqh5q",
+                "width": 1440
+            },
+            {
+                "height": 3057,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/111886462628898886874\">Hjärtebo Gård</a>"
+                ],
+                "photo_reference": "ATplDJZvrpFZ19WF4rOa7KT3T9bdiNBCzr2NbMa_t2RAsOZw4vYn9rigZYENwUNaAywYJvKe007lcR9i4eLvVjNz7GVrvBPVroiR9_TqP0QdxEL7mOk0mv5QeGbE3hUS-t745POpKQYhe_Z7QYjYQJ3OfmoV4W6jK_Os1aDu7X2QFrrdKA3j",
+                "width": 2166
+            },
+            {
+                "height": 4032,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/111886462628898886874\">Hjärtebo Gård</a>"
+                ],
+                "photo_reference": "ATplDJZT7XIIKgEf0Auz6QHzZowPx742T5sQWKAMiOuf7npzhFNS2NClarfrhhkSZud8cYh48ZFiuGB6WYoKO7arPFzvaVf-KZPFfe6NXjmKoZ1QgI3_Sgp_LkxYXCalCMkSqAiIJwD_qVbREbk-zGBZTD9_fqCmgujaTPW2j5hap_QFfx8R",
+                "width": 3024
+            },
+            {
+                "height": 1794,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/111886462628898886874\">Hjärtebo Gård</a>"
+                ],
+                "photo_reference": "ATplDJZLZnw4LLLg2FidqdFLakr0aW73GgXBrAsWsUIJ9-BelEPRPX0FFMV2aoGV0DvNG77guT0ozQxzr2vRI3NK79yXa5jZwdnPu64RYZFb9BdG1oyDTR8HhRnxrRWpWtfnljfkaZT5eqmIvSvcfNbV8UPYc0Ea8k_-mOojE6DKyDVmjUzt",
+                "width": 1440
+            }
+        ],
+        "place_id": "ChIJB_xSnw-TREYRnItx1WHUOHo",
+        "plus_code": {
+            "compound_code": "W4PV+6W Vammen, Sweden",
+            "global_code": "9FCJW4PV+6W"
+        },
+        "rating": 4,
+        "reference": "ChIJB_xSnw-TREYRnItx1WHUOHo",
+        "reviews": [
+            {
+                "author_name": "Jill Widenberg",
+                "author_url": "https://www.google.com/maps/contrib/107946950326565873454/reviews",
+                "language": "en-US",
+                "original_language": "sv",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjUeSRqnQ0HEEM0RlNELI6rOmM-rfPAtzZtovHbIB0r0g7W6U5w=s128-c0x00000000-cc-rp-mo-ba4",
+                "rating": 5,
+                "relative_time_description": "a year ago",
+                "text": "Best place! So knowledgeable and great products. Customer since many years. They also make fine woodwork which they sell. Highly recommended!",
+                "time": 1660478405,
+                "translated": true
+            },
+            {
+                "author_name": "Tina Johansson",
+                "author_url": "https://www.google.com/maps/contrib/106153396655550341633/reviews",
+                "language": "en-US",
+                "original_language": "sv",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjVk9IwRrBYOtigowJ7ucjGWbBopAPtxq_NiLWbz9Icy75OnC1YX=s128-c0x00000000-cc-rp-mo-ba5",
+                "rating": 4,
+                "relative_time_description": "a year ago",
+                "text": "Nice staff, such nice cutting boards. And good vegetables.",
+                "time": 1659117486,
+                "translated": true
+            },
+            {
+                "author_name": "Thina Bergman",
+                "author_url": "https://www.google.com/maps/contrib/102065137583528869285/reviews",
+                "language": "en-US",
+                "original_language": "sv",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjXZ0DG9t0lu0Vr1TBRPnzw55ZBINgpuHVtvq2Nxvs0JUm56wKs=s128-c0x00000000-cc-rp-mo",
+                "rating": 5,
+                "relative_time_description": "2 years ago",
+                "text": "So fast delivery! Thanks!",
+                "time": 1646215753,
+                "translated": true
+            },
+            {
+                "author_name": "Lennart Saxin",
+                "author_url": "https://www.google.com/maps/contrib/106399653151837050471/reviews",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjVXpqw0yNQapMK4wBte4Kc48cvVi2M6ssJCwihLIitbvUZ50xpF=s128-c0x00000000-cc-rp-mo-ba4",
+                "rating": 3,
+                "relative_time_description": "2 years ago",
+                "text": "",
+                "time": 1627035485,
+                "translated": false
+            },
+            {
+                "author_name": "Thomas Johansson",
+                "author_url": "https://www.google.com/maps/contrib/101542567693495101156/reviews",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocIKiTCG_nJUPYLek9iSkWGPyL1rXlpJAuRRXMwUZmakh6OnCg=s128-c0x00000000-cc-rp-mo-ba4",
+                "rating": 3,
+                "relative_time_description": "2 years ago",
+                "text": "",
+                "time": 1628539887,
+                "translated": false
+            }
+        ],
+        "types": [
+            "point_of_interest",
+            "establishment"
+        ],
+        "url": "https://maps.google.com/?cid=8807022587980909468",
+        "user_ratings_total": 5,
+        "utc_offset": 120,
+        "vicinity": "BLIGAN 5, Dals Långed",
+        "website": "http://hjartebogard.se/"
+    },
+    "Gårdsbutiken/Querzoo AB": {
+        "address_components": [
+            {
+                "long_name": "1",
+                "short_name": "1",
+                "types": [
+                    "street_number"
+                ]
+            },
+            {
+                "long_name": "Sneppekas",
+                "short_name": "Sneppekas",
+                "types": [
+                    "route"
+                ]
+            },
+            {
+                "long_name": "Strömstad",
+                "short_name": "Strömstad",
+                "types": [
+                    "postal_town"
+                ]
+            },
+            {
+                "long_name": "Västra Götalands län",
+                "short_name": "Västra Götalands län",
+                "types": [
+                    "administrative_area_level_1",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "Sweden",
+                "short_name": "SE",
+                "types": [
+                    "country",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "452 94",
+                "short_name": "452 94",
+                "types": [
+                    "postal_code"
+                ]
+            }
+        ],
+        "adr_address": "Hogen, <span class=\"street-address\">Sneppekas 1</span>, <span class=\"postal-code\">452 94</span> <span class=\"locality\">Strömstad</span>, <span class=\"country-name\">Sweden</span>",
+        "business_status": "OPERATIONAL",
+        "curbside_pickup": true,
+        "current_opening_hours": {
+            "open_now": false,
+            "periods": [
+                {
+                    "close": {
+                        "date": "2024-04-24",
+                        "day": 3,
+                        "time": "1800"
+                    },
+                    "open": {
+                        "date": "2024-04-24",
+                        "day": 3,
+                        "time": "1100"
+                    }
+                },
+                {
+                    "close": {
+                        "date": "2024-04-25",
+                        "day": 4,
+                        "time": "1800"
+                    },
+                    "open": {
+                        "date": "2024-04-25",
+                        "day": 4,
+                        "time": "1100"
+                    }
+                },
+                {
+                    "close": {
+                        "date": "2024-04-26",
+                        "day": 5,
+                        "time": "1800"
+                    },
+                    "open": {
+                        "date": "2024-04-26",
+                        "day": 5,
+                        "time": "1100"
+                    }
+                },
+                {
+                    "close": {
+                        "date": "2024-04-27",
+                        "day": 6,
+                        "time": "1500"
+                    },
+                    "open": {
+                        "date": "2024-04-27",
+                        "day": 6,
+                        "time": "1100"
+                    }
+                }
+            ],
+            "weekday_text": [
+                "Monday: Closed",
+                "Tuesday: Closed",
+                "Wednesday: 11:00 AM – 6:00 PM",
+                "Thursday: 11:00 AM – 6:00 PM",
+                "Friday: 11:00 AM – 6:00 PM",
+                "Saturday: 11:00 AM – 3:00 PM",
+                "Sunday: Closed"
+            ]
+        },
+        "delivery": true,
+        "formatted_address": "Hogen, Sneppekas 1, 452 94 Strömstad, Sweden",
+        "formatted_phone_number": "070-320 51 65",
+        "geometry": {
+            "location": {
+                "lat": 58.92978230000001,
+                "lng": 11.3465003
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 58.93105543029152,
+                    "lng": 11.3479755802915
+                },
+                "southwest": {
+                    "lat": 58.9283574697085,
+                    "lng": 11.3452776197085
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+        "icon_background_color": "#4B96F3",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+        "international_phone_number": "+46 70 320 51 65",
+        "name": "Gårdsbutiken/Querzoo AB",
+        "opening_hours": {
+            "open_now": false,
+            "periods": [
+                {
+                    "close": {
+                        "day": 3,
+                        "time": "1800"
+                    },
+                    "open": {
+                        "day": 3,
+                        "time": "1100"
+                    }
+                },
+                {
+                    "close": {
+                        "day": 4,
+                        "time": "1800"
+                    },
+                    "open": {
+                        "day": 4,
+                        "time": "1100"
+                    }
+                },
+                {
+                    "close": {
+                        "day": 5,
+                        "time": "1800"
+                    },
+                    "open": {
+                        "day": 5,
+                        "time": "1100"
+                    }
+                },
+                {
+                    "close": {
+                        "day": 6,
+                        "time": "1500"
+                    },
+                    "open": {
+                        "day": 6,
+                        "time": "1100"
+                    }
+                }
+            ],
+            "weekday_text": [
+                "Monday: Closed",
+                "Tuesday: Closed",
+                "Wednesday: 11:00 AM – 6:00 PM",
+                "Thursday: 11:00 AM – 6:00 PM",
+                "Friday: 11:00 AM – 6:00 PM",
+                "Saturday: 11:00 AM – 3:00 PM",
+                "Sunday: Closed"
+            ]
+        },
+        "photos": [
+            {
+                "height": 2448,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/107120391222735687059\">Sonja Wassberg</a>"
+                ],
+                "photo_reference": "ATplDJb_AF4mxmdcUI58EnEGslJPLmP4brbKY7nbAFisDXkljH6S2KpaESM0p7TL1dTkNRYzenvmuDkhEo83-AYUG_a1qvqhXQnujzzGOsBuiqhikYL0h0SyZ-H8I11Ev2g1_mUd4dkmK1p6OwjVyp_W8w4hOxkrsHahIzRXNwl2ZeIrov1T",
+                "width": 3264
+            },
+            {
+                "height": 2988,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/106955305211416329863\">Eva Ohlsson</a>"
+                ],
+                "photo_reference": "ATplDJaABfCdCZJFWDE-nkX0s7Av96zfd0hB0vut4Kn7puXVO5duqBk-Mv8O69i1LFnDy3i7Oj4t5yBwYGH2XUZJLuarVcrSP5U7Q96gwvXwSe8N4F0uBylfZ0OMgRhggOXq6-4uMYoBn0k2EkdBxhmtjXTtIq8A2RNc2E0E-IdP7c0gnRLX",
+                "width": 5312
+            },
+            {
+                "height": 427,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/102090874181014440832\">Gårdsbutiken Hund och Heminredning</a>"
+                ],
+                "photo_reference": "ATplDJaIeW6awJUKq09LP0AwZbbnL4rxeu6whugncd2rHI6bd7hHyDHLSfNp1Fd199S5XwkRiIe-a28XWyaD1A51jhBKRiy2JMJc2Q-6Hz-MHEsnJ7IoWFP_MM8VeKGKObEuGpbEfAj1UiySK1l3NjkPXZfOSGk7iXYIIRjifhMA_OwYrQd3",
+                "width": 640
+            },
+            {
+                "height": 1920,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/102090874181014440832\">Gårdsbutiken Hund och Heminredning</a>"
+                ],
+                "photo_reference": "ATplDJau7HBQZvB3KjjQvVDinIbHJbBzhLxMFDU0Lpc5_FK3bE3zr69kpTfy9PlZTmTLBUsUs5v-cyRIhyGY1lXTQ0DOnHPSJ34-vX5GAC7pTrwuFIFj0khxr8XDB-pLmWYq6mu2XA_7b-Ac2dmY6Jm4RUiQASiRSOxJbmQ3HDP-B6hZxTcZ",
+                "width": 1920
+            },
+            {
+                "height": 1365,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/102090874181014440832\">Gårdsbutiken Hund och Heminredning</a>"
+                ],
+                "photo_reference": "ATplDJb5pfQEDE1aOTlVj7OjffB38UKiV9f4hS09ThhjhxKL6qNLq9cn2SIB1edZPooENcRFVgEwFQntCmUZVBug3yyy9MO3c88kCHnWV6S28xWjzTcZvrRfux9hK-R1DWHOLZ_XRCR_v8AMJFxogrSGvomQZGZNol41Elo0eL8IMzuN3jIv",
+                "width": 2048
+            },
+            {
+                "height": 4032,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/102090874181014440832\">Gårdsbutiken Hund och Heminredning</a>"
+                ],
+                "photo_reference": "ATplDJbC_6k3GlIkxgvGvsNdVo4PC0ykIgqbzYO16WEfAiQ7v58yqg63L2GekTCOWxGhO1zjFb17Sdaj6p7BL-5PYFNtl4ppjVcH_RjDfLzEhHD-YwmTBeFnBcjmciReMsUfGqfgVct6625kHUcIJ8purwsXtmf90aGjVj-B9YXZ2Bse-xXG",
+                "width": 1960
+            },
+            {
+                "height": 1365,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/102090874181014440832\">Gårdsbutiken Hund och Heminredning</a>"
+                ],
+                "photo_reference": "ATplDJZaOclWqoB37pwDWgV5ZRtxOyjRT7HDiP-Xba3e_a9bD27sGyeW1rN8MGsOIOzMp4oENdbeTl32C-VROwX02b6cfGrA9JKf_kxaRH5T00_Ktyl9ZdxZskg5qFiG6qKlvXgW3ozUDjxuSsULiQOpBHJxTNm1azVz4xgq2Vzob3nwmjDs",
+                "width": 2048
+            },
+            {
+                "height": 2879,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/102090874181014440832\">Gårdsbutiken Hund och Heminredning</a>"
+                ],
+                "photo_reference": "ATplDJbSRzfWP8oAdF9U67h-x_9R7YLK6csFBOabTvdfC_eqXuz-varZruK2pGhNI8EwqEut9FAIL03Goz_ltpa4f25TItHZemT_5lPaCOmWGWbaoQAmZI7mp49wU58zbZNa2g13EonpIrIDtiRHR_Zh18g0qlvuzY2zVhxr1iPdDcpumhaE",
+                "width": 1919
+            },
+            {
+                "height": 430,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/102090874181014440832\">Gårdsbutiken Hund och Heminredning</a>"
+                ],
+                "photo_reference": "ATplDJYkocEQ2PhaWGUM02HnNEGuItT7y01YH4ZNKs9-ZkJxXVp8wK6fYg64RcXtP4QFcS63VU0SgPInaoIe5fEQK2d2dFxO8tKgslX2c2rZKDqvle5jw4vGAUPIyCG84t1JqJrq6y_IDdtXMFCMoRSankIKoEdcwTiHKnXRcKQBpouhrdZS",
+                "width": 640
+            },
+            {
+                "height": 500,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/102090874181014440832\">Gårdsbutiken Hund och Heminredning</a>"
+                ],
+                "photo_reference": "ATplDJaaVAJrHaxWIS0FNNX1MlyKA677ue3uiW_JBvwOWvFZhFtSEjJjnvS-Mkudlog7vG5_qJsw5jSO6NNEG2qmXpciDGUl_BG0U06SqhtjuO5LK4tfpHb22UctP1EAGETyObms9UlOsvFPzcnAJpWrd4CxCftBiD7u9wUGyj52hIT1cvQg",
+                "width": 334
+            }
+        ],
+        "place_id": "ChIJFUDqzis8REYRElpn_zzFj-M",
+        "plus_code": {
+            "compound_code": "W8HW+WJ Stromstad, Sweden",
+            "global_code": "9FCHW8HW+WJ"
+        },
+        "rating": 4.8,
+        "reference": "ChIJFUDqzis8REYRElpn_zzFj-M",
+        "reviews": [
+            {
+                "author_name": "Mikael Skölhammar",
+                "author_url": "https://www.google.com/maps/contrib/109033100515817028784/reviews",
+                "language": "en-US",
+                "original_language": "sv",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocLO6AZFrBjON3x5fjBhw3jzVtQfxpErwhKzRHX_Tvu2z0TNFg=s128-c0x00000000-cc-rp-mo",
+                "rating": 5,
+                "relative_time_description": "7 months ago",
+                "text": "Very nice treatment by the 2 Evas. Heh.",
+                "time": 1694182926,
+                "translated": true
+            },
+            {
+                "author_name": "Ken Martin Basteviken",
+                "author_url": "https://www.google.com/maps/contrib/107943201079215183538/reviews",
+                "language": "sv",
+                "original_language": "sv",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocLVcMZY19B_-eq4mhp6KqCMlDWX_zcN_gSHITcZ0GKxqmSNLA=s128-c0x00000000-cc-rp-mo",
+                "rating": 5,
+                "relative_time_description": "3 months ago",
+                "text": "Mycket trevligt bemötande.",
+                "time": 1706026729,
+                "translated": false
+            },
+            {
+                "author_name": "Janne Kristin Hauge",
+                "author_url": "https://www.google.com/maps/contrib/116914864656885086970/reviews",
+                "language": "en-US",
+                "original_language": "no",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocJUZusXnQeajQ6qPp0CsbfHlaA1Gp5wbGGV1aIakIWuyRVvxQ=s128-c0x00000000-cc-rp-mo",
+                "rating": 5,
+                "relative_time_description": "5 years ago",
+                "text": "Fantastic dog kennel in the forest where the dogs run freely and enjoy themselves, which you can rent cheaply. Lots of good dog equipment and lots of nice interiors. Not to forget very friendly service that makes you feel welcome. Strongly recommended.",
+                "time": 1537016325,
+                "translated": true
+            },
+            {
+                "author_name": "Anita Tanke",
+                "author_url": "https://www.google.com/maps/contrib/107926249563457724916/reviews",
+                "language": "en-US",
+                "original_language": "no",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjUNLoIZLmUDgpA-z45ENFOEhAtxLRh7ZileNIWKK63PRdkuPar5=s128-c0x00000000-cc-rp-mo",
+                "rating": 5,
+                "relative_time_description": "4 years ago",
+                "text": "Old-fashioned shop with small things for the home. Jars, crockery, lamps and decor etc. There is also a department for your best friend, the dog, with a good selection of equipment, toys and more. Always personal service",
+                "time": 1563615738,
+                "translated": true
+            },
+            {
+                "author_name": "Sofie Eriksson",
+                "author_url": "https://www.google.com/maps/contrib/100108025327397138038/reviews",
+                "language": "en-US",
+                "original_language": "sv",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocISZzLY9xuMEWhdwf9vpzMTBsGL2DhipRSoB9ndeURRYwxgEg=s128-c0x00000000-cc-rp-mo",
+                "rating": 5,
+                "relative_time_description": "3 years ago",
+                "text": "Eva is so knowledgeable and you always learn something new when you come here. Always ends up more than you planned to buy😅",
+                "time": 1596840528,
+                "translated": true
+            }
+        ],
+        "types": [
+            "pet_store",
+            "home_goods_store",
+            "store",
+            "point_of_interest",
+            "establishment"
+        ],
+        "url": "https://maps.google.com/?cid=16397541634052938258",
+        "user_ratings_total": 47,
+        "utc_offset": 120,
+        "vicinity": "Hogen, Sneppekas 1, Strömstad",
+        "website": "http://www.gardsbutiken.org/"
+    },
+    "Laxarby kvarn": {
+        "address_components": [
+            {
+                "long_name": "30",
+                "short_name": "30",
+                "types": [
+                    "premise"
+                ]
+            },
+            {
+                "long_name": "Stommen",
+                "short_name": "Stommen",
+                "types": [
+                    "locality",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "Bengtsfors",
+                "short_name": "Bengtsfors",
+                "types": [
+                    "postal_town"
+                ]
+            },
+            {
+                "long_name": "Västra Götalands län",
+                "short_name": "Västra Götalands län",
+                "types": [
+                    "administrative_area_level_1",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "Sweden",
+                "short_name": "SE",
+                "types": [
+                    "country",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "666 92",
+                "short_name": "666 92",
+                "types": [
+                    "postal_code"
+                ]
+            }
+        ],
+        "adr_address": "<span class=\"extended-address\">Stommen</span> <span class=\"street-address\">30</span>, <span class=\"postal-code\">666 92</span> <span class=\"locality\">Bengtsfors</span>, <span class=\"country-name\">Sweden</span>",
+        "business_status": "OPERATIONAL",
+        "formatted_address": "Stommen 30, 666 92 Bengtsfors, Sweden",
+        "geometry": {
+            "location": {
+                "lat": 59.0322184,
+                "lng": 12.3285373
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 59.0336287302915,
+                    "lng": 12.3297695802915
+                },
+                "southwest": {
+                    "lat": 59.03093076970849,
+                    "lng": 12.3270716197085
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+        "icon_background_color": "#4B96F3",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+        "name": "Laxarby kvarn",
+        "photos": [
+            {
+                "height": 3024,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/111324354273457569941\">Mattias Löwkrantz</a>"
+                ],
+                "photo_reference": "ATplDJZHhEyO4ir1I9HW_jZCbKr9v1St_ohcBhFPZU94i_u81akBHz_6fDT6hbyqf86RA7_RJ5uZQm4Txpu3A8VV_qzg7uY-QoDS-F3WZ3O2NHgXSD_KCAj0eWmQout8BXE8XHn92Nja4HwmXaxg52g89joMCau4CXhULnbJ2Ooz6S7lheBa",
+                "width": 4032
+            },
+            {
+                "height": 3024,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/116438173527105420524\">Tobias Andersson</a>"
+                ],
+                "photo_reference": "ATplDJa4DFTCQXjhMQWAq0kT-DJlGAyxQHpICKFQScSKeiC9cnU15SCWZt29nnvCz9K2-Hie1vLfWx1Q2tEHaFpegBy6ynenDG1qpMRHg8syglYaxffTlskBGO7tpO3IvdGch9ai3aNfRXzdHqF_bWKJBU__4nzlArObEfv40Adik-Om50bm",
+                "width": 4032
+            },
+            {
+                "height": 4032,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/116438173527105420524\">Tobias Andersson</a>"
+                ],
+                "photo_reference": "ATplDJb0I4MSNu4uI-jgb8cnVuCYEMpY1gnlBeXP7URw53xj2JBVA5ClhVrPVOy_jJpValtq00-nLSbzbcEyPDWkv_OLan89E2QuYKZyqJXUFlPpBdiUKzSRytAfLRpF1S7mAorJ8ZexSmChAJ3kUAAdsGbqqJFsLY7MQG4kykUNAD3RmgLU",
+                "width": 3024
+            },
+            {
+                "height": 1536,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/111324354273457569941\">Mattias Löwkrantz</a>"
+                ],
+                "photo_reference": "ATplDJbO-uxbgWfvZpTJxWlmF9fpY67uo4CmmiKLQw4wuQLoA6qqHkB8Crv3lRIB_NMiVdlKicZny1JK_89VU72xvi4SH0wejVHO6LLB3yNgZfWg-5eFzUbFO1M2OaTWnBKbVnnI1Mu5yEfqvSP8gP48em2eOyix0qqOPWW0HYeGcGzVp9HK",
+                "width": 2048
+            },
+            {
+                "height": 1536,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/111324354273457569941\">Mattias Löwkrantz</a>"
+                ],
+                "photo_reference": "ATplDJb9cHE3h0Xtfjxqc_YEWCYo6FjQOEV8q1pRnKKGA_bggZ3CEALbDVuuU3kZHtIA13wHWUVMdh866FmLT4Tn_PJY3fVK2WVjM6D5nib32ZfEnGy2lPDlbnLtHOukmqEsseH_SQjwBKc8SahP5fQOXis5YjNWVh9cLSHCEezLGrzyR5G5",
+                "width": 2048
+            },
+            {
+                "height": 3024,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/116438173527105420524\">Tobias Andersson</a>"
+                ],
+                "photo_reference": "ATplDJaJRlgBMvS1AzTKqsTYOsVHfqyVAB-852fbXLZJIlZex_ZPs9B-Hc8VzToM0ZoGUjVEn68AAzT2s8yBwoZMj5IQK-FYcBu4ph0Qus5t7g1kX63R6FAxjWCed495YKFNS9s_PE-HeNu_iGokERASI_bAjfuWYfbPI5AQM4ajcS9SrLxH",
+                "width": 4032
+            },
+            {
+                "height": 3024,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/116438173527105420524\">Tobias Andersson</a>"
+                ],
+                "photo_reference": "ATplDJYcydomx1xNMfa4NUW13dmHkGPQmWODUZ1K_dwPzmyA02Ng9lFcGKAFWCxJOUdgcFAmLT2UwVu0dHfOn96rs8ZVBPi0vfwpWGXXjlfzIqME-nIFg-8PPbgIOpY1BZQs1X-TQp5MxdvoLlAtWIC3oprRx8Ue4Y5BISPBR0Y2OmZYX8Bo",
+                "width": 4032
+            }
+        ],
+        "place_id": "ChIJwcww1W2RREYRKDERbKbqc44",
+        "plus_code": {
+            "compound_code": "28JH+VC Stommen, Sweden",
+            "global_code": "9FFJ28JH+VC"
+        },
+        "rating": 4,
+        "reference": "ChIJwcww1W2RREYRKDERbKbqc44",
+        "reviews": [
+            {
+                "author_name": "Mattias Löwkrantz",
+                "author_url": "https://www.google.com/maps/contrib/111324354273457569941/reviews",
+                "language": "en-US",
+                "original_language": "sv",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjU7a_Ttc3TD8dBw5riLhQoRIUU6D5eygTvqCjqGEOu6rak-X9KI=s128-c0x00000000-cc-rp-mo-ba6",
+                "rating": 4,
+                "relative_time_description": "3 years ago",
+                "text": "Görfin mill in the lovely area.",
+                "time": 1598900399,
+                "translated": true
+            },
+            {
+                "author_name": "Premiär Banan",
+                "author_url": "https://www.google.com/maps/contrib/117165985383634612943/reviews",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocIA4MfVDFggHS-D9jeOjozlOZpFejTgBMcKboXqB7d5369r2Q=s128-c0x00000000-cc-rp-mo",
+                "rating": 4,
+                "relative_time_description": "2 years ago",
+                "text": "",
+                "time": 1644694040,
+                "translated": false
+            }
+        ],
+        "types": [
+            "store",
+            "point_of_interest",
+            "establishment"
+        ],
+        "url": "https://maps.google.com/?cid=10264805976206029096",
+        "user_ratings_total": 2,
+        "utc_offset": 120,
+        "vicinity": "Stommen 30, Bengtsfors",
+        "website": "http://laxarbykvarn.se/"
+    },
+    "Nöddö Musteri": {
+        "address_components": [
+            {
+                "long_name": "3",
+                "short_name": "3",
+                "types": [
+                    "street_number"
+                ]
+            },
+            {
+                "long_name": "Nöddö Rörvik",
+                "short_name": "Nöddö Rörvik",
+                "types": [
+                    "route"
+                ]
+            },
+            {
+                "long_name": "Strömstad",
+                "short_name": "Strömstad",
+                "types": [
+                    "postal_town"
+                ]
+            },
+            {
+                "long_name": "Västra Götalands län",
+                "short_name": "Västra Götalands län",
+                "types": [
+                    "administrative_area_level_1",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "Sweden",
+                "short_name": "SE",
+                "types": [
+                    "country",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "452 97",
+                "short_name": "452 97",
+                "types": [
+                    "postal_code"
+                ]
+            }
+        ],
+        "adr_address": "<span class=\"street-address\">Nöddö Rörvik 3</span>, <span class=\"postal-code\">452 97</span> <span class=\"locality\">Strömstad</span>, <span class=\"country-name\">Sweden</span>",
+        "business_status": "OPERATIONAL",
+        "current_opening_hours": {
+            "open_now": false,
+            "periods": [
+                {
+                    "close": {
+                        "date": "2024-04-28",
+                        "day": 0,
+                        "time": "1900"
+                    },
+                    "open": {
+                        "date": "2024-04-28",
+                        "day": 0,
+                        "time": "1000"
+                    }
+                },
+                {
+                    "close": {
+                        "date": "2024-04-22",
+                        "day": 1,
+                        "time": "1900"
+                    },
+                    "open": {
+                        "date": "2024-04-22",
+                        "day": 1,
+                        "time": "1000"
+                    }
+                },
+                {
+                    "close": {
+                        "date": "2024-04-23",
+                        "day": 2,
+                        "time": "1900"
+                    },
+                    "open": {
+                        "date": "2024-04-23",
+                        "day": 2,
+                        "time": "1000"
+                    }
+                },
+                {
+                    "close": {
+                        "date": "2024-04-24",
+                        "day": 3,
+                        "time": "1900"
+                    },
+                    "open": {
+                        "date": "2024-04-24",
+                        "day": 3,
+                        "time": "1000"
+                    }
+                },
+                {
+                    "close": {
+                        "date": "2024-04-25",
+                        "day": 4,
+                        "time": "1900"
+                    },
+                    "open": {
+                        "date": "2024-04-25",
+                        "day": 4,
+                        "time": "1000"
+                    }
+                },
+                {
+                    "close": {
+                        "date": "2024-04-26",
+                        "day": 5,
+                        "time": "1900"
+                    },
+                    "open": {
+                        "date": "2024-04-26",
+                        "day": 5,
+                        "time": "1000"
+                    }
+                },
+                {
+                    "close": {
+                        "date": "2024-04-27",
+                        "day": 6,
+                        "time": "1900"
+                    },
+                    "open": {
+                        "date": "2024-04-27",
+                        "day": 6,
+                        "time": "1000"
+                    }
+                }
+            ],
+            "weekday_text": [
+                "Monday: 10:00 AM – 7:00 PM",
+                "Tuesday: 10:00 AM – 7:00 PM",
+                "Wednesday: 10:00 AM – 7:00 PM",
+                "Thursday: 10:00 AM – 7:00 PM",
+                "Friday: 10:00 AM – 7:00 PM",
+                "Saturday: 10:00 AM – 7:00 PM",
+                "Sunday: 10:00 AM – 7:00 PM"
+            ]
+        },
+        "delivery": false,
+        "formatted_address": "Nöddö Rörvik 3, 452 97 Strömstad, Sweden",
+        "formatted_phone_number": "073-940 50 55",
+        "geometry": {
+            "location": {
+                "lat": 58.8679479,
+                "lng": 11.2334639
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 58.8693246802915,
+                    "lng": 11.2348574802915
+                },
+                "southwest": {
+                    "lat": 58.86662671970849,
+                    "lng": 11.2321595197085
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+        "icon_background_color": "#4B96F3",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shoppingcart_pinlet",
+        "international_phone_number": "+46 73 940 50 55",
+        "name": "Nöddö Musteri",
+        "opening_hours": {
+            "open_now": false,
+            "periods": [
+                {
+                    "close": {
+                        "day": 0,
+                        "time": "1900"
+                    },
+                    "open": {
+                        "day": 0,
+                        "time": "1000"
+                    }
+                },
+                {
+                    "close": {
+                        "day": 1,
+                        "time": "1900"
+                    },
+                    "open": {
+                        "day": 1,
+                        "time": "1000"
+                    }
+                },
+                {
+                    "close": {
+                        "day": 2,
+                        "time": "1900"
+                    },
+                    "open": {
+                        "day": 2,
+                        "time": "1000"
+                    }
+                },
+                {
+                    "close": {
+                        "day": 3,
+                        "time": "1900"
+                    },
+                    "open": {
+                        "day": 3,
+                        "time": "1000"
+                    }
+                },
+                {
+                    "close": {
+                        "day": 4,
+                        "time": "1900"
+                    },
+                    "open": {
+                        "day": 4,
+                        "time": "1000"
+                    }
+                },
+                {
+                    "close": {
+                        "day": 5,
+                        "time": "1900"
+                    },
+                    "open": {
+                        "day": 5,
+                        "time": "1000"
+                    }
+                },
+                {
+                    "close": {
+                        "day": 6,
+                        "time": "1900"
+                    },
+                    "open": {
+                        "day": 6,
+                        "time": "1000"
+                    }
+                }
+            ],
+            "weekday_text": [
+                "Monday: 10:00 AM – 7:00 PM",
+                "Tuesday: 10:00 AM – 7:00 PM",
+                "Wednesday: 10:00 AM – 7:00 PM",
+                "Thursday: 10:00 AM – 7:00 PM",
+                "Friday: 10:00 AM – 7:00 PM",
+                "Saturday: 10:00 AM – 7:00 PM",
+                "Sunday: 10:00 AM – 7:00 PM"
+            ]
+        },
+        "photos": [
+            {
+                "height": 472,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/106252023205976919619\">Nöddö Musteri</a>"
+                ],
+                "photo_reference": "ATplDJYfzolKZCZXaYnFlCcuKCk7NB5rloAXN1WPfKi-x6FWM8fk68NmA071v0anFFaWln4SHYUUd0uySkGvhSlR8m5cBCVc92fy-S6cK5sgllTsWtM3i2bM1sF0XhWDoAkgEvC7REq6q7Pd5Jd0Of4F6SPtemqwfbb4vcZLxfb1bTcGMKro",
+                "width": 710
+            }
+        ],
+        "place_id": "ChIJ-xwmveA4REYRXuPnYwr5jUM",
+        "plus_code": {
+            "compound_code": "V69M+59 Rävö, Sweden",
+            "global_code": "9FCHV69M+59"
+        },
+        "rating": 4.7,
+        "reference": "ChIJ-xwmveA4REYRXuPnYwr5jUM",
+        "reviews": [
+            {
+                "author_name": "Alex Perry",
+                "author_url": "https://www.google.com/maps/contrib/109996387424534338567/reviews",
+                "language": "en",
+                "original_language": "en",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjWXk6p3GWTXJodXYlxNnK_VlrydLSHvjNKAa9ycoVCiS212H8ql=s128-c0x00000000-cc-rp-mo",
+                "rating": 5,
+                "relative_time_description": "5 years ago",
+                "text": "Not a grocery store\nedit:\nhiking through sweden i passed this \"farm store\" but it was closed",
+                "time": 1549633020,
+                "translated": false
+            },
+            {
+                "author_name": "Julie Gjelsvik",
+                "author_url": "https://www.google.com/maps/contrib/105686454121514039295/reviews",
+                "language": "en-US",
+                "original_language": "sv",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocKpw5Af2QVkL0lvq4I-HRTdlpmbf59LWPazxVPik-76OvfHmA=s128-c0x00000000-cc-rp-mo",
+                "rating": 5,
+                "relative_time_description": "9 months ago",
+                "text": "A small farm shop with a very nice owner and good must!",
+                "time": 1689757046,
+                "translated": true
+            },
+            {
+                "author_name": "Mikael Olsson",
+                "author_url": "https://www.google.com/maps/contrib/105901445968080651582/reviews",
+                "language": "en-US",
+                "original_language": "sv",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocKpFxvZ89e7-23oGAzVcPKKV11OK23oUp4iS5ATgm9XJYKgbg=s128-c0x00000000-cc-rp-mo-ba4",
+                "rating": 3,
+                "relative_time_description": "a year ago",
+                "text": "Great must, a real craft!\nThe musterie/shop itself is unfortunately not a great experience, but again, the must is really good.",
+                "time": 1658834222,
+                "translated": true
+            },
+            {
+                "author_name": "Lars Karlsson",
+                "author_url": "https://www.google.com/maps/contrib/110445061371873071244/reviews",
+                "language": "en-US",
+                "original_language": "sv",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocKe62gnLTyvWEIuHnrjXt9-ZDSG-w4KgpeR8SjWxtE8zQ3Muw=s128-c0x00000000-cc-rp-mo-ba5",
+                "rating": 5,
+                "relative_time_description": "4 years ago",
+                "text": "There is no distaste for this company..very serious venture company with very good must\nabove all.",
+                "time": 1578764305,
+                "translated": true
+            },
+            {
+                "author_name": "WestCoast Angler",
+                "author_url": "https://www.google.com/maps/contrib/118002822634109947523/reviews",
+                "language": "en-US",
+                "original_language": "sv",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjX7SkeK7anKqc5UTsZ3wuQah6uX6FxslBG6ykRj2s-ShLAxZsY=s128-c0x00000000-cc-rp-mo-ba4",
+                "rating": 5,
+                "relative_time_description": "2 years ago",
+                "text": "Cozy and local. Their organic must is worth a detour just for that!",
+                "time": 1628090542,
+                "translated": true
+            }
+        ],
+        "types": [
+            "grocery_or_supermarket",
+            "food",
+            "point_of_interest",
+            "store",
+            "establishment"
+        ],
+        "url": "https://maps.google.com/?cid=4867820595278504798",
+        "user_ratings_total": 11,
+        "utc_offset": 120,
+        "vicinity": "Nöddö Rörvik 3, Strömstad",
+        "website": "http://www.musta.se/"
+    },
+    "Animskog": {
+        "address_components": [
+            {
+                "long_name": "402",
+                "short_name": "402",
+                "types": [
+                    "street_number"
+                ]
+            },
+            {
+                "long_name": "GYLTUNGEBYN",
+                "short_name": "GYLTUNGEBYN",
+                "types": [
+                    "route"
+                ]
+            },
+            {
+                "long_name": "Ånimskog",
+                "short_name": "Ånimskog",
+                "types": [
+                    "postal_town"
+                ]
+            },
+            {
+                "long_name": "Västra Götalands län",
+                "short_name": "Västra Götalands län",
+                "types": [
+                    "administrative_area_level_1",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "Sweden",
+                "short_name": "SE",
+                "types": [
+                    "country",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "662 97",
+                "short_name": "662 97",
+                "types": [
+                    "postal_code"
+                ]
+            }
+        ],
+        "adr_address": "<span class=\"street-address\">GYLTUNGEBYN 402</span>, <span class=\"postal-code\">662 97</span> <span class=\"locality\">Ånimskog</span>, <span class=\"country-name\">Sweden</span>",
+        "business_status": "OPERATIONAL",
+        "formatted_address": "GYLTUNGEBYN 402, 662 97 Ånimskog, Sweden",
+        "geometry": {
+            "location": {
+                "lat": 58.90932640000001,
+                "lng": 12.5414525
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 58.91061273029151,
+                    "lng": 12.5424876302915
+                },
+                "southwest": {
+                    "lat": 58.9079147697085,
+                    "lng": 12.5397896697085
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+        "icon_background_color": "#909CE1",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+        "name": "Animskog",
+        "photos": [
+            {
+                "height": 2448,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/114546858674996065909\">Alexander Tag</a>"
+                ],
+                "photo_reference": "ATplDJbzWY1yjy6O4F-aq9E0W3QoRMaUg5SpyBivBMalGdBF-9S0lm21W1EM4_57XznC6t2tJC0dH18iWbnHVOLGfR3Mh_59mrV5qteklwbYDCDE1mJQKs0V7-jjGtsTqmdPftHPHBVlX6Jrjg1RvpopqvjQWfGo-TR4LMfxVys3LvSKKc2W",
+                "width": 3264
+            },
+            {
+                "height": 2250,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/103126866125308218589\">David S.</a>"
+                ],
+                "photo_reference": "ATplDJbJ4cwwzsHessMmScLIOkbU-MPLLWr7HBTQjT9X0vLJUgFlCCLwAnqTBD9rZOVjjP7xQW2kNQdnSq3OAGcbp-tTN5D28mHdpO-oTVvNcz1Gols_67-dxmA4QgIF2ILjYhKlNf2AQU1P53EvEFGkzf_y0dTklv3L3dEAaLUP4XLOfxTC",
+                "width": 4000
+            },
+            {
+                "height": 4000,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/109237372001461955662\">Livia</a>"
+                ],
+                "photo_reference": "ATplDJasDHJ-bZDvgz8uhPbBcmjVqMjPOFTkAILumq4qh3k_2Rmczctf8TKQAlwLyIcmbR1cfBNyCQAoGMxzsLyPXrxWWkTo2dH6KI3Zj8WZd3rNK-0fXPlBQRpGP2b0W8L3T2zfyvEby9RiMGpoOpOx_d6-14e5A7rXNd038A5UcqBvIUEO",
+                "width": 3000
+            },
+            {
+                "height": 1920,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/104788359468751901395\">Birgitta Halvarsson</a>"
+                ],
+                "photo_reference": "ATplDJZRvchQTRJEwM-bN4pAO38iSRcu5FkDWm37wYQBFLYFtwgaCi1jx19TDT65ao6UnWZ5h6yEwGdVvzJ3PxbWl_WADh4mSIDFHJFvoiHgbJ5mCgrr-nxkYT1mHRtHAp280SbXhzEO01aE9CRIeO96_kK4Dt76J7v9VBKb5qCnGI7IZYue",
+                "width": 1080
+            },
+            {
+                "height": 1152,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/107020432143327041671\">Pavlin Antonov</a>"
+                ],
+                "photo_reference": "ATplDJb2ARaEsA5VKOWNmjOmtgxK3Df_jDeZHFIBOG2kG5zg1OmTs9ec1Tx-E3s1Cc5v5KErHxdBD6sqOsjUz--Q7K_Q3ce6p4DHN1ozi2AspyK0AUbHzjxE3Aru7NXtlGaUL_h1HuZOM1QE6_XjtR1J8-BJAAvw8FmOdoNt4zt2evvraRqX",
+                "width": 2048
+            },
+            {
+                "height": 2448,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/114546858674996065909\">Alexander Tag</a>"
+                ],
+                "photo_reference": "ATplDJYroddeKEeb0djKq2ay9PGtbjr9--5RAzb8iAkLs7rtgyRfYWyyMM4y-Q_qQGMyLGmXvQNqDE4Js2ocyCILmnMHZ3byi8LJjsRKMHEACjHXv6hLECNQhAfhU9PRU_jaxFFU0fFcklqISdgi2X_rgUBBtQCy3ZujxfvdJHnBIhbXa3tr",
+                "width": 3264
+            },
+            {
+                "height": 2240,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/115858673812590925025\">Johan Jonsson</a>"
+                ],
+                "photo_reference": "ATplDJbmSr-jE9pbfEsNjeav2amJYsgBuus75qa3sRo6Jcw7ZhsLkh0kP4ZiDZbfyed4pdoVmkVCgmNoCaoKKB23Rrl6c-CgYo-sgBwPIDaqnALlb_etr2ysp1Xow1Zxex701cIBJVA_l5_Wf2e5Pb-G9C_lB9bS01VMlNXkBfl3b1AqogQZ",
+                "width": 4608
+            },
+            {
+                "height": 2448,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/114546858674996065909\">Alexander Tag</a>"
+                ],
+                "photo_reference": "ATplDJb5OJ1P6QEflIwisIFlJBPOo35Gml5tt4vNqFISleoyLp3SQo7eCtcuoxtuIRQs2X7tN1npAyg-mXB-fcsgczANZjK4XW10D90VArbuOkAhckM52hWoHHRHtIGyW9xUVcEjMJq6KwBgCFqTS3gkdQ2hJSFy7LQixuC5UsQ_TT2f9b4o",
+                "width": 3264
+            },
+            {
+                "height": 2240,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/115858673812590925025\">Johan Jonsson</a>"
+                ],
+                "photo_reference": "ATplDJYMcFlDoi2z66fB1LqnBb6bd2eHQgN_3f-u2sDtjRBPeNOm3J8a75TZW9gMg4I6zKlix5boiNzTXUp-83y0FUs5JvrEuJgUclEFyZitulsb0HwROgRDXdJt5ICIM6whdIs_wLwt6rirEkzk9nqbtjjspZulzn0EXP0zmJTckbZ6dH9x",
+                "width": 4608
+            },
+            {
+                "height": 2448,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/114546858674996065909\">Alexander Tag</a>"
+                ],
+                "photo_reference": "ATplDJaTbsTqkE91wV94CcA21Bb5kZ2QrspXF5d-3H-90SWNOvPVEigl2H1UbY6mvILT3qLeDhemQDbL5gO7Wo8FI_lY6V1ITcD5n50Jc_3idoR0niAeU2lORZyCqT8g6B7yD3pVWLaI-NSuTg2GM55w8VvYq4EZzlkCIK678HfIJqJWzYbv",
+                "width": 3264
+            }
+        ],
+        "place_id": "ChIJnfuWVrW_REYRjhxF38hJRGU",
+        "plus_code": {
+            "compound_code": "WG5R+PH Lilla Bräcke, Sweden",
+            "global_code": "9FCJWG5R+PH"
+        },
+        "rating": 4.5,
+        "reference": "ChIJnfuWVrW_REYRjhxF38hJRGU",
+        "reviews": [
+            {
+                "author_name": "Pavlin Antonov",
+                "author_url": "https://www.google.com/maps/contrib/107020432143327041671/reviews",
+                "language": "en",
+                "original_language": "en",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocK53OE7x_IiqNXahCE2hPgfxyZNy_SIfmGJf4wuiUGZqp7GPQ=s128-c0x00000000-cc-rp-mo-ba3",
+                "rating": 5,
+                "relative_time_description": "5 years ago",
+                "text": "The owners - Larsson family, are great people. I was completely satisfied of my stay there. Peaceful farm environment, lake with warm water, grassland and forest - everything you could wish for.",
+                "time": 1528821963,
+                "translated": false
+            },
+            {
+                "author_name": "Birgitta Halvarsson",
+                "author_url": "https://www.google.com/maps/contrib/104788359468751901395/reviews",
+                "language": "en-US",
+                "original_language": "sv",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocLr8zTacfO_Dp1DyEYqNvw8xo7KBkoOCVZyyyAFmr_9yJXHzA=s128-c0x00000000-cc-rp-mo",
+                "rating": 5,
+                "relative_time_description": "4 years ago",
+                "text": "Larsson's farm shop. Very cozy. Worth a visit.",
+                "time": 1561807075,
+                "translated": true
+            },
+            {
+                "author_name": "Thomas Skåån",
+                "author_url": "https://www.google.com/maps/contrib/105176703186393643828/reviews",
+                "language": "en-US",
+                "original_language": "sv",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjWInWe99cKNA_i_nEjkngPz59Q1mpeS2dK4lULeH2UQDwHo0NU=s128-c0x00000000-cc-rp-mo-ba4",
+                "rating": 4,
+                "relative_time_description": "4 years ago",
+                "text": "Cozy",
+                "time": 1564323780,
+                "translated": true
+            },
+            {
+                "author_name": "Mikko Pasanen",
+                "author_url": "https://www.google.com/maps/contrib/108825955319922496516/reviews",
+                "language": "en-US",
+                "original_language": "sv",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocL7XcUMvCwunzPFmF3ux5uZZVmrznvrlZHIfY3-mPULgfoA-w=s128-c0x00000000-cc-rp-mo-ba4",
+                "rating": 4,
+                "relative_time_description": "5 years ago",
+                "text": "Thriving",
+                "time": 1538129128,
+                "translated": true
+            },
+            {
+                "author_name": "Karin Rolfsman",
+                "author_url": "https://www.google.com/maps/contrib/106122809060134433149/reviews",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjXy6Vq-o4KCEIUV_g7aNwASPgJyu-Z0KhIvb99aWYSw0f95IvJaOQ=s128-c0x00000000-cc-rp-mo",
+                "rating": 5,
+                "relative_time_description": "6 years ago",
+                "text": "",
+                "time": 1515179796,
+                "translated": false
+            }
+        ],
+        "types": [
+            "lodging",
+            "point_of_interest",
+            "establishment"
+        ],
+        "url": "https://maps.google.com/?cid=7297038423335181454",
+        "user_ratings_total": 13,
+        "utc_offset": 120,
+        "vicinity": "GYLTUNGEBYN 402, Ånimskog"
+    },
+    "Wiksfors Bruksbutik": {
+        "address_components": [
+            {
+                "long_name": "Långserud",
+                "short_name": "Långserud",
+                "types": [
+                    "postal_town"
+                ]
+            },
+            {
+                "long_name": "Värmlands län",
+                "short_name": "Värmlands län",
+                "types": [
+                    "administrative_area_level_1",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "Sweden",
+                "short_name": "SE",
+                "types": [
+                    "country",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "661 96",
+                "short_name": "661 96",
+                "types": [
+                    "postal_code"
+                ]
+            }
+        ],
+        "adr_address": "Wiksfors Bruk, Wiksfors, <span class=\"postal-code\">661 96</span> <span class=\"locality\">Långserud</span>, <span class=\"country-name\">Sweden</span>",
+        "business_status": "OPERATIONAL",
+        "current_opening_hours": {
+            "open_now": false,
+            "periods": [
+                {
+                    "close": {
+                        "date": "2024-04-28",
+                        "day": 0,
+                        "time": "1600"
+                    },
+                    "open": {
+                        "date": "2024-04-28",
+                        "day": 0,
+                        "time": "1100"
+                    }
+                },
+                {
+                    "close": {
+                        "date": "2024-04-27",
+                        "day": 6,
+                        "time": "1600"
+                    },
+                    "open": {
+                        "date": "2024-04-27",
+                        "day": 6,
+                        "time": "1100"
+                    }
+                }
+            ],
+            "weekday_text": [
+                "Monday: Closed",
+                "Tuesday: Closed",
+                "Wednesday: Closed",
+                "Thursday: Closed",
+                "Friday: Closed",
+                "Saturday: 11:00 AM – 4:00 PM",
+                "Sunday: 11:00 AM – 4:00 PM"
+            ]
+        },
+        "delivery": false,
+        "formatted_address": "Wiksfors Bruk, Wiksfors, 661 96 Långserud, Sweden",
+        "formatted_phone_number": "073-806 80 78",
+        "geometry": {
+            "location": {
+                "lat": 59.2643839,
+                "lng": 12.6304667
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 59.26585708029151,
+                    "lng": 12.6319673802915
+                },
+                "southwest": {
+                    "lat": 59.2631591197085,
+                    "lng": 12.6292694197085
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+        "icon_background_color": "#4B96F3",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+        "international_phone_number": "+46 73 806 80 78",
+        "name": "Wiksfors Bruksbutik",
+        "opening_hours": {
+            "open_now": false,
+            "periods": [
+                {
+                    "close": {
+                        "day": 0,
+                        "time": "1600"
+                    },
+                    "open": {
+                        "day": 0,
+                        "time": "1100"
+                    }
+                },
+                {
+                    "close": {
+                        "day": 6,
+                        "time": "1600"
+                    },
+                    "open": {
+                        "day": 6,
+                        "time": "1100"
+                    }
+                }
+            ],
+            "weekday_text": [
+                "Monday: Closed",
+                "Tuesday: Closed",
+                "Wednesday: Closed",
+                "Thursday: Closed",
+                "Friday: Closed",
+                "Saturday: 11:00 AM – 4:00 PM",
+                "Sunday: 11:00 AM – 4:00 PM"
+            ]
+        },
+        "photos": [
+            {
+                "height": 3000,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/104127992168347334190\">Dagfinn Kolberg</a>"
+                ],
+                "photo_reference": "ATplDJb--JEQ2PAg6tw8Rdur-mlUev0hmjnJzV121gpzaxHa6dbE9L6933NC09eop4UDs1A0wYWVUpGQqQAYm6p1zRQr_y00Hk7mD_EKk-We8DPJ6_P5TdFK1YACEuEhbiKPxsQDAm6YrhG0RBnQPH9gTzdfUOXqKgt56KmnsCXy73rKEZ4J",
+                "width": 4000
+            },
+            {
+                "height": 4000,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/114083404240353342369\">Wiksfors Bruksbutik</a>"
+                ],
+                "photo_reference": "ATplDJZlxbhnR8owTptQZ82RNOSs05sDhbaybiGGjASYpkbeDiRQCq0LwFdKhP1KZccLDV1YhGTfLk52PjyU8zadMruaJvK2Mx2rR8EgxFS4SIEKfKQF6MH2T-wCOW4DEjGO0zWNyrDVJs4bPgwIbds0_hQlnMycHpfllcm0fLdtQGwrpBbZ",
+                "width": 6000
+            },
+            {
+                "height": 4000,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/111075940291121126832\">Lamduan Khamlong</a>"
+                ],
+                "photo_reference": "ATplDJYuzgyIVNRNGI8K-kOyXYKEb9KZ1_8Q6sD9J32b8BL8LBB0hIw39M8LZT5sEZM5b_cKFAXWJzceUb6tox-bNKU0YNfMizv74D_1C66CnRU2g_Y5JvtjJa0pM6vudvIjzntEIRV3AILCEgJCyzW2S70kUE7T2htdADK78rmncFL6x8nJ",
+                "width": 3000
+            },
+            {
+                "height": 4000,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/100021792612082883201\">DJ Bodda</a>"
+                ],
+                "photo_reference": "ATplDJZm6abPN4MplvsFnqX4aiHnxjMII_owwiL06pvCQCwbdq8S5sbVveEkvg_VWaPYUezRV86WYWBBzt8L2NRkenA3luNKcwpll6XPbJQ1bHYdxgPgSP864rTznVWoboxwJWa9kWFqkjmUEiatQD9mQIHm1GkqtA81PHM-tnRzBJCugxL8",
+                "width": 1848
+            },
+            {
+                "height": 4000,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/111075940291121126832\">Lamduan Khamlong</a>"
+                ],
+                "photo_reference": "ATplDJbg0OI7ddWCr-7JaoTM5-tjEqo0mrbhnFAh_cVjog05hziTkm5OiZBIb4LV4L-dufGYMT5Xu0rGHrOphtsaFFQwLcnu1iXw4_7lmG4rGVQC-W0rMJEyiwNpN2GaGryU4MQqJB_uv0uJIzrcURSixGGcky8xKXIkef3fXyQBnfTdwh5O",
+                "width": 3000
+            },
+            {
+                "height": 4000,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/100021792612082883201\">DJ Bodda</a>"
+                ],
+                "photo_reference": "ATplDJZcROHsnFLFmifoga2hg_dlJ08eEEGPKdLxk1AIEXY3SjOYABd-zKzFOaHfqAVKDtbaPyMV6NW2HUhC0TXlksOYl5xLgAS5OXvTzGK__Uciscy8BP8ZNd-Hs6iUEcOSAuQS0ygdMibndVf2yeGsBa2Grd62wJt0mjK6RDxlsNFjAW-j",
+                "width": 1848
+            },
+            {
+                "height": 3000,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/104127992168347334190\">Dagfinn Kolberg</a>"
+                ],
+                "photo_reference": "ATplDJY6o989JlsdGon7xbbYx1KSSwn9c00NwPqkq19BcGDzlVJIwYn1jVKx787Hq2bag1qBSSfE-IIF5hKbSuhpvZttEcoSSVFgM3iCs0QyZiYKpDWc-gIbROQ7lnbG58SBRoNNVaRVOTWJm5wDbLbMWzbEqaQBuVMnSFsfhDzXQcMnNFB5",
+                "width": 4000
+            },
+            {
+                "height": 3000,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/104127992168347334190\">Dagfinn Kolberg</a>"
+                ],
+                "photo_reference": "ATplDJZoyZsyG_h67ckaRbnAfVlmRkq_hEOIAKWlsFxOu1VIQOemOq74I4EK6X18fcMbdeNzlFOZpHcCkoPZcWPfgteehca0O8mbaU_RhFESEY9SxF72Q3L8mAkdPx2nTeKq5pWJHR9irV28OOwVhbajxSoxLfMsiMGD6FXoyXCFZlNij-zu",
+                "width": 4000
+            },
+            {
+                "height": 4000,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/100021792612082883201\">DJ Bodda</a>"
+                ],
+                "photo_reference": "ATplDJYdM0oScjXXCsHq6KzaSoTzpDWjInfDfJyYAvXRyu0bGyUyRTUaVQm9AsYDca-mN7-S8DhZs1dht0d4Rf3fV0scLs5yAaWBPSlFEDZAfoKzizmAsS4rHMCBrvzvOkU2SXZlJIZe4vbXmxmJ8rBRYwEyPsfgoFkcH2nHRBoU6-fZq2ZW",
+                "width": 1848
+            },
+            {
+                "height": 3000,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/104127992168347334190\">Dagfinn Kolberg</a>"
+                ],
+                "photo_reference": "ATplDJaRE5sMCHBDLO81TxdfRxdBBIvjaeXTJxIBtYWnJzXXiKCcozDcz_M3CxBPqCzLAJLtSd356put5ble8-OxGkELpJisIxZbS6qazP3qZ_SBIJ4aU8zDp7a-r6IXPsKC3Bnbh9CP0eBQMhQXYOw2-7Z-JYD-afMSwhbexAeAI-V75zue",
+                "width": 4000
+            }
+        ],
+        "place_id": "ChIJYb1d5I9hQ0YRx-bfcrEkX88",
+        "plus_code": {
+            "compound_code": "7J7J+Q5 Sillingebyn, Sweden",
+            "global_code": "9FFJ7J7J+Q5"
+        },
+        "rating": 4.6,
+        "reference": "ChIJYb1d5I9hQ0YRx-bfcrEkX88",
+        "reviews": [
+            {
+                "author_name": "DJ Bodda",
+                "author_url": "https://www.google.com/maps/contrib/100021792612082883201/reviews",
+                "language": "en-US",
+                "original_language": "sv",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjU4_QypljF1-Z6Rn_Jk6Rsj83UUohIu9WGEt2MRfhM5jZThCiSY=s128-c0x00000000-cc-rp-mo-ba4",
+                "rating": 4,
+                "relative_time_description": "5 months ago",
+                "text": "Very nice place. Very many people, so it is best to book a table if you want to eat. Good food, nice shops.",
+                "time": 1700607886,
+                "translated": true
+            },
+            {
+                "author_name": "Dagfinn Kolberg",
+                "author_url": "https://www.google.com/maps/contrib/104127992168347334190/reviews",
+                "language": "en-US",
+                "original_language": "no",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjV4qE8HZbwMCPBcRtI5phGg6WV6dpe31l4mSSfTbkPu1SXxRWxrsQ=s128-c0x00000000-cc-rp-mo-ba6",
+                "rating": 5,
+                "relative_time_description": "5 months ago",
+                "text": "Fantastic place that must be experienced!",
+                "time": 1698847380,
+                "translated": true
+            },
+            {
+                "author_name": "Johnny Strandli",
+                "author_url": "https://www.google.com/maps/contrib/108887047673983174435/reviews",
+                "language": "en-US",
+                "original_language": "sv",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocJZpOZZiGoZ_w1_apC6h7cRA6434mv6P3xcbdO9uI6fojMNmw=s128-c0x00000000-cc-rp-mo-ba5",
+                "rating": 5,
+                "relative_time_description": "4 months ago",
+                "text": "Very cozy! Nice people nice products. Visit the bakery👍. Good waffles, available with shrimp, ice cream and cream 👌. Merry Christmas atmosphere 🎄",
+                "time": 1701859017,
+                "translated": true
+            },
+            {
+                "author_name": "Livia",
+                "author_url": "https://www.google.com/maps/contrib/109237372001461955662/reviews",
+                "language": "en-US",
+                "original_language": "sv",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjUH2S4sPloT7FwGw_H9_s8RW7g6QYdtbujMzfNpm-vlz7gOksfX=s128-c0x00000000-cc-rp-mo",
+                "rating": 4,
+                "relative_time_description": "6 months ago",
+                "text": "There is a lot to look at.",
+                "time": 1695745665,
+                "translated": true
+            },
+            {
+                "author_name": "Carina Magnusson",
+                "author_url": "https://www.google.com/maps/contrib/111313378967714840819/reviews",
+                "language": "en-US",
+                "original_language": "sv",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocJ8O3eUS6jaCPuYo7s_I6m8-p1EzuNDmQC1Q6xhV78SAC5MMQ=s128-c0x00000000-cc-rp-mo",
+                "rating": 4,
+                "relative_time_description": "9 months ago",
+                "text": "There is a lot to look at, shops of various kinds, exciting with waffles with shrimp on them, I was full and satisfied.",
+                "time": 1689064057,
+                "translated": true
+            }
+        ],
+        "types": [
+            "store",
+            "point_of_interest",
+            "establishment"
+        ],
+        "url": "https://maps.google.com/?cid=14942702433193682631",
+        "user_ratings_total": 16,
+        "utc_offset": 120,
+        "vicinity": "Wiksfors Bruk, Wiksfors, Långserud",
+        "website": "https://instagram.com/wiksforsbruksbutik?igshid=iaxgo5dhgv4e",
+        "wheelchair_accessible_entrance": true
+    },
+    "Fjälla Trädgård": {
+        "address_components": [
+            {
+                "long_name": "9",
+                "short_name": "9",
+                "types": [
+                    "street_number"
+                ]
+            },
+            {
+                "long_name": "Fjälla",
+                "short_name": "Fjälla",
+                "types": [
+                    "route"
+                ]
+            },
+            {
+                "long_name": "Strömstad",
+                "short_name": "Strömstad",
+                "types": [
+                    "postal_town"
+                ]
+            },
+            {
+                "long_name": "Västra Götalands län",
+                "short_name": "Västra Götalands län",
+                "types": [
+                    "administrative_area_level_1",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "Sweden",
+                "short_name": "SE",
+                "types": [
+                    "country",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "452 92",
+                "short_name": "452 92",
+                "types": [
+                    "postal_code"
+                ]
+            }
+        ],
+        "adr_address": "<span class=\"street-address\">Fjälla 9</span>, <span class=\"postal-code\">452 92</span> <span class=\"locality\">Strömstad</span>, <span class=\"country-name\">Sweden</span>",
+        "business_status": "OPERATIONAL",
+        "formatted_address": "Fjälla 9, 452 92 Strömstad, Sweden",
+        "formatted_phone_number": "070-540 42 06",
+        "geometry": {
+            "location": {
+                "lat": 59.0656666,
+                "lng": 11.2577922
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 59.0670787802915,
+                    "lng": 11.2590909802915
+                },
+                "southwest": {
+                    "lat": 59.06438081970849,
+                    "lng": 11.2563930197085
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+        "icon_background_color": "#4DB546",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+        "international_phone_number": "+46 70 540 42 06",
+        "name": "Fjälla Trädgård",
+        "photos": [
+            {
+                "height": 4000,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/110890256447546285001\">Torolf Tveter</a>"
+                ],
+                "photo_reference": "ATplDJZswV94fv0HPy55oxNZ5ZMwLk9Nk_JI0Xte8iUTi7bK7kPEgqdF7IjsCukL-OnJjNKKVUf3GhrC_WVLFJDkj--27-bGBVB5VjyHAxeHgq5TrfQz-5nbEBrBiBbZk5dCOv716gHIaqXO5TR7w4U9-iJU0_BYf7QWzKaiAx33_eOB5GwD",
+                "width": 3000
+            },
+            {
+                "height": 4000,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/110890256447546285001\">Torolf Tveter</a>"
+                ],
+                "photo_reference": "ATplDJa6GF-nsUzyi3qozb2u-wzvVSui42ydz-TFs9lMLhGHJymYo9nBRS7dbfOgC0-fy0H-YW9dqgbdgH3yGfJzvxCYQwAD2I2DEBcM6ovRA4YwIhUzBy8T42px4lAbDSXyYYzRs3jo8c_1Z6eIhApPfZTSIAWKQ10HJDhhNIqXqkMko5ml",
+                "width": 3000
+            },
+            {
+                "height": 4000,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/110890256447546285001\">Torolf Tveter</a>"
+                ],
+                "photo_reference": "ATplDJZL65CV0pzQTDFJ18Eu9ohubMkGr706j9CYW391GFbFQaCzBTQJSsOan71-FVCCUbBRzSdwo7NQqoH_i_VS12o3cmzzVwl05JU7jlul5lMv5kMes9tAFlr6WWmm8jDloGL-g2ioGth5IENa5RYkv4X-gaOlL4HXVECny-sM1EGcTWCB",
+                "width": 3000
+            }
+        ],
+        "place_id": "ChIJb3Vwv7cVREYRuObWt_UiRH4",
+        "plus_code": {
+            "compound_code": "3785+74 Svinesund, Sweden",
+            "global_code": "9FFH3785+74"
+        },
+        "rating": 4,
+        "reference": "ChIJb3Vwv7cVREYRuObWt_UiRH4",
+        "reviews": [
+            {
+                "author_name": "Torolf Tveter",
+                "author_url": "https://www.google.com/maps/contrib/110890256447546285001/reviews",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjVJXpSRwBCJY4Tp6pHWoIJ-3RI0TnszMZku10ZJFbQASlN0Yyjd=s128-c0x00000000-cc-rp-mo-ba5",
+                "rating": 4,
+                "relative_time_description": "8 months ago",
+                "text": "",
+                "time": 1692591929,
+                "translated": false
+            }
+        ],
+        "types": [
+            "park",
+            "point_of_interest",
+            "establishment"
+        ],
+        "url": "https://maps.google.com/?cid=9098435585941890744",
+        "user_ratings_total": 1,
+        "utc_offset": 120,
+        "vicinity": "Fjälla 9, Strömstad",
+        "website": "https://www.fjallatradgard.se/"
+    },
+    "Dalslands Vilt": {
+        "address_components": [
+            {
+                "long_name": "1",
+                "short_name": "1",
+                "types": [
+                    "street_number"
+                ]
+            },
+            {
+                "long_name": "Steneby Gård",
+                "short_name": "Steneby Gård",
+                "types": [
+                    "route"
+                ]
+            },
+            {
+                "long_name": "Dals Långed",
+                "short_name": "Dals Långed",
+                "types": [
+                    "postal_town"
+                ]
+            },
+            {
+                "long_name": "Västra Götalands län",
+                "short_name": "Västra Götalands län",
+                "types": [
+                    "administrative_area_level_1",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "Sweden",
+                "short_name": "SE",
+                "types": [
+                    "country",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "666 94",
+                "short_name": "666 94",
+                "types": [
+                    "postal_code"
+                ]
+            }
+        ],
+        "adr_address": "<span class=\"street-address\">Steneby Gård 1</span>, <span class=\"postal-code\">666 94</span> <span class=\"locality\">Dals Långed</span>, <span class=\"country-name\">Sweden</span>",
+        "business_status": "OPERATIONAL",
+        "current_opening_hours": {
+            "open_now": false,
+            "periods": [
+                {
+                    "close": {
+                        "date": "2024-04-22",
+                        "day": 1,
+                        "time": "2100"
+                    },
+                    "open": {
+                        "date": "2024-04-22",
+                        "day": 1,
+                        "time": "0700"
+                    }
+                },
+                {
+                    "close": {
+                        "date": "2024-04-23",
+                        "day": 2,
+                        "time": "2100"
+                    },
+                    "open": {
+                        "date": "2024-04-23",
+                        "day": 2,
+                        "time": "0700"
+                    }
+                },
+                {
+                    "close": {
+                        "date": "2024-04-24",
+                        "day": 3,
+                        "time": "2100"
+                    },
+                    "open": {
+                        "date": "2024-04-24",
+                        "day": 3,
+                        "time": "0700"
+                    }
+                },
+                {
+                    "close": {
+                        "date": "2024-04-25",
+                        "day": 4,
+                        "time": "2100"
+                    },
+                    "open": {
+                        "date": "2024-04-25",
+                        "day": 4,
+                        "time": "0700"
+                    }
+                },
+                {
+                    "close": {
+                        "date": "2024-04-26",
+                        "day": 5,
+                        "time": "2100"
+                    },
+                    "open": {
+                        "date": "2024-04-26",
+                        "day": 5,
+                        "time": "0700"
+                    }
+                },
+                {
+                    "close": {
+                        "date": "2024-04-27",
+                        "day": 6,
+                        "time": "1400"
+                    },
+                    "open": {
+                        "date": "2024-04-27",
+                        "day": 6,
+                        "time": "1000"
+                    }
+                }
+            ],
+            "weekday_text": [
+                "Monday: 7:00 AM – 9:00 PM",
+                "Tuesday: 7:00 AM – 9:00 PM",
+                "Wednesday: 7:00 AM – 9:00 PM",
+                "Thursday: 7:00 AM – 9:00 PM",
+                "Friday: 7:00 AM – 9:00 PM",
+                "Saturday: 10:00 AM – 2:00 PM",
+                "Sunday: Closed"
+            ]
+        },
+        "formatted_address": "Steneby Gård 1, 666 94 Dals Långed, Sweden",
+        "formatted_phone_number": "070-633 30 86",
+        "geometry": {
+            "location": {
+                "lat": 58.932565,
+                "lng": 12.2096542
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 58.93402863029151,
+                    "lng": 12.2113868302915
+                },
+                "southwest": {
+                    "lat": 58.9313306697085,
+                    "lng": 12.2086888697085
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+        "icon_background_color": "#7B9EB0",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+        "international_phone_number": "+46 70 633 30 86",
+        "name": "Dalslands Vilt",
+        "opening_hours": {
+            "open_now": false,
+            "periods": [
+                {
+                    "close": {
+                        "day": 1,
+                        "time": "2100"
+                    },
+                    "open": {
+                        "day": 1,
+                        "time": "0700"
+                    }
+                },
+                {
+                    "close": {
+                        "day": 2,
+                        "time": "2100"
+                    },
+                    "open": {
+                        "day": 2,
+                        "time": "0700"
+                    }
+                },
+                {
+                    "close": {
+                        "day": 3,
+                        "time": "2100"
+                    },
+                    "open": {
+                        "day": 3,
+                        "time": "0700"
+                    }
+                },
+                {
+                    "close": {
+                        "day": 4,
+                        "time": "2100"
+                    },
+                    "open": {
+                        "day": 4,
+                        "time": "0700"
+                    }
+                },
+                {
+                    "close": {
+                        "day": 5,
+                        "time": "2100"
+                    },
+                    "open": {
+                        "day": 5,
+                        "time": "0700"
+                    }
+                },
+                {
+                    "close": {
+                        "day": 6,
+                        "time": "1400"
+                    },
+                    "open": {
+                        "day": 6,
+                        "time": "1000"
+                    }
+                }
+            ],
+            "weekday_text": [
+                "Monday: 7:00 AM – 9:00 PM",
+                "Tuesday: 7:00 AM – 9:00 PM",
+                "Wednesday: 7:00 AM – 9:00 PM",
+                "Thursday: 7:00 AM – 9:00 PM",
+                "Friday: 7:00 AM – 9:00 PM",
+                "Saturday: 10:00 AM – 2:00 PM",
+                "Sunday: Closed"
+            ]
+        },
+        "photos": [
+            {
+                "height": 809,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/107654504247513315515\">Dalslands Vilt</a>"
+                ],
+                "photo_reference": "ATplDJakvTY2lxdRU_Gho49hHpqDBrH17cjIWTWpz8ByBm6tzWGq6enruuy8o7Mj697QuPTl-Jddo7Houo7mshCCkHa2AosfTb8k9UVxGLleWKdBBkQQBJHYEjjrMrfYkcoNEDaDoG41GggJR65N9dLqZnviH3rKo-9-8Q2G1vCOyxCOZT73",
+                "width": 1440
+            },
+            {
+                "height": 1576,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/107654504247513315515\">Dalslands Vilt</a>"
+                ],
+                "photo_reference": "ATplDJZwDJjOREkQYKNOs4H6fuVHG47ke-Jux4dd_pzrgn9Gv_Nfhfpq0jNQigNH8ViijhuHRb1VK_svf7TkjyUI8BmhPzi9fKn4kf9m-mVNk1JDFJWQ0kFh866gvPl4odP5Bs9zgYTDgRVo_eB0cI6n_t9FX8t4F8ZJFCwCVW8Krw7LCvwI",
+                "width": 1691
+            },
+            {
+                "height": 3024,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/107654504247513315515\">Dalslands Vilt</a>"
+                ],
+                "photo_reference": "ATplDJYG9dPDM8e4mMWuT_o0WrveJGiTbM0I948DnVS3AA4-i8UzKlz906NUPi45O-EjquI_LyUYADZfP5xlqe0q1VrF_TTqVYL4BjIxi8enbn-_bLtNbYu5zgkFYZWAuGh8-bHq-qofg7MnNioRtbtWAgDUPnswa4o8v1oPP1FS2xrJZ5Bk",
+                "width": 3024
+            },
+            {
+                "height": 3024,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/107654504247513315515\">Dalslands Vilt</a>"
+                ],
+                "photo_reference": "ATplDJYK8i0sjW9kH8e5QUUcgUnZ1zNP_QGJtU0Zju6IrLkCfC-fDEs-bEVeurM2PZfPQ1ZN6fNE1n0p9QqJDHNphxsmTOVCnfOX6_N17iBfA2CGeQIGjRfiDFXbHdgMpffs5uwUnOCgPzx8IYWoDJPgQZeI5Lmn_iEawiUhvqWLZ9XpfhM3",
+                "width": 4032
+            },
+            {
+                "height": 431,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/107654504247513315515\">Dalslands Vilt</a>"
+                ],
+                "photo_reference": "ATplDJYj51IdZ8pC1psE9UqJ7r1GsUE3nlDvzUADcnqL0BTifYPr1_KP1ZmT--2aP8xRJJeDRAuhPaLmT818K0tIbByMMuDK6WNVEf3h7SrSkFuX-o4qeWp8oJqHW2mwCMbubuSnoS8Y_7VryZ3-OP2grRfN4c4gxQSr5dGYZRUFOmhjcRJd",
+                "width": 575
+            },
+            {
+                "height": 475,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/107654504247513315515\">Dalslands Vilt</a>"
+                ],
+                "photo_reference": "ATplDJYwBVX2RdhEfVVow52QN28pRdqQCODPS2DF5Y4owK0NSyFIdeoIjmtktQG-9JA9MuzZ9caGpjMKhg5HCOXoB3GrnIuF0JHeIHYSTcWUIzovoJEUafmKjZbQvd86T6KOqEisSq0Sz4IXG1UoDjt7-Ar8BCD7TlNg7HtNLNokOoPR4aCT",
+                "width": 1000
+            },
+            {
+                "height": 683,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/107654504247513315515\">Dalslands Vilt</a>"
+                ],
+                "photo_reference": "ATplDJYTHWxKyn3_9EhcCXz7ZBGaoLpryCbB6azVOZJP42GbRIVkqpxje4NIp1InGHTNPShcQVdtvx3Wgc9f6vr55jFJ6Eo89ih7IT-hyuGKF1j3k27lT63syfgAhRfqqjgJF_VrFdEA8fQ4Ehw5S583p-JJPdMaHxdihgavCNWZKmeajvIj",
+                "width": 1024
+            },
+            {
+                "height": 4032,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/107654504247513315515\">Dalslands Vilt</a>"
+                ],
+                "photo_reference": "ATplDJavWTaLnMk8FmnWy4xprohNn8DV0aSN3EFly0T_B861W8CvLFHPCAR7w1Onh_EsB-W7Ay0ovwgKWcDl5UknG52Un0tl0xPLqE3payMqt29u14ZHbgjlcNEuP4ok0LaDtbTTwuee6SRLmKtigsQXesqHBm7DFDL7nuO4iC3Wk14_FjWX",
+                "width": 3024
+            },
+            {
+                "height": 4032,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/107654504247513315515\">Dalslands Vilt</a>"
+                ],
+                "photo_reference": "ATplDJbF7kduKn5n32qRVRpoBB8Eb5KpjJSdySxctw8Z6Cz2UlITjJSZkXVSNLcP2HArm7WzCOyHX8FMzAtUptNwoxjgWlXa1Uofb3_ffimw9B6EKFPEoJaQJNxEoeMfPR-pUCiEuxgVX39_uZzR27nUsuljFT62b-zN52oAuRgXA8_fuWj5",
+                "width": 3024
+            },
+            {
+                "height": 2866,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/107654504247513315515\">Dalslands Vilt</a>"
+                ],
+                "photo_reference": "ATplDJbMMmfVjXDpz3eNhR5mjYlFSC9notr2xQhcsQoukARQa9N7Tcy0Y6FfEVwF-9KbdDHfhpyTzAWbAEMKc8yGbeBs1k7H9oUUEmMJlylLfikeXOHGas5rWZ90doWfSQJ-15jgZ_nq7GIKacpqnOcI76hsVcMTTLIxN4CakMhrUnCa8nq4",
+                "width": 2972
+            }
+        ],
+        "place_id": "ChIJ63UYpnSNREYRAVfoilbZ3Ko",
+        "plus_code": {
+            "compound_code": "W6M5+2V Steneby, Sweden",
+            "global_code": "9FCJW6M5+2V"
+        },
+        "reference": "ChIJ63UYpnSNREYRAVfoilbZ3Ko",
+        "types": [
+            "food",
+            "point_of_interest",
+            "establishment"
+        ],
+        "url": "https://maps.google.com/?cid=12311954447044990721",
+        "utc_offset": 120,
+        "vicinity": "Steneby Gård 1, Dals Långed",
+        "website": "http://www.dalslandsvilt.se/"
+    },
+    "Brukets godaste ek för": {
+        "address_components": [
+            {
+                "long_name": "2A",
+                "short_name": "2A",
+                "types": [
+                    "street_number"
+                ]
+            },
+            {
+                "long_name": "Fabriksvägen",
+                "short_name": "Fabriksvägen",
+                "types": [
+                    "route"
+                ]
+            },
+            {
+                "long_name": "Fengersfors",
+                "short_name": "Fengersfors",
+                "types": [
+                    "postal_town"
+                ]
+            },
+            {
+                "long_name": "Västra Götalands län",
+                "short_name": "Västra Götalands län",
+                "types": [
+                    "administrative_area_level_1",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "Sweden",
+                "short_name": "SE",
+                "types": [
+                    "country",
+                    "political"
+                ]
+            },
+            {
+                "long_name": "662 95",
+                "short_name": "662 95",
+                "types": [
+                    "postal_code"
+                ]
+            }
+        ],
+        "adr_address": "<span class=\"street-address\">Fabriksvägen 2A</span>, <span class=\"postal-code\">662 95</span> <span class=\"locality\">Fengersfors</span>, <span class=\"country-name\">Sweden</span>",
+        "business_status": "OPERATIONAL",
+        "current_opening_hours": {
+            "open_now": false,
+            "periods": [
+                {
+                    "close": {
+                        "date": "2024-04-26",
+                        "day": 5,
+                        "time": "1600"
+                    },
+                    "open": {
+                        "date": "2024-04-26",
+                        "day": 5,
+                        "time": "0900"
+                    }
+                },
+                {
+                    "close": {
+                        "date": "2024-04-27",
+                        "day": 6,
+                        "time": "1500"
+                    },
+                    "open": {
+                        "date": "2024-04-27",
+                        "day": 6,
+                        "time": "0900"
+                    }
+                }
+            ],
+            "weekday_text": [
+                "Monday: Closed",
+                "Tuesday: Closed",
+                "Wednesday: Closed",
+                "Thursday: Closed",
+                "Friday: 9:00 AM – 4:00 PM",
+                "Saturday: 9:00 AM – 3:00 PM",
+                "Sunday: Closed"
+            ]
+        },
+        "formatted_address": "Fabriksvägen 2A, 662 95 Fengersfors, Sweden",
+        "formatted_phone_number": "070-816 97 54",
+        "geometry": {
+            "location": {
+                "lat": 58.9950311,
+                "lng": 12.4691489
+            },
+            "viewport": {
+                "northeast": {
+                    "lat": 58.99633388029151,
+                    "lng": 12.47033498029151
+                },
+                "southwest": {
+                    "lat": 58.9936359197085,
+                    "lng": 12.4676370197085
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+        "icon_background_color": "#FF9E67",
+        "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+        "international_phone_number": "+46 70 816 97 54",
+        "name": "Brukets godaste ek för",
+        "opening_hours": {
+            "open_now": false,
+            "periods": [
+                {
+                    "close": {
+                        "day": 5,
+                        "time": "1600"
+                    },
+                    "open": {
+                        "day": 5,
+                        "time": "0900"
+                    }
+                },
+                {
+                    "close": {
+                        "day": 6,
+                        "time": "1500"
+                    },
+                    "open": {
+                        "day": 6,
+                        "time": "0900"
+                    }
+                }
+            ],
+            "weekday_text": [
+                "Monday: Closed",
+                "Tuesday: Closed",
+                "Wednesday: Closed",
+                "Thursday: Closed",
+                "Friday: 9:00 AM – 4:00 PM",
+                "Saturday: 9:00 AM – 3:00 PM",
+                "Sunday: Closed"
+            ]
+        },
+        "photos": [
+            {
+                "height": 3024,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/107478954764425692008\">Boy named Sue</a>"
+                ],
+                "photo_reference": "ATplDJbwQdCat7hF6eIFB8ULUCPKT069EJw83XcFvhB7ezveEnompum5yMdam906Q-GxfidUff1WG8SDtEoHB_0bxZQ66ofFJf9NFOx_3_0inktquZM5xOkfbR46lY9K_Fd8gImQorOGl34ll-ATsG-crfaJBKB8LoR1GNLDRURpMuvyoHAO",
+                "width": 4032
+            },
+            {
+                "height": 4032,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/102714205960757238618\">Mats Holmér</a>"
+                ],
+                "photo_reference": "ATplDJb7ieqPW1WKvJUbgF6Rws0P8BcZCt7j_OFP4J32iW-cEn0eXsddrm3E0kxtULDwsSiE5x7sL3ORfk_2BIid5luADrlU6K4ZH-h9rI71-p7USjsnUfUldtymDIADQRBqP2uXtXJfDLKHB041IEfqgwlvVtM3OcdycI1IH8bAUyihIn6z",
+                "width": 3024
+            },
+            {
+                "height": 4032,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/102714205960757238618\">Mats Holmér</a>"
+                ],
+                "photo_reference": "ATplDJaSh87VVTBbZOTLndR_WNfpz0THYn5bzBV9oemdXGzm1TYuZHY2-4UmKlezkZojmurvb_uQ4Y2UiguAp7_gdrgAh1PZjUGxAPRrk8DQkaKUHrJjUMRBb7EIQCufMQijerxWO8K71pTb2jkJ01TUzsKDs-DoKuUUcc0O-ehhS9VCHL0I",
+                "width": 3024
+            },
+            {
+                "height": 4032,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/107661420224856508759\">Sarah Edvardsson</a>"
+                ],
+                "photo_reference": "ATplDJY0iHNupnPvRjZlXJPyB00DTlnK3Ig77p_oGzfah8kjTTVWgW8bT7JSYw-PWVsxQ9vG1X7R7zZVU9bSPsf2EiokjXqTcRyC1nt6FhucYlfYLdDJuMpSfwVfVT2bkuDdmhMV0HQRZ2DjCnJT24fej_pf_lM4H_AAmrNfu0ze4wdBmqE_",
+                "width": 3024
+            },
+            {
+                "height": 3000,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/108108409730542152095\">Elin Gustavsson</a>"
+                ],
+                "photo_reference": "ATplDJZwt1_4o9Y34rJi06QycRHJorIzkFnmEdXCU6n8JEhiOsmou098SlOgzF-QnZoWHudx8cztCkPLvqRXiYpeRXuSVZ8NmQy67qhfe6n1mrGVVXFeb6-kmPNo2QFjAKG13IXjNldgt-J_FzKM-D53C4ckRB4NI6d5KaDmxZih9RbBirw5",
+                "width": 4000
+            },
+            {
+                "height": 4032,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/107478954764425692008\">Boy named Sue</a>"
+                ],
+                "photo_reference": "ATplDJasu7q8k9qb-uT9DZp658sgBoLnAgu1XFumn73u9pJZVhOanj6dcGP24pr7IKaet8sM6V9wnnSNac3cGuca1X3Exxhilc2pmDo_HnpNrCAoeoyaGL5XB6InuNRifVOjwXnpGRnhqTlV9I1o1HYWBJG9uq9r-AA1851ONkWwXghqyvgZ",
+                "width": 3024
+            },
+            {
+                "height": 1920,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/105169256404679346256\">salvo vasco</a>"
+                ],
+                "photo_reference": "ATplDJbaUTbK11QLwS0qeoHQiDm9tZ6TQh0Odx7Pd2A4rhgL_pbzZbmTLDUBfQoiVFmJSnWe7uiZ585TocjvExBKEzEywSP5oImsKnuiGz88aR1-t9_OxuxWB_kCIFtDe0c_KifHbZfkA-xMx65veTq-WnP0ukG9HivymvLPYHM7y8VXr8BV",
+                "width": 1080
+            },
+            {
+                "height": 4032,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/106984691557494727422\">Nicola Bramigk</a>"
+                ],
+                "photo_reference": "ATplDJbhpAzXUZEA4UTUzNivwOoYHo5mWBGP39e3YG2x7VZXp0uSNc1Ajqc1wNE2D9tMaYhf9Vy3NNgEH800jpdHLRw7YA5Pm96pSejtFVCdMqdxOanjtT0N7RogQ2udk0dit6k5uz0bRzn-WGYeVS9riveSxYOnsvuswY5dGdl4Rc0HgfaL",
+                "width": 3024
+            },
+            {
+                "height": 4032,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/102714205960757238618\">Mats Holmér</a>"
+                ],
+                "photo_reference": "ATplDJb_E-lwhbYAzfnsudWD2nh4d8LOScGAy3Y-INfcIvjQ_6Xobveb0EJG6b6LIKCpz_l0cBPgO4JLIUyhmhzTWBQ_xTGMLDhLbYFjsoaD21_-6TE_mhSZfPoh1-jpdKXlcxcAwpVF397kSvrH0ZLb8LMvHoanmLTMsi6-_jfQgAshh8cj",
+                "width": 3024
+            },
+            {
+                "height": 2805,
+                "html_attributions": [
+                    "<a href=\"https://maps.google.com/maps/contrib/100549565428848266889\">Michaela Harms</a>"
+                ],
+                "photo_reference": "ATplDJaSVWH_GgDgzlfdwHDkFY0ZUTOWSiVre3rPLDC_3wwlf5WI6YBSXAEZhubTRPoDhzLuRQn5jiSqo_guWocqAFdSlYqAlnCvOvNjNCTs2-ZectIzV3ngtaXw0hYxyv3eFMlyeW3mZ1iyVYFXXPZdvpHoVZjZFwICR5-2ZE4UhoCg516k",
+                "width": 2913
+            }
+        ],
+        "place_id": "ChIJUT22SfaWREYR7Gco2G0zArg",
+        "plus_code": {
+            "compound_code": "XFW9+2M Fengersfors, Sweden",
+            "global_code": "9FCJXFW9+2M"
+        },
+        "rating": 4.6,
+        "reference": "ChIJUT22SfaWREYR7Gco2G0zArg",
+        "reviews": [
+            {
+                "author_name": "Thibaut R.",
+                "author_url": "https://www.google.com/maps/contrib/113553560592119644494/reviews",
+                "language": "en",
+                "original_language": "en",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjVrb_wkUPLRfrMdTV1JNyXYHWsyxiuUgNB9GlZACOKg1xCK17mL=s128-c0x00000000-cc-rp-mo-ba6",
+                "rating": 5,
+                "relative_time_description": "a year ago",
+                "text": "A friendly place with a great authentic feel.\nThe kanelbulle was a bit doughy (too bad, was very good otherwise), bread was excellent though.\nStill really liked this place!",
+                "time": 1658216499,
+                "translated": false
+            },
+            {
+                "author_name": "Iida S",
+                "author_url": "https://www.google.com/maps/contrib/101238387687556655877/reviews",
+                "language": "en",
+                "original_language": "en",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocKMt8FYEUAc6HxVj9-fgPnLPikEdbEv28ldTAnBiUTqQvou2w=s128-c0x00000000-cc-rp-mo",
+                "rating": 5,
+                "relative_time_description": "2 years ago",
+                "text": "Wonderful cafe area and simply delicious breads and buns and pastrys. Highly recommended! Visit also old bruk, learn history of paper mill and see art!",
+                "time": 1619455810,
+                "translated": false
+            },
+            {
+                "author_name": "salvo vasco",
+                "author_url": "https://www.google.com/maps/contrib/105169256404679346256/reviews",
+                "language": "en",
+                "original_language": "en",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjWxvnE0ao6ivJWkfpUJKL05CK8Hjh65hzHpPo969AVd_2Dx4ytJkQ=s128-c0x00000000-cc-rp-mo-ba5",
+                "rating": 5,
+                "relative_time_description": "a year ago",
+                "text": "Fantastic location , really good food and very cosy place",
+                "time": 1679231233,
+                "translated": false
+            },
+            {
+                "author_name": "Mantas Beniušis",
+                "author_url": "https://www.google.com/maps/contrib/109178963434538375888/reviews",
+                "language": "en",
+                "original_language": "en",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjVhmzLlQW_JVtyo0QHpExT1PXum3Y5-JMgAoAcYrr_sW8o2TkZB=s128-c0x00000000-cc-rp-mo-ba3",
+                "rating": 5,
+                "relative_time_description": "8 months ago",
+                "text": "Amazing bakery, great food!",
+                "time": 1691324468,
+                "translated": false
+            },
+            {
+                "author_name": "Giovanni Ferri",
+                "author_url": "https://www.google.com/maps/contrib/104942300196068701290/reviews",
+                "language": "en",
+                "original_language": "en",
+                "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjW10NXkI54zCex7SS7RjlHmEK4TQ3BlKFDMfsmdRbXYj22k3ZJ_WQ=s128-c0x00000000-cc-rp-mo-ba3",
+                "rating": 5,
+                "relative_time_description": "8 months ago",
+                "text": "Amazing sweets and bread!",
+                "time": 1690569180,
+                "translated": false
+            }
+        ],
+        "types": [
+            "bakery",
+            "store",
+            "food",
+            "point_of_interest",
+            "establishment"
+        ],
+        "url": "https://maps.google.com/?cid=13259216799803140076",
+        "user_ratings_total": 100,
+        "utc_offset": 120,
+        "vicinity": "Fabriksvägen 2A, Fengersfors",
+        "website": "http://www.bruketsgodaste.se/",
+        "wheelchair_accessible_entrance": true
+    }
+}
