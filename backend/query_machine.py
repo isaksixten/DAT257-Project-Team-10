@@ -87,7 +87,7 @@ class QueryMachine:
             
     def fetch_by_search(self, term): # Can search for both name and address. Only returns name and adress to search bar as of now....
         with self.conn.cursor() as cur:
-            sql = """SELECT name, address FROM Farms WHERE Farms.name ILIKE %s OR Farms.address ILIKE %s"""
+            sql = """SELECT id,name, address FROM Farms WHERE Farms.name ILIKE %s OR Farms.address ILIKE %s"""
             cur.execute(sql, (term + '%', term + '%'))
             res = cur.fetchall()
             list = []
@@ -97,7 +97,7 @@ class QueryMachine:
                 list.sort()
                 return list
             else:
-                return "No results for your search"
+                return []
 
     def fetch_opening_hours(self, id): # Fetches location opening hours based on id and returns them in the form of a dictionary.
         with self.conn.cursor() as cur:

@@ -45,3 +45,7 @@ class LocalFoodMapController:
     def get_farm_tags(self):
         tags=self.query_machine.fetch_tags()
         return tags
+
+    def get_search_options(self,term):
+        results=self.query_machine.fetch_by_search(term)
+        return results

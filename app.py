@@ -32,6 +32,12 @@ def show_farm():
 def fetch_tags(): 
     return controller.get_farm_tags() 
 
+@app.route('/fetch-search-options', methods=['POST'])
+def fetch_search_options():
+    data = request.get_json()  # Get the JSON data from the request
+    term = data.get('term', '')  # Extract the search term from the JSON data
+    print(controller.get_search_options(term))
+    return controller.get_search_options(term)
 
 if __name__ == "__main__":
     app.run(debug=True)

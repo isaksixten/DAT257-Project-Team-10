@@ -102,6 +102,16 @@
         .dropdown:hover .dropdown-content {
             display: block;
         }
+        .suggestion {
+            padding: 5px;
+            cursor: pointer;
+            background-color: white; /* Set background color */
+            border: 1px solid #ccc; /* Add border */
+        }
+
+        .suggestion:hover {
+            background-color: #f0f0f0; /* Change background color on hover */
+        }
 
 
     </style>
@@ -113,15 +123,12 @@
     </div>
     <div class="banner2">
         <div class="upperLeftSection">
-            <select id="farmSelect" onchange="zoomToFarm()">
-                <option value="">--Select a Farm--</option>
-                {% for farm in farms %}
-                <option value="{{ farm['id'] }}" data-lat="{{ farm['latitude'] }}" data-lng="{{ farm['longitude'] }}" data-description="{{ farm['description'] }}" data-rating="{{ farm['rating'] }}" data-address="{{ farm['address'] }}" data-website="{{ farm['website'] }}" data-phonenumber="{{ farm['phonenumber'] }}">
-                    {{ farm['name'] }}
-                </option>
-                {% endfor %}
-            </select>
+            <div class="dropdown">
+            <input type="text" id="searchBar" placeholder="Search for farms...">
+            <div id="searchSuggestions" class="dropdown-content"></div>
         </div>
+        </div>
+        
         <div class="lowerLeftSection">
             <div class="dropdown">
                 <button class="dropbtn">Apply Filters</button>
@@ -165,18 +172,34 @@
         var markers = {};
 
         {% for farm in farms %}
-        markers['{{ farm['id'] }}'] = add_marker({{ farm.latitude }}, {{ farm.longitude }}, "{{ farm.name }}", "{{ farm.description }}");
+        markers['{{ farm['id'] }}'] = add_marker({{ farm.latitude }}, {{ farm.longitude }}, "{{ farm.name }}", "{{ farm.description }}","{{ farm.rating }}", "{{ farm.address }}","{{ farm.website }}", "{{ farm.phonenumber }}");
         {% endfor %}
 
-        function add_marker(latitude, longitude, name, description) {
-            var marker = L.marker([latitude, longitude]).addTo(map).bindPopup("<b>" + name);
+        function add_marker(latitude, longitude, name, description, rating, address, website, phonenumber) {
+        var marker = L.marker([latitude, longitude]).addTo(map).bindPopup("<b>" + name);
 
-            marker.on('click', function() {
-                updateInfo(name, description);
-            });
+        // Set additional options for the marker
+        marker.options.description = description || '';
+        marker.options.rating = rating || '';
+        marker.options.website = website || '';
+        marker.options.phonenumber = phonenumber || '';
 
-            return marker;
-        }
+        marker.on('click', function() {
+            // Retrieve information from marker options
+            const description = marker.options.description;
+            const rating = marker.options.rating;
+            const website = marker.options.website;
+            const phonenumber = marker.options.phonenumber;
+
+            updateInfo(name, description, rating, address, website, phonenumber);
+        });
+
+        return marker;
+}
+
+
+
+
 
         function zoomToFarm() {
             var select = document.getElementById('farmSelect');
@@ -280,6 +303,72 @@
             .catch(error => {
                 console.error('Fetch tags error:', error);
             });
+
+
+        // Funktionalitet för att lyssna på input från sökfältet
+        document.getElementById('searchBar').addEventListener('input', function(event) {
+            const searchTerm = event.target.value;
+            fetchSearchOptions(searchTerm);
+        });
+
+        // Hämtar förslag från backend
+        function fetchSearchOptions(term) {
+            fetch('/fetch-search-options', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ term: term })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to fetch search options');
+                }
+                return response.json();
+            })
+            .then(options => {
+                displaySearchOptions(options);
+            })
+            .catch(error => {
+                console.error('Fetch search options error:', error);
+            });
+        }
+
+        // Visar förslagen
+        function displaySearchOptions(options) {
+            const searchSuggestions = document.getElementById('searchSuggestions');
+            searchSuggestions.innerHTML = ''; // Clear existing suggestions
+
+            options.forEach(option => {
+                console.log(option)
+                const [name, address] = [option[1],option[2]]; // Destructure the tuple into name and address
+                const suggestion = document.createElement('div');
+                suggestion.textContent = `${name} - ${address}`;
+                suggestion.classList.add('suggestion');
+
+                // Add event listener to each suggestion
+                // Add event listener to each suggestion
+                suggestion.addEventListener('click', function() {
+                    // Retrieve marker object from markers array using the farm name as the key
+                    const marker = markers[option[0]];
+
+                    // Extract information from the marker object
+                    const description = marker.options.description || ''; // Assuming the description is stored in the popup content
+                    const rating = marker.options.rating || ''; // Assuming rating is stored as an option in the marker
+                    const website = marker.options.website || ''; // Assuming website is stored as an option in the marker
+                    const phonenumber = marker.options.phonenumber || ''; // Assuming phone number is stored as an option in the marker
+
+                    // Call updateInfo with all farm details
+                    updateInfo(name, description, rating, address, website, phonenumber);
+                });
+
+
+                searchSuggestions.appendChild(suggestion);
+            });
+}
+
+
+
     </script>
 </body>
 </html>
