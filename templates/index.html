@@ -113,15 +113,10 @@
     </div>
     <div class="banner2">
         <div class="upperLeftSection">
-            <select id="farmSelect" onchange="zoomToFarm()">
-                <option value="">--Select a Farm--</option>
-                {% for farm in farms %}
-                <option value="{{ farm['id'] }}" data-lat="{{ farm['latitude'] }}" data-lng="{{ farm['longitude'] }}" data-description="{{ farm['description'] }}" data-rating="{{ farm['rating'] }}" data-address="{{ farm['address'] }}" data-website="{{ farm['website'] }}" data-phonenumber="{{ farm['phonenumber'] }}">
-                    {{ farm['name'] }}
-                </option>
-                {% endfor %}
-            </select>
+            <input type="text" id="searchBar" placeholder="Search for farms...">
+            <div id="searchSuggestions" class="dropdown-content"></div>
         </div>
+        
         <div class="lowerLeftSection">
             <div class="dropdown">
                 <button class="dropbtn">Apply Filters</button>
@@ -165,18 +160,19 @@
         var markers = {};
 
         {% for farm in farms %}
-        markers['{{ farm['id'] }}'] = add_marker({{ farm.latitude }}, {{ farm.longitude }}, "{{ farm.name }}", "{{ farm.description }}");
+        markers['{{ farm['id'] }}'] = add_marker({{ farm.latitude }}, {{ farm.longitude }}, "{{ farm.name }}", "{{ farm.description }}","{{ farm.rating }}", "{{ farm.address }}","{{ farm.website }}", "{{ farm.phonenumber }}");
         {% endfor %}
 
-        function add_marker(latitude, longitude, name, description) {
-            var marker = L.marker([latitude, longitude]).addTo(map).bindPopup("<b>" + name);
+        function add_marker(latitude, longitude, name, description,rating,address,website,phonenumber) {
+        var marker = L.marker([latitude, longitude]).addTo(map).bindPopup("<b>" + name);
 
-            marker.on('click', function() {
-                updateInfo(name, description);
-            });
+        marker.on('click', function() {
+        updateInfo(name, description,rating,address,website,phonenumber);
+    });
 
-            return marker;
-        }
+    return marker;
+}
+
 
         function zoomToFarm() {
             var select = document.getElementById('farmSelect');
@@ -280,6 +276,53 @@
             .catch(error => {
                 console.error('Fetch tags error:', error);
             });
+
+
+        // Funktionalitet för att lyssna på input från sökfältet
+        document.getElementById('searchBar').addEventListener('input', function(event) {
+            const searchTerm = event.target.value;
+            fetchSearchOptions(searchTerm);
+        });
+
+        // Hämtar förslag från backend
+        function fetchSearchOptions(term) {
+            fetch('/fetch-search-options', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ term: term })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to fetch search options');
+                }
+                return response.json();
+            })
+            .then(options => {
+                console.log(options);
+                // Transform list of tuples into array of objects
+                const suggestions = options.map(([name, address]) => ({ name, address }));
+                displaySearchOptions(suggestions);
+            })
+            .catch(error => {
+                console.error('Fetch search options error:', error);
+            });
+        }
+
+        // Visar förslagen
+        function displaySearchOptions(options) {
+            const searchSuggestions = document.getElementById('searchSuggestions');
+            searchSuggestions.innerHTML = ''; // Clear existing suggestions
+            options.forEach(option => {
+                const suggestion = document.createElement('div');
+                suggestion.textContent = `${option.name} - ${option.address}`;
+                suggestion.classList.add('suggestion');
+                searchSuggestions.appendChild(suggestion);
+            });
+        }
+
+
     </script>
 </body>
 </html>

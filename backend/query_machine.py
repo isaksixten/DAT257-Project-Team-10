@@ -97,7 +97,7 @@ class QueryMachine:
                 list.sort()
                 return list
             else:
-                return "No results for your search"
+                return []
 
     def fetch_opening_hours(self, id): # Fetches location opening hours based on id and returns them in the form of a dictionary.
         with self.conn.cursor() as cur:
