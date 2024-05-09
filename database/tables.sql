@@ -51,3 +51,21 @@ CREATE TABLE Farm_Products(
     FOREIGN KEY (farm) REFERENCES Farms(id),
     FOREIGN KEY (product) REFERENCES Products(product)
 );
+-- Tables för reviews om vi vill låta usern reviewa farms
+CREATE TABLE User_Ratings(
+    farm TEXT,
+	user TEXT,
+	rating INT,
+    PRIMARY KEY (farm, user),
+    FOREIGN KEY (farm) REFERENCES Farms(id),
+	CHECK (rating IN (1, 2, 3, 4, 5))
+);
+
+CREATE TABLE Farm_Reviews(
+    review_id TEXT PRIMARY KEY,
+    farm TEXT,
+    user TEXT,
+    comment TEXT,
+    review_date DATE,
+    FOREIGN KEY (farm) REFERENCES Farms(id)
+);
