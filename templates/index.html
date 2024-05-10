@@ -201,47 +201,84 @@
         var markers = {};
 
         function addMarkers(farms) {
-            farms.forEach(function(farm) {
-                markers[farm.id] = add_marker(farm.latitude, farm.longitude, farm.name, farm.description, farm.rating, farm.address, farm.website, farm.phonenumber);
-            });
-        }
-
-        function add_marker(latitude, longitude, name, description, rating, address, website, phonenumber) {
-        var marker = L.marker([latitude, longitude]).addTo(map).bindPopup("<b>" + name);
-
-        marker.options.description = description || '';
-        marker.options.rating = rating || '';
-        marker.options.website = website || '';
-        marker.options.phonenumber = phonenumber || '';
-
-        marker.on('click', function() {
-            const description = marker.options.description;
-            const rating = marker.options.rating;
-            const website = marker.options.website;
-            const phonenumber = marker.options.phonenumber;
-
-            updateInfo(name, description, rating, address, website, phonenumber);
-        });
-
-        return marker;
+    farms.forEach(function(farm) {
+        markers[farm.id] = add_marker(
+            farm.latitude,
+            farm.longitude,
+            farm.name,
+            farm.description,
+            farm.rating,
+            farm.address,
+            farm.website,
+            farm.phonenumber
+        );
+    });
 }
 
-        fetch('/fetch-farms')
+function add_marker(latitude, longitude, name, description, rating, address, website, phonenumber) {
+    var marker = L.marker([latitude, longitude]).addTo(map).bindPopup("<b>" + name + "</b><br>" + description);
+
+    // Set marker options
+    marker.options.description = description || '';
+    marker.options.rating = rating || '';
+    marker.options.website = website || '';
+    marker.options.phonenumber = phonenumber || '';
+    marker.options.address = address || ''; // Add this line to set the address
+
+    // Add event listener to marker
+    marker.on('click', function() {
+        const description = marker.options.description;
+        const rating = marker.options.rating;
+        const website = marker.options.website;
+        const phonenumber = marker.options.phonenumber;
+        const address = marker.options.address; // Add this line to get the address
+
+        updateInfo(name, description, rating, address, website, phonenumber);
+    });
+
+    return marker;
+}
+
+
+function fetchfarms() {
+        return fetch('/fetch-farms')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Failed to fetch farms');
                 }
                 return response.json();
-            })
-            .then(farms => {
-                addMarkers(farms);
-            })
-            .catch(error => {
-                console.error('Fetch farms error:', error);
             });
+    }
 
+    function callApiPing(lon, lat) {
+        console.log("hej")
+        return fetch(`/new-farms?lon=${lon}&lat=${lat}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to call API');
+            }
+            console.log(response);
+        });
+    }
 
+    const longitude = 20;
+const latitude = 63;
 
+(async () => {
+    try {
+        await callApiPing(longitude, latitude);
+        const farms = await fetchfarms();
+        console.log(farms);
+        addMarkers(farms);
+    } catch (error) {
+        console.error('Error:', error);
+    }
+})();
 
 
         function zoomToFarm() {
@@ -405,7 +442,7 @@
         function toggleMode() {
             document.body.classList.toggle('dark-mode'); 
         }
-        addMarkers(farms);
+        //addMarkers(farms);
     </script>
 </body>
 </html>
