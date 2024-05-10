@@ -160,9 +160,11 @@ class QueryMachine:
             cur.execute(sql, (id))
             res = cur.fetchall()
             dict = {}
+            innerdict = {}
             if res:
                 for location in res:
-                    dict[location[0]] = [location[1], location[2], location[3]]
+                    innerdict[location[1]] = [location[2], location[3]]
+                    dict[location[0]] = innerdict
                 return dict # Bör returnera en dict med key som är farm ID och value som är en lista av [Weekday, opening_time, closing_time].
             else:
                 return "No location with that ID"
