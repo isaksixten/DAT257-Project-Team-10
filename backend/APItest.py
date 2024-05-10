@@ -1,9 +1,13 @@
 import requests
 import json
 from query_machine import QueryMachine
+import geocoder
 
 API_KEY = ''    #PUSHA EJ TILL GIT
 
+def get_current_location():
+    location = geocoder.ip('me')
+    return location.latlng  
 
 # Places API 
 base_url_nearby = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json'
@@ -93,5 +97,5 @@ def local_farms_sweden(longitude: float, latitude: float, radius: float = 50000)
 
 #print(query.fetch_all_locations())         #Kör denna rad för att se nuvarande content i databasen
 
-query.reset_database()
-local_farms_sweden(63.1792, 14.63566)
+local_farms_sweden(get_current_location()[0], get_current_location()[1])
+
