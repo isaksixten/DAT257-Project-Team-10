@@ -1,3 +1,4 @@
+
 import psycopg2
 
 class QueryMachine:
@@ -53,7 +54,7 @@ class QueryMachine:
             else:
                 return "No locations in database"
                       
-    def add_location(self, id, name, description, rating, latitude, longitude,address, website,phonenumber):
+    def add_location(self, id, name, description, rating, latitude, longitude,address, website, phonenumber):
         try:
             with self.conn.cursor() as cur:
                 sql = """INSERT INTO Farms VALUES (%s, %s, %s, %s, %s,%s, %s, %s, %s)"""
@@ -71,6 +72,20 @@ class QueryMachine:
         except psycopg2.Error as e:
             message = repr(e)
             return "failed: " + message
+
+    def add_opening_hours(self, farm_id: str, weekday: int, open_time: str, close_time: str):
+        try:
+            with self.conn.cursor() as cur:
+                a = list(open_time)
+                b = list(close_time)
+                open = a[0] + a[1] + ":" + a[2] + a[3]
+                close = b[0] + b[1] + ":" + b[2] + b[3]
+                sql = """INSERT INTO Opening_hours VALUES (%s, %s, %s, %s)"""
+                cur.execute(sql, (farm_id, weekday, open, close))
+        except psycopg2.Error as e:
+            message = repr(e)
+            return "failed: " + message
+
 
     def fetch_tags(self):
         with self.conn.cursor() as cur:
@@ -121,7 +136,7 @@ class QueryMachine:
 
     def fetch_opening_hours(self, id): # Fetches location opening hours based on id and returns them in the form of a dictionary.
         with self.conn.cursor() as cur:
-            sql = """SELECT * FROM Opening_Hours WHERE Opening_Hours.farm = %s"""
+            sql = """SELECT * FROM Opening_Hours WHERE Opening_Hours.farm_id = %s"""
             cur.execute(sql, (id))
             res = cur.fetchall()
             dict = {}
