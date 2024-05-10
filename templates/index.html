@@ -160,7 +160,7 @@
         
         <div class="lowerLeftSection">
             <div class="dropdown">
-                <button class="dropbtn">Apply Filters</button>
+                <button class="dropbtn" onclick="applyFilter()">Apply Filters</button>
                 <div class="dropdown-content" id="tagDropdown">
                 </div>
             </div>
@@ -363,7 +363,29 @@ const latitude = 63;
                     selectedTags.push(checkbox.value);
                 }
             });
-            console.log(selectedTags);
+            filterSearchOptions(selectedTags);
+        }
+
+        function filterSearchOptions(tags){
+            fetch('/fetch-farms-with-tags', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ tags: tags })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to fetch filtered search options');
+                }
+                return response.json();
+            })
+            .then(options => {
+                displaySearchOptions(options);
+            })
+            .catch(error => {
+                console.error('Fetch filtered search options error:', error);
+            });
         }
 
         fetch('/fetch-tags')
