@@ -42,9 +42,13 @@ class LocalFoodMapController:
         sorted_farms = self.model.get_farms_sorted_by_distance(user_lat, user_lon)
         return self.view.render_farms_sorted_page(sorted_farms)
 
-    def get_farm_tags(self):
+    def get_tags(self):
         tags=self.query_machine.fetch_tags()
         return tags
+
+    def get_farmtags(self):
+        farmtags=self.query_machine.fetch_farmtags()
+        return farmtags
 
     def get_search_options(self,term):
         results=self.query_machine.fetch_by_search(term)
