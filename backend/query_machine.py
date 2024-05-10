@@ -54,7 +54,7 @@ class QueryMachine:
             else:
                 return "No locations in database"
                       
-    def add_location(self, id, name, description, rating, latitude, longitude,address, website, phonenumber):
+    def add_location(self, id: str, name: str, description: str, rating: float, latitude: float, longitude: float, address: str, website: str, phonenumber: str):
         try:
             with self.conn.cursor() as cur:
                 sql = """INSERT INTO Farms VALUES (%s, %s, %s, %s, %s,%s, %s, %s, %s)"""
