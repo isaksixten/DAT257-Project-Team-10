@@ -83,7 +83,21 @@ class QueryMachine:
                     list.append(location[0])
                 return list
             else:
-                return "No locations in database"        
+                return "No locations in database"   
+
+    def fetch_farmtags(self):
+        with self.conn.cursor() as cur:
+            sql = """ SELECT * FROM Farm_Tags"""
+            cur.execute(sql)
+            res = cur.fetchall()
+            print("res:" + str(res))
+            list = []
+            if res:
+                for farm in res:
+                    list.append(farm)
+                return list
+            else:
+                return []     
             
     def fetch_by_search(self, term): # Can search for both name and address. Only returns name and adress to search bar as of now....
         with self.conn.cursor() as cur:
