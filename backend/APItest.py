@@ -97,5 +97,7 @@ def local_farms_sweden(longitude: float, latitude: float, radius: float = 50000)
 
 #print(query.fetch_all_locations())         #Kör denna rad för att se nuvarande content i databasen
 
-local_farms_sweden(get_current_location()[0], get_current_location()[1])
+def local_farms_startingpoint():
+    local_farms_sweden(get_current_location()[0], get_current_location()[1])
+
 
