@@ -20,6 +20,10 @@ def home():
     # Call controller to display the home page
     return controller.display_home_page()
 
+@app.route('/fetch-farms')
+def fetch_farms():
+    return controller.fetch_farms()
+
 @app.route('/show_farm', methods=['POST'])
 def show_farm():
     # Retrieve farm ID from form data
