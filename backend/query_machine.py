@@ -98,11 +98,25 @@ class QueryMachine:
                     list.append(location[0])
                 return list
             else:
-                return "No locations in database"        
+                return "No locations in database"   
+
+    def fetch_farmtags(self):
+        with self.conn.cursor() as cur:
+            sql = """ SELECT * FROM Farm_Tags"""
+            cur.execute(sql)
+            res = cur.fetchall()
+            print("res:" + str(res))
+            list = []
+            if res:
+                for farm in res:
+                    list.append(farm)
+                return list
+            else:
+                return []     
             
     def fetch_by_search(self, term): # Can search for both name and address. Only returns name and adress to search bar as of now....
         with self.conn.cursor() as cur:
-            sql = """SELECT name, address FROM Farms WHERE Farms.name ILIKE %s OR Farms.address ILIKE %s"""
+            sql = """SELECT id,name, address FROM Farms WHERE Farms.name ILIKE %s OR Farms.address ILIKE %s"""
             cur.execute(sql, (term + '%', term + '%'))
             res = cur.fetchall()
             list = []
@@ -113,6 +127,12 @@ class QueryMachine:
                 return list
             else:
                 return []
+    
+    def reset_database(self):
+        with self.conn.cursor() as cur:
+            sql = """DELETE FROM Farms"""
+            cur.execute(sql)
+            
 
     def fetch_opening_hours(self, id): # Fetches location opening hours based on id and returns them in the form of a dictionary.
         with self.conn.cursor() as cur:

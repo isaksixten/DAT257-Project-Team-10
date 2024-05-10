@@ -5,9 +5,8 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <style>
-        /* Set a more modern font family */
         html * {
-            font-family: 'Times New Roman', Times, serif; /* Classic and formal font style */
+            font-family: 'Times New Roman', Times, serif;
             font-weight: normal;
         }
 
@@ -28,6 +27,15 @@
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+
+        .banner-text {
+            flex: 1; 
+            text-align: center; 
+        }
+
+        .banner-button {
+            margin-left: auto; 
         }
 
         .banner2 {
@@ -67,9 +75,9 @@
         }
 
         .contactBox {
-            border: 3px solid #383736; /* Border for the contact box */
-            padding: 10px; /* Padding for the contact box content */
-            margin-top: 20px; /* Margin from the farm information */
+            border: 3px solid #383736; 
+            padding: 10px;
+            margin-top: 20px;
         }
 
         /* Här har jag trollat lite fritt, försökte få listan att synas framför kartan*/
@@ -102,19 +110,52 @@
         .dropdown:hover .dropdown-content {
             display: block;
         }
+        .suggestion {
+            padding: 5px;
+            cursor: pointer;
+            background-color: white;
+            border: 1px solid #ccc;
+        }
 
+        .suggestion:hover {
+            background-color: #f0f0f0; /*Byter färg på det alternativ som nu är valt*/
+        }
+        .dark-mode, .dark-mode div, .dark-mode .banner {
+            background-color: #000000;
+            color: #FFFFFF;
+        }
+        .dark-mode .banner2 {
+            background-color: #6A0DAD; 
+        }
+
+        .dark-mode {
+            background-color: #000000; /* Byter bakgrund till svart */
+            color: #FFFFFF; /* Byter textfärg till vit */
+        }
+
+        .dark-mode .rightSection, .dark-mode .contactBox {
+            background-color: #000000; 
+            color: #FFFFFF;
+        }
 
     </style>
 
 </head>
 <body>
     <div class="banner">
-        <h1>Welcome to Team 10:s Local Farms!</h1>
+        <div class="banner-text">
+            <h1>Welcome to Team 10:s Local Farms!</h1>
+        </div>
+        <div class="banner-button">
+            <button onclick="toggleMode()">Light/Dark Mode</button> 
+        </div>
     </div>
     <div class="banner2">
         <div class="upperLeftSection">
+            <div class="dropdown">
             <input type="text" id="searchBar" placeholder="Search for farms...">
             <div id="searchSuggestions" class="dropdown-content"></div>
+        </div>
         </div>
         
         <div class="lowerLeftSection">
@@ -143,13 +184,13 @@
 
     <script>
         var map = L.map('map', {
-            minZoom: 3,  // Minimum zoom level
-            maxZoom: 18, // Maximum zoom level
-            maxBounds: [  // Define the geographical boundaries to restrict the map panning
-                [-100, -160],  // SouthWest corner of the boundary
-                [150, 180]    // NorthEast corner of the boundary
+            minZoom: 3,  
+            maxZoom: 18, 
+            maxBounds: [  
+                [-100, -160],  
+                [150, 180]    
             ],
-            maxBoundsViscosity: 1.0  // Makes the bounds fully rigid
+            maxBoundsViscosity: 1.0 
         }).setView([63, 15], 5.4);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -163,15 +204,28 @@
         markers['{{ farm['id'] }}'] = add_marker({{ farm.latitude }}, {{ farm.longitude }}, "{{ farm.name }}", "{{ farm.description }}","{{ farm.rating }}", "{{ farm.address }}","{{ farm.website }}", "{{ farm.phonenumber }}");
         {% endfor %}
 
-        function add_marker(latitude, longitude, name, description,rating,address,website,phonenumber) {
+        function add_marker(latitude, longitude, name, description, rating, address, website, phonenumber) {
         var marker = L.marker([latitude, longitude]).addTo(map).bindPopup("<b>" + name);
 
-        marker.on('click', function() {
-        updateInfo(name, description,rating,address,website,phonenumber);
-    });
+        marker.options.description = description || '';
+        marker.options.rating = rating || '';
+        marker.options.website = website || '';
+        marker.options.phonenumber = phonenumber || '';
 
-    return marker;
+        marker.on('click', function() {
+            const description = marker.options.description;
+            const rating = marker.options.rating;
+            const website = marker.options.website;
+            const phonenumber = marker.options.phonenumber;
+
+            updateInfo(name, description, rating, address, website, phonenumber);
+        });
+
+        return marker;
 }
+
+
+
 
 
         function zoomToFarm() {
@@ -247,10 +301,6 @@
             });
         }
 
-
-
-
-
         // Här lägger vi in filtrering
         function applyFilter() {
             var selectedTags = [];
@@ -277,7 +327,6 @@
                 console.error('Fetch tags error:', error);
             });
 
-
         // Funktionalitet för att lyssna på input från sökfältet
         document.getElementById('searchBar').addEventListener('input', function(event) {
             const searchTerm = event.target.value;
@@ -300,10 +349,7 @@
                 return response.json();
             })
             .then(options => {
-                console.log(options);
-                // Transform list of tuples into array of objects
-                const suggestions = options.map(([name, address]) => ({ name, address }));
-                displaySearchOptions(suggestions);
+                displaySearchOptions(options);
             })
             .catch(error => {
                 console.error('Fetch search options error:', error);
@@ -313,16 +359,36 @@
         // Visar förslagen
         function displaySearchOptions(options) {
             const searchSuggestions = document.getElementById('searchSuggestions');
-            searchSuggestions.innerHTML = ''; // Clear existing suggestions
+            searchSuggestions.innerHTML = ''; // Rensar tidigare förslag
+
             options.forEach(option => {
+                console.log(option)
+                const [name, address] = [option[1],option[2]];  
                 const suggestion = document.createElement('div');
-                suggestion.textContent = `${option.name} - ${option.address}`;
+                suggestion.textContent = `${name} - ${address}`;
                 suggestion.classList.add('suggestion');
+
+                // Här är vad som händer när ett sökalternativ väljs
+                suggestion.addEventListener('click', function() {
+                    // Hämtar info om en farm från kartan
+                    const marker = markers[option[0]];
+
+                    const description = marker.options.description || '';
+                    const rating = marker.options.rating || ''; 
+                    const website = marker.options.website || ''; 
+                    const phonenumber = marker.options.phonenumber || ''; 
+
+                    // Visar info om den farm som valts
+                    updateInfo(name, description, rating, address, website, phonenumber);
+                });
+
                 searchSuggestions.appendChild(suggestion);
             });
         }
 
-
+        function toggleMode() {
+            document.body.classList.toggle('dark-mode'); 
+        }
     </script>
 </body>
 </html>
