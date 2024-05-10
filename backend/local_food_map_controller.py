@@ -21,6 +21,9 @@ class LocalFoodMapController:
         farms = self.query_machine.fetch_all_locations()
         return self.view.render_home_page(farms)
 
+    def fetch_farms(self):
+        return self.query_machine.fetch_all_locations()
+
     def display_farm_page(self, farm_id):
         farm = self.query_machine.fetch_location(farm_id)
         if farm:
