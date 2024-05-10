@@ -112,6 +112,12 @@ class QueryMachine:
                 return list
             else:
                 return []
+    
+    def reset_database(self):
+        with self.conn.cursor() as cur:
+            sql = """DELETE FROM Farms"""
+            cur.execute(sql)
+            
 
     def fetch_opening_hours(self, id): # Fetches location opening hours based on id and returns them in the form of a dictionary.
         with self.conn.cursor() as cur:

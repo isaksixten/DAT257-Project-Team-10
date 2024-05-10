@@ -13,19 +13,6 @@ base_url_details = 'https://maps.googleapis.com/maps/api/place/details/json'
 
 query=QueryMachine()
 
-#list of countries to show data in
-COUNTRIES = ['Sweden', 'US', 'UK', 'Spain', 'Italy', 'Germany', 'France']
-
-#List of keywords in local languages
-KEYWORDS1 = {
-    'Sweden': 'Gårdsbutik',
-    'US': 'Farm shop',
-    'UK': 'Farm shop',
-    'Spain': 'Tienda de la granja',
-    'Italy': 'Negozio di fattoria',
-    'Germany': 'Hofladen',
-    'France': 'Magasin de la ferme'
-}
 
 def json_file_to_database(path):
     with open(path, encoding="utf-8") as file:
@@ -53,7 +40,7 @@ def farms_to_database(id, dict):
 
 
 # Funkar bara på sverige nu eftersom man behöver andra keywords för att hitta bongårdar i andra länder. Alltså det respektive landets översättning av "bondgård" exempelvis.
-def local_farms_sweden(longitude: float, latitude: float, radius: float):
+def local_farms_sweden(longitude: float, latitude: float, radius: float = 50000):
     params_nearby = {
         'key': API_KEY,
         'location': f"{longitude},{latitude}",
@@ -104,6 +91,7 @@ def local_farms_sweden(longitude: float, latitude: float, radius: float):
     with open('all_API_data_temp.json', 'w', encoding='utf-8') as json_file:    #Denna JSON innehåller ALL info från API-resultatet
         json.dump(all_farms, json_file, indent=4, ensure_ascii=False)
 
-    #print(query.fetch_all_locations())         Kör denna rad för att se nuvarande content i databasen
+#print(query.fetch_all_locations())         #Kör denna rad för att se nuvarande content i databasen
 
-local_farms_sweden(59.175709, 11.775670, 1000000)
+query.reset_database()
+local_farms_sweden(63.1792, 14.63566)
