@@ -3,6 +3,7 @@
 
 from backend.query_machine import QueryMachine
 from frontend.local_food_map_view import LocalFoodMapView
+from backend.APItest import local_farms_sweden, local_farms_startingpoint
 
 
 class LocalFoodMapController:
@@ -18,8 +19,12 @@ class LocalFoodMapController:
             print(e)
 
     def display_home_page(self):
+        local_farms_startingpoint()
         farms = self.query_machine.fetch_all_locations()
         return self.view.render_home_page(farms)
+
+    def update_locations_from_search(self,lon,lat):
+        local_farms_sweden(lon,lat)
 
     def fetch_farms(self):
         return self.query_machine.fetch_all_locations()

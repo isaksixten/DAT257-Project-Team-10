@@ -20,6 +20,10 @@ def home():
     # Call controller to display the home page
     return controller.display_home_page()
 
+@app.route('/new-farms')
+def api_ping(lon,lat):
+    controller.update_locations_from_search()
+
 @app.route('/fetch-farms')
 def fetch_farms():
     return controller.fetch_farms()
