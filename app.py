@@ -22,9 +22,9 @@ def home():
 
 @app.route('/new-farms', methods=["POST"])
 def api_ping():
-    lon = request.args.get('lon')  # Get the 'lon' parameter from the request
-    lat = request.args.get('lat')  # Get the 'lat' parameter from the request
-    controller.update_locations_from_search(lon, lat)
+    lat = request.args.get('lat')  # Get the 'lon' parameter from the request
+    lon = request.args.get('lon')  # Get the 'lat' parameter from the request
+    controller.update_locations_from_search(lat, lon)
     return 'Success', 200  # Return a success message with status code 200
 
 @app.route('/fetch-farms')

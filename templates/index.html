@@ -153,19 +153,23 @@
     <div class="banner2">
         <div class="upperLeftSection">
             <div class="dropdown">
-            <input type="text" id="searchBar" placeholder="Search for farms...">
-            <div id="searchSuggestions" class="dropdown-content"></div>
+                <input type="text" id="searchBar" placeholder="Search for farms...">
+                <div id="searchSuggestions" class="dropdown-content"></div>
+            </div>
         </div>
-        </div>
-        
+    
         <div class="lowerLeftSection">
             <div class="dropdown">
                 <button class="dropbtn" onclick="applyFilter()">Apply Filters</button>
-                <div class="dropdown-content" id="tagDropdown">
-                </div>
+                <div class="dropdown-content" id="tagDropdown"></div>
             </div>
-        </div>        
+        </div>
+    
+        <div class="lowerRightSection">
+            <button onclick="showLatLonPopup()">Search using Lat and Lon</button>
+        </div>
     </div>
+    
 
     <div class="mainSection">
         <div class="middleSection">
@@ -249,10 +253,31 @@ function fetchfarms() {
                 return response.json();
             });
     }
+    function showLatLonPopup() {
+    const lat = prompt("Please enter latitude:");
+    const lon = prompt("Please enter longitude:");
+    if (lat === null || lon === null) {
+        return;
+    }
+    const latitude = parseFloat(lat);
+    const longitude = parseFloat(lon);
 
-    function callApiPing(lon, lat) {
-        console.log("hej")
-        return fetch(`/new-farms?lon=${lon}&lat=${lat}`, {
+    if (isNaN(latitude) || isNaN(longitude)) {
+        alert("Invalid latitude or longitude. Please enter valid numbers.");
+        return;
+    }
+
+    callApiPing(latitude,longitude)
+        .then(() => {
+            console.log("API call successful");
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+}
+
+function callApiPing(lat,lon) {
+        return fetch(`/new-farms?lat=${lat}&lon=${lon}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -266,12 +291,12 @@ function fetchfarms() {
         });
     }
 
-    const longitude = 20;
-const latitude = 63;
+const longitude = 63;
+const latitude = 14;
 
 (async () => {
     try {
-        await callApiPing(longitude, latitude);
+        await callApiPing(latitude,longitude);
         const farms = await fetchfarms();
         console.log(farms);
         addMarkers(farms);

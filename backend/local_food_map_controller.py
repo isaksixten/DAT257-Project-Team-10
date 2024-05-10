@@ -23,8 +23,8 @@ class LocalFoodMapController:
         farms = self.query_machine.fetch_all_locations()
         return self.view.render_home_page(farms)
 
-    def update_locations_from_search(self,lon,lat):
-        local_farms_sweden(lon,lat)
+    def update_locations_from_search(self,lat,lon):
+        local_farms_sweden(float(lat),float(lon))
 
     def fetch_farms(self):
         return self.query_machine.fetch_all_locations()
