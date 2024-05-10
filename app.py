@@ -22,7 +22,7 @@ def home():
 
 @app.route('/new-farms')
 def api_ping(lon,lat):
-    controller.update_locations_from_search()
+    controller.update_locations_from_search(lon,lat)
 
 @app.route('/fetch-farms')
 def fetch_farms():
