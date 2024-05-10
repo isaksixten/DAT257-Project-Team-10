@@ -113,6 +113,26 @@ class QueryMachine:
                 return list
             else:
                 return []     
+    
+    def fetch_continous_farmtags(self, tags):
+        params = (tuple(tags), len(tags))
+        with self.conn.cursor() as cur:
+            sql = """ SELECT Farms.id, Farms.name, Farms.address
+                        FROM Farms
+                        JOIN Farm_Tags ON Farms.id = Farm_Tags.farm
+                        WHERE Farm_Tags.tag IN %s
+                        GROUP BY Farms.id, Farms.name, Farms.address
+                        HAVING COUNT(DISTINCT Farm_Tags.tag) = %s;"""
+            cur.execute(sql, params)
+            res = cur.fetchall()
+            print("res:", res)
+            list = []
+            if res:
+                for farm in res:
+                    list.append(farm)
+                return list
+            else:
+                return []   
             
     def fetch_by_search(self, term): # Can search for both name and address. Only returns name and adress to search bar as of now....
         with self.conn.cursor() as cur:

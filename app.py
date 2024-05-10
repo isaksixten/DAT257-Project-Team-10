@@ -46,9 +46,10 @@ def fetch_search_options():
     return controller.get_search_options(term)
 
 @app.route('/fetch-farms-with-tags',methods=["POST"])
-def fetch_farmtags():
-    return controller.get_farmtags()
-
+def fetch_continous_farmtags():
+    data = request.get_json()
+    tags = data.get('tags', [])
+    return controller.get_farmtags(tags)
 
 if __name__ == "__main__":
     app.run(debug=True)
