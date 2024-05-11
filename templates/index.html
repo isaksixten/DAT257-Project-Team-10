@@ -266,10 +266,12 @@ function fetchfarms() {
         alert("Invalid latitude or longitude. Please enter valid numbers.");
         return;
     }
-
-    callApiPing(latitude,longitude)
+    
+    fetchDataAndAddMarkers(latitude,longitude)
         .then(() => {
             console.log("API call successful");
+            const latlng = L.latLng(latitude, longitude);
+            map.setView(latlng, 8);
         })
         .catch(error => {
             console.error('Error:', error);
@@ -291,19 +293,29 @@ function callApiPing(lat,lon) {
         });
     }
 
-const longitude = 63;
-const latitude = 14;
-
-(async () => {
+async function fetchDataAndAddMarkers(latitude, longitude) {
     try {
-        await callApiPing(latitude,longitude);
-        const farms = await fetchfarms();
-        console.log(farms);
-        addMarkers(farms);
+        await callApiPing(latitude, longitude);
+        await updateFarms();
     } catch (error) {
         console.error('Error:', error);
     }
-})();
+}
+
+function updateFarms(){ //Denna hämtar alla farms från databasen och lägger till dem på kartan
+    fetchfarms()
+        .then(farms => {
+            addMarkers(farms);
+        })
+        .catch(error => {
+            console.error('Error fetching farms:', error);
+        });
+}
+
+
+updateFarms();  //Denna rad ser till att de ursprungliga farmsen läggs in när programmet startas
+
+
 
 
         function zoomToFarm() {
@@ -473,13 +485,18 @@ const latitude = 14;
                     // Hämtar info om en farm från kartan
                     const marker = markers[option[0]];
 
+                    map.setView(marker.getLatLng(), 10);    //Zoomar in på den valda farmen
+                    markers[option[0]].openPopup();
+
                     const description = marker.options.description || '';
                     const rating = marker.options.rating || ''; 
                     const website = marker.options.website || ''; 
                     const phonenumber = marker.options.phonenumber || ''; 
 
                     // Visar info om den farm som valts
+                
                     updateInfo(name, description, rating, address, website, phonenumber);
+
                 });
 
                 searchSuggestions.appendChild(suggestion);
