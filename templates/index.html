@@ -266,10 +266,12 @@ function fetchfarms() {
         alert("Invalid latitude or longitude. Please enter valid numbers.");
         return;
     }
-
+    
     fetchDataAndAddMarkers(latitude,longitude)
         .then(() => {
             console.log("API call successful");
+            const latlng = L.latLng(latitude, longitude);
+            map.setView(latlng, 8);
         })
         .catch(error => {
             console.error('Error:', error);
@@ -483,13 +485,18 @@ updateFarms();  //Denna rad ser till att de ursprungliga farmsen läggs in när 
                     // Hämtar info om en farm från kartan
                     const marker = markers[option[0]];
 
+                    map.setView(marker.getLatLng(), 10);    //Zoomar in på den valda farmen
+                    markers[option[0]].openPopup();
+
                     const description = marker.options.description || '';
                     const rating = marker.options.rating || ''; 
                     const website = marker.options.website || ''; 
                     const phonenumber = marker.options.phonenumber || ''; 
 
                     // Visar info om den farm som valts
+                
                     updateInfo(name, description, rating, address, website, phonenumber);
+
                 });
 
                 searchSuggestions.appendChild(suggestion);
