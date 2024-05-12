@@ -54,7 +54,7 @@ class QueryMachine:
             else:
                 return "No locations in database"
                       
-    def add_location(self, id, name, description, rating, latitude, longitude,address, website, phonenumber):
+    def add_location(self, id: str, name: str, description: str, rating: float, latitude: float, longitude: float, address: str, website: str, phonenumber: str):
         try:
             with self.conn.cursor() as cur:
                 sql = """INSERT INTO Farms VALUES (%s, %s, %s, %s, %s,%s, %s, %s, %s)"""
@@ -136,8 +136,27 @@ class QueryMachine:
                     a_list.append(i[1])
                 return a_list
             else:
-                return []
-
+                return []     
+    
+    def fetch_continous_farmtags(self, tags):
+        params = (tuple(tags), len(tags))
+        with self.conn.cursor() as cur:
+            sql = """ SELECT Farms.id
+                        FROM Farms
+                        JOIN Farm_Tags ON Farms.id = Farm_Tags.farm
+                        WHERE Farm_Tags.tag IN %s
+                        GROUP BY Farms.id, Farms.name, Farms.address
+                        HAVING COUNT(DISTINCT Farm_Tags.tag) = %s;"""
+            cur.execute(sql, params)
+            res = cur.fetchall()
+            list = []
+            if res:
+                for farm in res:
+                    list.append(self.fetch_location(farm))
+                return list
+            else:
+                return []   
+            
     def fetch_by_search(self, term): # Can search for both name and address. Only returns name and adress to search bar as of now....
         with self.conn.cursor() as cur:
             sql = """SELECT name, address FROM Farms WHERE Farms.name ILIKE %s OR Farms.address ILIKE %s"""
@@ -157,9 +176,11 @@ class QueryMachine:
             cur.execute(sql, (id))
             res = cur.fetchall()
             dict = {}
+            innerdict = {}
             if res:
                 for location in res:
-                    dict[location[0]] = [location[1], location[2], location[3]]
+                    innerdict[location[1]] = [location[2], location[3]]
+                    dict[location[0]] = innerdict
                 return dict # Bör returnera en dict med key som är farm ID och value som är en lista av [Weekday, opening_time, closing_time].
             else:
                 return "No location with that ID"
