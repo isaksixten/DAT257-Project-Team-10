@@ -105,7 +105,6 @@ class QueryMachine:
             sql = """ SELECT * FROM Farm_Tags"""
             cur.execute(sql)
             res = cur.fetchall()
-            print("res:" + str(res))
             list = []
             if res:
                 for farm in res:
@@ -117,7 +116,7 @@ class QueryMachine:
     def fetch_continous_farmtags(self, tags):
         params = (tuple(tags), len(tags))
         with self.conn.cursor() as cur:
-            sql = """ SELECT Farms.id, Farms.name, Farms.address
+            sql = """ SELECT Farms.id
                         FROM Farms
                         JOIN Farm_Tags ON Farms.id = Farm_Tags.farm
                         WHERE Farm_Tags.tag IN %s
@@ -125,11 +124,10 @@ class QueryMachine:
                         HAVING COUNT(DISTINCT Farm_Tags.tag) = %s;"""
             cur.execute(sql, params)
             res = cur.fetchall()
-            print("res:", res)
             list = []
             if res:
                 for farm in res:
-                    list.append(farm)
+                    list.append(self.fetch_location(farm))
                 return list
             else:
                 return []   

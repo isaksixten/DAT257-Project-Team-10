@@ -269,7 +269,6 @@ function fetchfarms() {
     
     fetchDataAndAddMarkers(latitude,longitude)
         .then(() => {
-            console.log("API call successful");
             const latlng = L.latLng(latitude, longitude);
             map.setView(latlng, 8);
         })
@@ -289,7 +288,6 @@ function callApiPing(lat,lon) {
             if (!response.ok) {
                 throw new Error('Failed to call API');
             }
-            console.log(response);
         });
     }
 
@@ -310,6 +308,11 @@ function updateFarms(){ //Denna hämtar alla farms från databasen och lägger t
         .catch(error => {
             console.error('Error fetching farms:', error);
         });
+}
+
+function updatefilteredFarms(farms){
+    Object.values(markers).forEach(marker => map.removeLayer(marker));
+    addMarkers(farms);
 }
 
 
@@ -400,7 +403,12 @@ updateFarms();  //Denna rad ser till att de ursprungliga farmsen läggs in när 
                     selectedTags.push(checkbox.value);
                 }
             });
+            if (selectedTags.length > 0){
             filterSearchOptions(selectedTags);
+            }
+            else{
+                updateFarms();
+            }
         }
 
         function filterSearchOptions(tags){
@@ -418,7 +426,12 @@ updateFarms();  //Denna rad ser till att de ursprungliga farmsen läggs in när 
                 return response.json();
             })
             .then(options => {
-                displaySearchOptions(options);
+                displaytags=[]
+                options.forEach(option => {
+                    const id = option[0];
+                    displaytags.push(option)                    
+                });
+                updatefilteredFarms(displaytags); 
             })
             .catch(error => {
                 console.error('Fetch filtered search options error:', error);
@@ -474,7 +487,6 @@ updateFarms();  //Denna rad ser till att de ursprungliga farmsen läggs in när 
             searchSuggestions.innerHTML = ''; // Rensar tidigare förslag
 
             options.forEach(option => {
-                console.log(option)
                 const [name, address] = [option[1],option[2]];  
                 const suggestion = document.createElement('div');
                 suggestion.textContent = `${name} - ${address}`;
@@ -506,7 +518,6 @@ updateFarms();  //Denna rad ser till att de ursprungliga farmsen läggs in när 
         function toggleMode() {
             document.body.classList.toggle('dark-mode'); 
         }
-        //addMarkers(farms);
     </script>
 </body>
 </html>
