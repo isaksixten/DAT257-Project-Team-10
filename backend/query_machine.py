@@ -160,6 +160,7 @@ class QueryMachine:
                 return []
 
     def update_open_now(self, farmid):
+        # fix with weekday
         with self.conn.cursor() as cur:
             sql = """ SELECT farm_id, open_time, close_time FROM Opening_Hours WHERE farmid = %s"""
             cur.execute(sql, (farmid,))
@@ -173,6 +174,7 @@ class QueryMachine:
                     with self.conn.cursor() as cur2:
                         sql = """ INSERT INTO Farm_tag VALUES (%s,  %s, %s) """
                         cur2.execute(sql, (i[0], i[1], i[2]))
+
             
     def fetch_by_search(self, term): # Can search for both name and address. Only returns name and adress to search bar as of now....
         with self.conn.cursor() as cur:
