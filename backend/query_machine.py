@@ -1,5 +1,7 @@
 
 import psycopg2
+from urllib3.util import current_time
+
 
 class QueryMachine:
     def __init__(self):
@@ -155,7 +157,22 @@ class QueryMachine:
                     list.append(self.fetch_location(farm))
                 return list
             else:
-                return []   
+                return []
+
+    def update_open_now(self, farmid):
+        with self.conn.cursor() as cur:
+            sql = """ SELECT farm_id, open_time, close_time FROM Opening_Hours WHERE farmid = %s"""
+            cur.execute(sql, (farmid,))
+            res = cur.fetchall()
+            for i in res:
+                if i[1] > current_time or current_time > i[2]:
+                    with self.conn.cursor() as cur2:
+                        sql = """ DELETE farm, tag FROM Farm_tag WHERE farm_id = %s AND tag = "open_now" """
+                        cur2.execute(sql, (i[0],))
+                else:
+                    with self.conn.cursor() as cur2:
+                        sql = """ INSERT INTO Farm_tag VALUES (%s,  %s, %s) """
+                        cur2.execute(sql, (i[0], i[1], i[2]))
             
     def fetch_by_search(self, term): # Can search for both name and address. Only returns name and adress to search bar as of now....
         with self.conn.cursor() as cur:
