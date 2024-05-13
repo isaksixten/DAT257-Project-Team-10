@@ -136,7 +136,8 @@ class QueryMachine:
                     a_list.append(i[1])
                 return a_list
             else:
-                return []     
+                return []
+            # its a nice function
     
     def fetch_continous_farmtags(self, tags):
         params = (tuple(tags), len(tags))
