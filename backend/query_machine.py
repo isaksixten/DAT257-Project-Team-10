@@ -1,6 +1,7 @@
 
 import psycopg2
-from urllib3.util import current_time
+from datetime import datetime
+current_time = datetime.now()
 
 
 class QueryMachine:

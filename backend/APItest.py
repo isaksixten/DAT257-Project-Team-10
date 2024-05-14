@@ -42,7 +42,8 @@ def farms_to_database(id, dict):
         if dict['opening_hours'] != None:
             for day in range(len(dict['opening_hours']["periods"])):
                 cur_day = dict['opening_hours']["periods"][day]
-                query.add_opening_hours(id,cur_day['close']['day'],cur_day['open']['time'], cur_day['close']['time'])
+                if 'close' in cur_day and 'open' in cur_day:
+                    query.add_opening_hours(id,cur_day['open']['day'],cur_day['open']['time'], cur_day['close']['time'])
 
 
 
@@ -102,4 +103,3 @@ def local_farms_sweden(latitude: float,longitude:float, radius: float = 50000):
 def local_farms_startingpoint():
     local_farms_sweden(get_current_location()[0], get_current_location()[1])
 
-local_farms_sweden(57.70716, 11.96679, 10000)
