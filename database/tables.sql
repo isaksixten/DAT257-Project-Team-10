@@ -47,7 +47,6 @@ CREATE TABLE Opening_Hours(
     PRIMARY KEY (farm_id,weekday),
     FOREIGN KEY (farm_id) REFERENCES Farms(id),
     FOREIGN KEY (weekday) REFERENCES Weekdays(weekday)
-
 );
 
 --Och här under finns en bas för att kunna lägga in produkter--

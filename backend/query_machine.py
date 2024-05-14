@@ -1,3 +1,4 @@
+import datetime
 
 import psycopg2
 from urllib3.util import current_time
@@ -161,9 +162,11 @@ class QueryMachine:
 
     def update_open_now(self, farmid):
         # fix with weekday
+        current_date = datetime.date.today()
+        weekday = current_date.weekday()
         with self.conn.cursor() as cur:
-            sql = """ SELECT farm_id, open_time, close_time FROM Opening_Hours WHERE farmid = %s"""
-            cur.execute(sql, (farmid,))
+            sql = """ SELECT farm_id, open_time, close_time FROM Opening_Hours WHERE farmid = %s AND weekday = %s"""
+            cur.execute(sql, (farmid, weekday))
             res = cur.fetchall()
             for i in res:
                 if i[1] > current_time or current_time > i[2]:
