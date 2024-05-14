@@ -1,6 +1,6 @@
 import requests
 import json
-from query_machine import QueryMachine
+from .query_machine import QueryMachine
 import geocoder
 
 API_KEY = ''    #PUSHA EJ TILL GIT
