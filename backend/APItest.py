@@ -1,3 +1,4 @@
+from query_machine import QueryMachine
 import requests
 import json
 from query_machine import QueryMachine
@@ -39,6 +40,10 @@ def farms_to_database(id, dict):
             query.add_farmtag(id, 'wheelchair')
         if dict['open_now'] != None:
             query.add_farmtag(id, 'open_now')
+        if dict['opening_hours'] != None:
+            for day in range(len(dict['opening_hours']["periods"])):
+                cur_day = dict['opening_hours']["periods"][day]
+                query.add_opening_hours(id,cur_day['close']['day'],cur_day['open']['time'], cur_day['close']['time'])
 
 
 
@@ -55,7 +60,7 @@ def local_farms_sweden(longitude: float, latitude: float, radius: float = 50000)
 
     }
 
-    include_fields = ["name", "business_status", "formatted_address", "international_phone_number", "geometry", "rating", "url", "website", "wheelchair_accessible_entrance","open_now"]
+    include_fields = ["name", "business_status", "formatted_address", "international_phone_number", "geometry", "rating", "url", "website", "wheelchair_accessible_entrance","open_now", "opening_hours"]
     #periods? (öppettider)
     
     all_farms = {}  #Onödig, bara under develop-fas
@@ -82,7 +87,7 @@ def local_farms_sweden(longitude: float, latitude: float, radius: float = 50000)
                 included_farm_details = {field: farm_details.get(field, None) for field in include_fields}
                     
                 farm_name = included_farm_details.get('name', 'Unnamed Farm')
-                all_farms[farm_name] = farm_details    #onödigt bara under develop-fasen  
+                all_farms[farm_name] = included_farm_details   #onödigt bara under develop-fasen  
 
                 farms_to_database(place_id, included_farm_details)
                 
@@ -100,4 +105,4 @@ def local_farms_sweden(longitude: float, latitude: float, radius: float = 50000)
 def local_farms_startingpoint():
     local_farms_sweden(get_current_location()[0], get_current_location()[1])
 
-
+local_farms_sweden(57.70716, 11.96679, 10000)
