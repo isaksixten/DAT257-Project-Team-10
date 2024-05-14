@@ -33,6 +33,27 @@
             flex: 1; 
             text-align: center; 
         }
+		.popupForm {
+            display: none; /* Initially hidden */
+            position: fixed;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            z-index: 10;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+		.overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 5;
+        }
 
         .banner-button {
             margin-left: auto; 
@@ -142,21 +163,31 @@
 
 </head>
 <body>
+<div class="overlay" onclick="closeForm()"></div>
     <div class="banner">
         <div class="banner-text">
-            <h1>Welcome to Team 10:s Local Farms!</h1>
+            <div style="display: block;">
+        <h1>Welcome to Team 10:s Local Farms!</h1>
+		<p style="font-size: smaller">Here, we show you local food sourcing alternatives. Please enjoy!</p>
+		 </div>
         </div>
         <div class="banner-button">
             <button onclick="toggleMode()">Light/Dark Mode</button> 
         </div>
     </div>
     <div class="banner2">
+	<div class="upperLeftSection2">
+        <button onclick="showForm()">Add Farm</button> <!-- Ny knapp för att lägga till farm -->
+      
+        </select>
+    </div>
         <div class="upperLeftSection">
             <div class="dropdown">
                 <input type="text" id="searchBar" placeholder="Search for farms...">
                 <div id="searchSuggestions" class="dropdown-content"></div>
             </div>
         </div>
+		
     
         <div class="lowerLeftSection">
             <div class="dropdown">
@@ -184,7 +215,17 @@
                 <div id="contactInfo" class="contactInfo"></div>
             </div>
         </div>
+		
     </div>
+	<div class="popupForm" id="addFarmForm">
+        <h2>Here you can add a new farm that's not included in our map! </h2>
+        <label for="newFarmName">Name:</label>
+        <input type="text" id="newFarmName" name="newFarmName">
+        <label for="newFarmAddress">Address:</label>
+        <input type="text" id="newFarmAddress" name="newFarmAddress">
+        <button onclick="submitNewFarm()">Submit</button>
+    </div>
+	
 
     <script>
         var map = L.map('map', {
@@ -266,11 +307,10 @@ function fetchfarms() {
         alert("Invalid latitude or longitude. Please enter valid numbers.");
         return;
     }
-    
-    fetchDataAndAddMarkers(latitude,longitude)
+
+    callApiPing(latitude,longitude)
         .then(() => {
-            const latlng = L.latLng(latitude, longitude);
-            map.setView(latlng, 8);
+            console.log("API call successful");
         })
         .catch(error => {
             console.error('Error:', error);
@@ -288,37 +328,23 @@ function callApiPing(lat,lon) {
             if (!response.ok) {
                 throw new Error('Failed to call API');
             }
+            console.log(response);
         });
     }
 
-async function fetchDataAndAddMarkers(latitude, longitude) {
+const longitude = 63;
+const latitude = 14;
+
+(async () => {
     try {
-        await callApiPing(latitude, longitude);
-        await updateFarms();
+        await callApiPing(latitude,longitude);
+        const farms = await fetchfarms();
+        console.log(farms);
+        addMarkers(farms);
     } catch (error) {
         console.error('Error:', error);
     }
-}
-
-function updateFarms(){ //Denna hämtar alla farms från databasen och lägger till dem på kartan
-    fetchfarms()
-        .then(farms => {
-            addMarkers(farms);
-        })
-        .catch(error => {
-            console.error('Error fetching farms:', error);
-        });
-}
-
-function updatefilteredFarms(farms){
-    Object.values(markers).forEach(marker => map.removeLayer(marker));
-    addMarkers(farms);
-}
-
-
-updateFarms();  //Denna rad ser till att de ursprungliga farmsen läggs in när programmet startas
-
-
+})();
 
 
         function zoomToFarm() {
@@ -403,12 +429,7 @@ updateFarms();  //Denna rad ser till att de ursprungliga farmsen läggs in när 
                     selectedTags.push(checkbox.value);
                 }
             });
-            if (selectedTags.length > 0){
             filterSearchOptions(selectedTags);
-            }
-            else{
-                updateFarms();
-            }
         }
 
         function filterSearchOptions(tags){
@@ -426,12 +447,7 @@ updateFarms();  //Denna rad ser till att de ursprungliga farmsen läggs in när 
                 return response.json();
             })
             .then(options => {
-                displaytags=[]
-                options.forEach(option => {
-                    const id = option[0];
-                    displaytags.push(option)                    
-                });
-                updatefilteredFarms(displaytags); 
+                displaySearchOptions(options);
             })
             .catch(error => {
                 console.error('Fetch filtered search options error:', error);
@@ -487,6 +503,7 @@ updateFarms();  //Denna rad ser till att de ursprungliga farmsen läggs in när 
             searchSuggestions.innerHTML = ''; // Rensar tidigare förslag
 
             options.forEach(option => {
+                console.log(option)
                 const [name, address] = [option[1],option[2]];  
                 const suggestion = document.createElement('div');
                 suggestion.textContent = `${name} - ${address}`;
@@ -497,18 +514,13 @@ updateFarms();  //Denna rad ser till att de ursprungliga farmsen läggs in när 
                     // Hämtar info om en farm från kartan
                     const marker = markers[option[0]];
 
-                    map.setView(marker.getLatLng(), 10);    //Zoomar in på den valda farmen
-                    markers[option[0]].openPopup();
-
                     const description = marker.options.description || '';
                     const rating = marker.options.rating || ''; 
                     const website = marker.options.website || ''; 
                     const phonenumber = marker.options.phonenumber || ''; 
 
                     // Visar info om den farm som valts
-                
                     updateInfo(name, description, rating, address, website, phonenumber);
-
                 });
 
                 searchSuggestions.appendChild(suggestion);
@@ -518,6 +530,23 @@ updateFarms();  //Denna rad ser till att de ursprungliga farmsen läggs in när 
         function toggleMode() {
             document.body.classList.toggle('dark-mode'); 
         }
+		function showForm() {
+            document.querySelector('.overlay').style.display = 'block';
+            document.getElementById('addFarmForm').style.display = 'block';
+        }
+
+        function closeForm() {
+            document.querySelector('.overlay').style.display = 'none';
+            document.getElementById('addFarmForm').style.display = 'none';
+        }
+
+        function submitNewFarm() {
+            var name = document.getElementById('newFarmName').value;
+            var address = document.getElementById('newFarmAddress').value;
+            console.log('New Farm Name:', name, 'Address:', address);
+            closeForm();
+        }
+        //addMarkers(farms);
     </script>
 </body>
 </html>

@@ -20,6 +20,17 @@ def home():
     # Call controller to display the home page
     return controller.display_home_page()
 
+@app.route('/new-farms', methods=["POST"])
+def api_ping():
+    lat = request.args.get('lat')  # Get the 'lon' parameter from the request
+    lon = request.args.get('lon')  # Get the 'lat' parameter from the request
+    controller.update_locations_from_search(lat, lon)
+    return 'Success', 200  # Return a success message with status code 200
+
+@app.route('/fetch-farms')
+def fetch_farms():
+    return controller.fetch_farms()
+
 @app.route('/show_farm', methods=['POST'])
 def show_farm():
     # Retrieve farm ID from form data
@@ -38,9 +49,10 @@ def fetch_search_options():
     return controller.get_search_options(term)
 
 @app.route('/fetch-farms-with-tags',methods=["POST"])
-def fetch_farmtags():
-    return controller.get_farmtags()
-
+def fetch_continous_farmtags():
+    data = request.get_json()
+    tags = data.get('tags', [])
+    return controller.get_farmtags(tags)
 
 if __name__ == "__main__":
     app.run(debug=True)
