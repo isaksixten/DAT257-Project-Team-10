@@ -196,7 +196,7 @@ class QueryMachine:
     def fetch_opening_hours(self, id): # Fetches location opening hours based on id and returns them in the form of a dictionary.
         with self.conn.cursor() as cur:
             sql = """SELECT * FROM Opening_Hours WHERE Opening_Hours.farm_id = %s"""
-            cur.execute(sql, (id))
+            cur.execute(sql, (id,))
             res = cur.fetchall()
             dict = {}
             innerdict = {}
@@ -204,7 +204,5 @@ class QueryMachine:
                 for location in res:
                     innerdict[location[1]] = [location[2], location[3]]
                     dict[location[0]] = innerdict
-                return dict # Bör returnera en dict med key som är farm ID och value som är en lista av [Weekday, opening_time, closing_time].
-            else:
-                return "No location with that ID"
+        return dict # Bör returnera en dict med key som är farm ID och value som är en lista av [Weekday, opening_time, closing_time].
 
