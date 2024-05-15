@@ -81,35 +81,35 @@
         }
 
         /* Här har jag trollat lite fritt, försökte få listan att synas framför kartan*/
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
+       .dropdown {
+    position: relative;
+    display: inline-block;
+}
 
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: rgb(230,223, 218);
-            min-width: 150px;
-            overflow-y: auto;
-            border: 1px solid #ddd;
-            z-index: 9999;
-            top: 100%; 
-            color: black;
-        }
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(230,223, 218);
+    min-width: 150px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    z-index: 9999;
+    top: calc(100% - 1px); /* Adjust this to remove the gap */
+    color: black;
+}
 
-        .dropdown-content label {
-            display: block;
-            margin: 3px 0;
-        }
+.dropdown-content label {
+    display: block;
+    margin: 3px 0;
+}
 
-        .dropdown-content input[type="checkbox"] {
-            margin-right: 5px;
-        }
+.dropdown-content input[type="checkbox"] {
+    margin-right: 5px;
+}
 
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
+.dropdown:hover .dropdown-content {
+    display: block;
+}
         .suggestion {
             padding: 5px;
             cursor: pointer;
