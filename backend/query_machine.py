@@ -140,7 +140,8 @@ class QueryMachine:
                     a_list.append(i[1])
                 return a_list
             else:
-                return []     
+                return []
+            # its a nice function
     
     def fetch_continous_farmtags(self, tags):
         params = (tuple(tags), len(tags))
@@ -182,7 +183,7 @@ class QueryMachine:
             
     def fetch_by_search(self, term): # Can search for both name and address. Only returns name and adress to search bar as of now....
         with self.conn.cursor() as cur:
-            sql = """SELECT name, address FROM Farms WHERE Farms.name ILIKE %s OR Farms.address ILIKE %s"""
+            sql = """SELECT id,name, address FROM Farms WHERE Farms.name ILIKE %s OR Farms.address ILIKE %s"""
             cur.execute(sql, (term + '%', term + '%'))
             res = cur.fetchall()
             list = []
@@ -196,7 +197,7 @@ class QueryMachine:
     def fetch_opening_hours(self, id): # Fetches location opening hours based on id and returns them in the form of a dictionary.
         with self.conn.cursor() as cur:
             sql = """SELECT * FROM Opening_Hours WHERE Opening_Hours.farm_id = %s"""
-            cur.execute(sql, (id))
+            cur.execute(sql, (id,))
             res = cur.fetchall()
             dict = {}
             innerdict = {}
@@ -204,7 +205,5 @@ class QueryMachine:
                 for location in res:
                     innerdict[location[1]] = [location[2], location[3]]
                     dict[location[0]] = innerdict
-                return dict # Bör returnera en dict med key som är farm ID och value som är en lista av [Weekday, opening_time, closing_time].
-            else:
-                return "No location with that ID"
+        return dict # Bör returnera en dict med key som är farm ID och value som är en lista av [Weekday, opening_time, closing_time].
 

@@ -54,6 +54,10 @@ def fetch_continous_farmtags():
     tags = data.get('tags', [])
     return controller.get_farmtags(tags)
 
+@app.route('/fetch-opening-hours/<id>', methods=['POST'])
+def fetch_opening_hours(id):
+    return controller.fetch_opening_hours(id)
+
 if __name__ == "__main__":
     app.run(debug=True)
     

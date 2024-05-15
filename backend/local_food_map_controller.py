@@ -61,3 +61,6 @@ class LocalFoodMapController:
     def get_search_options(self,term):
         results=self.query_machine.fetch_by_search(term)
         return results
+
+    def fetch_opening_hours(self,id):
+        return self.query_machine.fetch_opening_hours(id)
