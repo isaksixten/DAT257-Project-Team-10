@@ -3,143 +3,156 @@
 <head>
     <title>Local Farms</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <style>
         html * {
-            font-family: 'Times New Roman', Times, serif;
-            font-weight: normal;
-        }
+    font-family: 'Courgette', cursive;
+    font-weight: normal;
+}
 
-        body {
-            display: flex;
-            flex-direction: column; 
-            height: 100vh;
-            margin: 0;
-            padding: 0;
-            background-color: #4b6636;
-        }
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #eae4d3; /* Light, earthy background color */
+}
 
-        .banner {
-            width: 100%;
-            height: 80px;
-            background-color: rgb(230,223, 218);
-            color: #383736;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .logo {
-            height: 80px; /* Adjust the height as needed */
-            margin-right: 0px; /* Space between the logo and the text */
-            }
-        .banner-text {
-            flex: 1; 
-            text-align: center; 
-        }
+.banner {
+    width: 100%;
+    height: 100px;
+    background-color: #8fbc8f; /* Farm green background */
+    color: #C19A6B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 2px -2px gray; /* Adds a subtle shadow */
+}
 
-        .banner-button {
-            margin-left: auto; 
-        }
+.logo {
+    height: 80px; /* Adjust the height as needed */
+    margin-right: 0px; /* Space between the logo and the text */
+}
 
-        .banner2 {
-            width: 100%;
-            height: 20px;
-            background-color: #556B2F;
-            color: rgb(230,223, 218);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0 20px; 
-        }
+.banner-text {
+    flex: 1;
+    text-align: center;
+    font-family: 'Courgette', cursive; /* Farmy font */
+    font-size: 2.5em; /* Increase font size */
+    color: #954535; /* Farmy brown color */
+}
 
-        #map {
-            width: 100%;
-            height: 100%;
-            position: relative; 
-            z-index: 0; 
-        }
+.banner-button {
+    margin-left: auto;
+}
 
-        .mainSection {
-            flex: 1; 
-            display: flex;
-        }
+.banner2 {
+    width: 100%;
+    height: 20px;
+    background-color: #6b8e23; /* Olive green background */
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+}
 
-        .middleSection {
-            flex: 2; 
-            justify-content: center;
-            align-items: center;
-        }
+#map {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 0;
+    background: url('path_to_your_farm_background_image.jpg') no-repeat center center;
+    background-size: cover;
+}
 
-        .rightSection {
-            flex: 1; 
-            padding: 20px;
-            background-color: rgb(230,223, 218);
-            color: #383736;
-        }
+.mainSection {
+    flex: 1;
+    display: flex;
+}
 
-        .contactBox {
-            border: 3px solid #383736;
-            padding: 10px;
-            margin-top: 20px;
-        }
+.middleSection {
+    flex: 2;
+    justify-content: center;
+    align-items: center;
+}
 
-        /* Här har jag trollat lite fritt, försökte få listan att synas framför kartan*/
-       .dropdown {
-        position: relative;
-        display: inline-block;
-        }
+.rightSection {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff8dc; /* Cornsilk background */
+    color: #383736;
+    border-left: 2px solid #8b4513; /* Dark brown border */
+}
 
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: rgb(230,223, 218);
-            min-width: 150px;
-            overflow-y: auto;
-            border: 1px solid #ddd;
-            z-index: 9999;
-            top: calc(100% - 1px); /* Adjust this to remove the gap */
-            color: black;
-        }
+.contactBox {
+    border: 3px solid #8b4513; /* Dark brown border */
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #fffaf0; /* Floral white background */
+}
 
-        .dropdown-content label {
-            display: block;
-            margin: 3px 0;
-        }
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
 
-        .dropdown-content input[type="checkbox"] {
-            margin-right: 5px;
-        }
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #faf0e6; /* Linen background */
+    min-width: 150px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    z-index: 9999;
+    top: calc(100% - 1px); /* Adjust this to remove the gap */
+    color: black;
+}
 
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        .suggestion {
-            padding: 5px;
-            cursor: pointer;
-            background-color: white;
-            border: 1px solid #ccc;
-        }
+.dropdown-content label {
+    display: block;
+    margin: 3px 0;
+}
 
-        .suggestion:hover {
-            background-color: #f0f0f0; /*Byter färg på det alternativ som nu är valt*/
-        }
-        .dark-mode, .dark-mode div, .dark-mode .banner {
-            background-color: #000000;
-            color: #FFFFFF;
-        }
-        .dark-mode .banner2 {
-            background-color: #6A0DAD; 
-        }
+.dropdown-content input[type="checkbox"] {
+    margin-right: 5px;
+}
 
-        .dark-mode {
-            background-color: #000000; /* Byter bakgrund till svart */
-            color: #FFFFFF; /* Byter textfärg till vit */
-        }
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 
-        .dark-mode .rightSection, .dark-mode .contactBox {
-            background-color: #000000; 
-            color: #FFFFFF;
-        }
+.suggestion {
+    padding: 5px;
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid #ccc;
+}
+
+.suggestion:hover {
+    background-color: #f0f0f0; /*Byter färg på det alternativ som nu är valt*/
+}
+
+.dark-mode, .dark-mode div, .dark-mode .banner {
+    background-color: #2f4f4f;
+    color: #FFFFFF;
+}
+
+.dark-mode .banner2 {
+    background-color: #556b2f;
+}
+
+.dark-mode {
+    background-color: #2f4f4f; /* Byter bakgrund till svart */
+    color: #FFFFFF; /* Byter textfärg till vit */
+}
+
+.dark-mode .rightSection, .dark-mode .contactBox {
+    background-color: #2f4f4f;
+    color: #FFFFFF;
+}
 
     </style>
 
