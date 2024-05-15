@@ -1,6 +1,7 @@
 import requests
 import json
 from .query_machine import QueryMachine
+from geopandas import *
 import geocoder
 
 API_KEY = ''    #PUSHA EJ TILL GIT
@@ -8,6 +9,12 @@ API_KEY = ''    #PUSHA EJ TILL GIT
 def get_current_location():
     location = geocoder.ip('me')
     return location.latlng  
+
+def get_latlon_from_location(search_string: str) -> tuple: #Returnerar tuple med latlon från arbiträr search string. 
+    res = geopandas.tools.geocode("Umeå") # Search_string vara formatterad lite hursomhelst till min förståelse.
+    lon = res.get_coordinates().iat[0, 0]
+    lat = res.get_coordinates().iat[0, 1]
+    return (lat, lon)
 
 # Places API 
 base_url_nearby = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json'
@@ -102,4 +109,3 @@ def local_farms_sweden(latitude: float,longitude:float, radius: float = 50000):
 
 def local_farms_startingpoint():
     local_farms_sweden(get_current_location()[0], get_current_location()[1])
-
