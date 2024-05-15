@@ -140,7 +140,8 @@ class QueryMachine:
                     a_list.append(i[1])
                 return a_list
             else:
-                return []     
+                return []
+            # its a nice function
     
     def fetch_continous_farmtags(self, tags):
         params = (tuple(tags), len(tags))
@@ -182,7 +183,7 @@ class QueryMachine:
             
     def fetch_by_search(self, term): # Can search for both name and address. Only returns name and adress to search bar as of now....
         with self.conn.cursor() as cur:
-            sql = """SELECT name, address FROM Farms WHERE Farms.name ILIKE %s OR Farms.address ILIKE %s"""
+            sql = """SELECT id,name, address FROM Farms WHERE Farms.name ILIKE %s OR Farms.address ILIKE %s"""
             cur.execute(sql, (term + '%', term + '%'))
             res = cur.fetchall()
             list = []
