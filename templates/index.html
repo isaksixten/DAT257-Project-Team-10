@@ -554,9 +554,9 @@
             });
 
         // Listen to input from the search bar
-        document.getElementById('locationSearchBar').addEventListener('input', function(event) {
+        document.getElementById('searchBar').addEventListener('input', function(event) {
         const searchTerm = event.target.value;
-        fetchLocationSearchOptions(searchTerm);
+        fetchSearchOptions(searchTerm);
     });
 
         // Add this event listener for the location search bar
