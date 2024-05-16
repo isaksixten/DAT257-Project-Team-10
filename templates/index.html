@@ -64,7 +64,6 @@
             height: 100%;
             position: relative;
             z-index: 0;
-            background: url('path_to_your_farm_background_image.jpg') no-repeat center center;
             background-size: cover;
         }
 
@@ -199,10 +198,6 @@
                 <input type="text" id="searchBar" placeholder="Search for farms...">
                 <div id="searchSuggestions" class="dropdown-content"></div>
             </div>
-            <div class="dropdown">
-                <input type="text" id="locationSearchBar" placeholder="Search by location...">
-                <div id="locationSearchSuggestions" class="dropdown-content"></div>
-            </div>
         </div>
 
         <div class="lowerLeftSection">
@@ -213,6 +208,9 @@
         </div>
 
         <div class="lowerRightSection">
+            <div class="dropdown">
+                <button id="locationbutton" onclick="showLocationPopup()">Find more farms using city name</button>
+            </div>
             <button onclick="showLatLonPopup()">Search using Lat and Lon</button>
         </div>
     </div>
@@ -333,6 +331,23 @@
                 });
         }
 
+
+        function showLocationPopup() {
+            const location = prompt("Please enter city name:");
+            if (location==null) {
+                return;
+            }
+            callApiPingLocation(location)
+                .then(() => {
+                    updateFarms();
+                    /*const latlng = L.latLng();
+                    map.setView(latlng, 8);*/
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            }
+
         function callApiPing(lat, lon) {
             return fetch(`/new-farms?lat=${lat}&lon=${lon}`, {
                 method: 'POST',
@@ -347,6 +362,21 @@
             });
         }
 
+        function callApiPingLocation(location) {
+            if (location.length > 0){
+            return fetch(`/new-farms-city-name?city=${location}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to call API');
+                }
+            });
+        }
+        }        
         async function fetchDataAndAddMarkers(latitude, longitude) {
             try {
                 await callApiPing(latitude, longitude);
@@ -434,7 +464,7 @@
             openinghoursContainer.innerHTML = '';
 
             openinghoursPromise.then(openinghours => {
-                if (openinghours) {
+                if (openinghours && openinghours[id]) {
                     var openingHoursElement = document.createElement('div');
                     var daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
@@ -452,8 +482,14 @@
                         }
                     });
                     openinghoursContainer.appendChild(openingHoursElement);
+                } else {
+                    openinghoursContainer.textContent = 'Opening hours not available';
                 }
+            })
+            .catch(error => {
+                console.error('Error fetching opening hours:', error);
             });
+            
 
             var contactInfoContainer = document.getElementById('contactInfo');
             contactInfoContainer.innerHTML = '';
@@ -559,11 +595,6 @@
         fetchSearchOptions(searchTerm);
     });
 
-        // Add this event listener for the location search bar
-        document.getElementById('locationSearchBar').addEventListener('input', function(event) {
-            const searchTerm = event.target.value;
-            fetchLocationSearchOptions(searchTerm);
-        });
 
         // Fetch suggestions from backend
         function fetchSearchOptions(term) {
@@ -588,8 +619,8 @@
             });
         }
 
-         function fetchLocationSearchOptions(term) {
-        fetch('/new-farms', {
+/*         function fetchLocationSearchOptions(term) {
+        fetch('/new-farms-city-name', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -610,6 +641,7 @@
             console.error('Fetch location search options error:', error);
         });
     }
+*/
 
         // Display suggestions
         function displaySearchOptions(options) {
@@ -639,26 +671,6 @@
                 searchSuggestions.appendChild(suggestion);
             });
         }
-
-        function displayLocationSearchOptions(options) {
-        const locationSearchSuggestions = document.getElementById('locationSearchSuggestions');
-        locationSearchSuggestions.innerHTML = ''; // Clear previous suggestions
-
-        options.forEach(option => {
-            const { name, lat, lon } = option;
-            const suggestion = document.createElement('div');
-            suggestion.textContent = `${name}`;
-            suggestion.classList.add('suggestion');
-
-            // Event listener for suggestion click
-            suggestion.addEventListener('click', function() {
-                map.setView([lat, lon], 10);
-                fetchDataAndAddMarkers(lat, lon);
-            });
-
-            locationSearchSuggestions.appendChild(suggestion);
-        });
-    }
     </script>
 </body>
 </html>
