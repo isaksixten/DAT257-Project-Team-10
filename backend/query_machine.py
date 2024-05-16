@@ -1,5 +1,9 @@
+import datetime
 
 import psycopg2
+from datetime import datetime
+current_time = datetime.now()
+
 
 class QueryMachine:
     def __init__(self):
@@ -156,7 +160,26 @@ class QueryMachine:
                     list.append(self.fetch_location(farm))
                 return list
             else:
-                return []   
+                return []
+
+    def update_open_now(self, farmid):
+        # fix with weekday
+        current_date = datetime.date.today()
+        weekday = current_date.weekday()
+        with self.conn.cursor() as cur:
+            sql = """ SELECT farm_id, open_time, close_time FROM Opening_Hours WHERE farmid = %s AND weekday = %s"""
+            cur.execute(sql, (farmid, weekday))
+            res = cur.fetchall()
+            for i in res:
+                if i[1] > current_time or current_time > i[2]:
+                    with self.conn.cursor() as cur2:
+                        sql = """ DELETE farm, tag FROM Farm_tag WHERE farm_id = %s AND tag = "open_now" """
+                        cur2.execute(sql, (i[0],))
+                else:
+                    with self.conn.cursor() as cur2:
+                        sql = """ INSERT INTO Farm_tag VALUES (%s,  %s, %s) """
+                        cur2.execute(sql, (i[0], i[1], i[2]))
+
             
     def fetch_by_search(self, term): # Can search for both name and address. Only returns name and adress to search bar as of now....
         with self.conn.cursor() as cur:
@@ -174,7 +197,7 @@ class QueryMachine:
     def fetch_opening_hours(self, id): # Fetches location opening hours based on id and returns them in the form of a dictionary.
         with self.conn.cursor() as cur:
             sql = """SELECT * FROM Opening_Hours WHERE Opening_Hours.farm_id = %s"""
-            cur.execute(sql, (id))
+            cur.execute(sql, (id,))
             res = cur.fetchall()
             dict = {}
             innerdict = {}
@@ -182,7 +205,5 @@ class QueryMachine:
                 for location in res:
                     innerdict[location[1]] = [location[2], location[3]]
                     dict[location[0]] = innerdict
-                return dict # Bör returnera en dict med key som är farm ID och value som är en lista av [Weekday, opening_time, closing_time].
-            else:
-                return "No location with that ID"
+        return dict # Bör returnera en dict med key som är farm ID och value som är en lista av [Weekday, opening_time, closing_time].
 

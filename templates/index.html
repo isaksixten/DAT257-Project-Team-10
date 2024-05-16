@@ -7,162 +7,179 @@
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <style>
         html * {
-    font-family: 'Courgette', cursive;
-    font-weight: normal;
-}
+            font-family: 'Courgette', cursive;
+            font-weight: normal;
+        }
 
-body {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    background-color: #eae4d3; /* Light, earthy background color */
-}
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            background-color: #eae4d3; /* Light, earthy background color */
+        }
 
-.banner {
-    width: 100%;
-    height: 100px;
-    background-color: #8fbc8f; /* Farm green background */
-    color: #C19A6B;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 2px -2px gray; /* Adds a subtle shadow */
-}
+        .banner {
+            width: 100%;
+            height: 100px;
+            background-color: #8fbc8f; /* Farm green background */
+            color: #C19A6B;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 2px -2px gray; /* Adds a subtle shadow */
+        }
 
-.logo {
-    height: 80px; /* Adjust the height as needed */
-    margin-right: 0px; /* Space between the logo and the text */
-}
+        .logo {
+            height: 80px; /* Adjust the height as needed */
+            margin-right: 0px; /* Space between the logo and the text */
+        }
 
-.banner-text {
-    flex: 1;
-    text-align: center;
-    font-family: 'Courgette', cursive; /* Farmy font */
-    font-size: 2.5em; /* Increase font size */
-    color: #954535; /* Farmy brown color */
-}
+        .banner-text {
+            flex: 1;
+            text-align: center;
+            font-family: 'Courgette', cursive; /* Farmy font */
+            font-size: 2.5em; /* Increase font size */
+            color: #954535; /* Farmy brown color */
+        }
 
-.banner-button {
-    margin-left: auto;
-}
+        .banner-button {
+            margin-left: auto;
+        }
 
-.banner2 {
-    width: 100%;
-    height: 20px;
-    background-color: #6b8e23; /* Olive green background */
-    color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 20px;
-}
+        .banner2 {
+            width: 100%;
+            height: 20px;
+            background-color: #6b8e23; /* Olive green background */
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 20px;
+        }
 
-#map {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    z-index: 0;
-    background: url('path_to_your_farm_background_image.jpg') no-repeat center center;
-    background-size: cover;
-}
+        #map {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            z-index: 0;
+            background-size: cover;
+        }
 
-.mainSection {
-    flex: 1;
-    display: flex;
-}
+        .mainSection {
+            flex: 1;
+            display: flex;
+        }
 
-.middleSection {
-    flex: 2;
-    justify-content: center;
-    align-items: center;
-}
+        .middleSection {
+            flex: 2;
+            justify-content: center;
+            align-items: center;
+        }
 
-.rightSection {
-    flex: 1;
-    padding: 20px;
-    background-color: #fff8dc; /* Cornsilk background */
-    color: #383736;
-    border-left: 2px solid #8b4513; /* Dark brown border */
-}
+        .rightSection {
+            flex: 1;
+            padding: 20px;
+            background-color: #fff8dc; /* Cornsilk background */
+            color: #383736;
+            border-left: 2px solid #8b4513; /* Dark brown border */
+        }
 
-.contactBox {
-    border: 3px solid #8b4513; /* Dark brown border */
-    padding: 10px;
-    margin-top: 20px;
-    background-color: #fffaf0; /* Floral white background */
-}
+        .contactBox {
+            border: 3px solid #8b4513; /* Dark brown border */
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #fffaf0; /* Floral white background */
+        }
 
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #faf0e6; /* Linen background */
-    min-width: 150px;
-    overflow-y: auto;
-    border: 1px solid #ddd;
-    z-index: 9999;
-    top: calc(100% - 1px); /* Adjust this to remove the gap */
-    color: black;
-}
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #faf0e6; /* Linen background */
+            min-width: 150px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            z-index: 9999;
+            top: calc(100% - 1px); /* Adjust this to remove the gap */
+            color: black;
+        }
 
-.dropdown-content label {
-    display: block;
-    margin: 3px 0;
-}
+        .dropdown-content label {
+            display: block;
+            margin: 3px 0;
+        }
 
-.dropdown-content input[type="checkbox"] {
-    margin-right: 5px;
-}
+        .dropdown-content input[type="checkbox"] {
+            margin-right: 5px;
+        }
 
-.dropdown:hover .dropdown-content {
-    display: block;
-}
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
 
-.suggestion {
-    padding: 5px;
-    cursor: pointer;
-    background-color: white;
-    border: 1px solid #ccc;
-}
+        .suggestion {
+            padding: 5px;
+            cursor: pointer;
+            background-color: white;
+            border: 1px solid #ccc;
+        }
 
-.suggestion:hover {
-    background-color: #f0f0f0; /*Byter färg på det alternativ som nu är valt*/
-}
+        .suggestion:hover {
+            background-color: #f0f0f0; /*Byter färg på det alternativ som nu är valt*/
+        }
 
-.dark-mode, .dark-mode div, .dark-mode .banner {
-    background-color: #2f4f4f;
-    color: #FFFFFF;
-}
+        .dark-mode, .dark-mode div, .dark-mode .banner {
+            background-color: #2f4f4f;
+            color: #FFFFFF;
+        }
 
-.dark-mode .banner2 {
-    background-color: #556b2f;
-}
+        .dark-mode .banner2 {
+            background-color: #556b2f;
+        }
 
-.dark-mode {
-    background-color: #2f4f4f; /* Byter bakgrund till svart */
-    color: #FFFFFF; /* Byter textfärg till vit */
-}
+        .dark-mode {
+            background-color: #2f4f4f; /* Byter bakgrund till svart */
+            color: #FFFFFF; /* Byter textfärg till vit */
+        }
 
-.dark-mode .rightSection, .dark-mode .contactBox {
-    background-color: #2f4f4f;
-    color: #FFFFFF;
-}
-.placeholder {
+        .dark-mode .rightSection, .dark-mode .contactBox {
+            background-color: #2f4f4f;
+            color: #FFFFFF;
+        }
+
+        .placeholder {
             color: #8b4513; /* Farmy brown color */
             font-style: italic;
         }
+
         .hidden {
             display: none;
         }
 
-    </style>
+        .suggestions {
+            border: 1px solid #ccc;
+            max-height: 150px;
+            overflow-y: auto;
+            position: absolute;
+            background: white;
+            width: 200px;
+        }
 
+        .suggestions li {
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .suggestions li:hover {
+            background: #eee;
+        }
+    </style>
 </head>
 <body>
     <div class="banner">
@@ -182,19 +199,21 @@ body {
                 <div id="searchSuggestions" class="dropdown-content"></div>
             </div>
         </div>
-    
+
         <div class="lowerLeftSection">
             <div class="dropdown">
                 <button class="dropbtn" onclick="applyFilter()">Apply Filters</button>
                 <div class="dropdown-content" id="tagDropdown"></div>
             </div>
         </div>
-    
+
         <div class="lowerRightSection">
+            <div class="dropdown">
+                <button id="locationbutton" onclick="showLocationPopup()">Find more farms using city name</button>
+            </div>
             <button onclick="showLatLonPopup()">Search using Lat and Lon</button>
         </div>
     </div>
-    
 
     <div class="mainSection">
         <div class="middleSection">
@@ -207,23 +226,25 @@ body {
                 <p id="placeholder" class="contactInfo">Choose a farm on the map or use the searchbar</p>
             </div>
             <div class="contactBox">
+                <h2>Opening Hours</h2>
+                <div id="openHoursInfo" class="openHoursInfo"></div>
+            </div>
+            <div class="contactBox">
                 <h2>Contact Farm</h2>
-                <div id="contactInfo" class="contactInfo">
-
-                </div>
+                <div id="contactInfo" class="contactInfo"></div>
             </div>
         </div>
     </div>
 
     <script>
         var map = L.map('map', {
-            minZoom: 3,  
-            maxZoom: 18, 
-            maxBounds: [  
-                [-100, -160],  
-                [150, 180]    
+            minZoom: 3,
+            maxZoom: 18,
+            maxBounds: [
+                [-100, -160],
+                [150, 180]
             ],
-            maxBoundsViscosity: 1.0 
+            maxBoundsViscosity: 1.0
         }).setView([63, 15], 5.4);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -234,135 +255,195 @@ body {
         var markers = {};
 
         function addMarkers(farms) {
-    farms.forEach(function(farm) {
-        markers[farm.id] = add_marker(
-            farm.latitude,
-            farm.longitude,
-            farm.name,
-            farm.description,
-            farm.rating,
-            farm.address,
-            farm.website,
-            farm.phonenumber
-        );
-    });
-}
+            farms.forEach(function(farm) {
+                markers[farm.id] = add_marker(
+                    farm.id,
+                    farm.latitude,
+                    farm.longitude,
+                    farm.name,
+                    farm.description,
+                    farm.rating,
+                    farm.address,
+                    farm.website,
+                    farm.phonenumber,
+                    farm.openinghours
+                );
+            });
+        }
 
-function add_marker(latitude, longitude, name, description, rating, address, website, phonenumber) {
-    var marker = L.marker([latitude, longitude]).addTo(map).bindPopup("<b>" + name + "</b><br>" + description);
+        function add_marker(id, latitude, longitude, name, description, rating, address, website, phonenumber, openinghours) {
+            var marker = L.marker([latitude, longitude]).addTo(map).bindPopup("<b>" + name + "</b><br>" + description);
 
-    // Set marker options
-    marker.options.description = description || '';
-    marker.options.rating = rating || '';
-    marker.options.website = website || '';
-    marker.options.phonenumber = phonenumber || '';
-    marker.options.address = address || ''; // Add this line to set the address
+            // Set marker options
+            marker.options.description = description || '';
+            marker.options.rating = rating || '';
+            marker.options.website = website || '';
+            marker.options.phonenumber = phonenumber || '';
+            marker.options.address = address || ''; // Add this line to set the address
+            marker.options.openinghours = fetchOpeningHours(id);
 
-    // Add event listener to marker
-    marker.on('click', function() {
-        const description = marker.options.description;
-        const rating = marker.options.rating;
-        const website = marker.options.website;
-        const phonenumber = marker.options.phonenumber;
-        const address = marker.options.address; // Add this line to get the address
+            // Add event listener to marker
+            marker.on('click', function() {
+                const description = marker.options.description;
+                const rating = marker.options.rating;
+                const website = marker.options.website;
+                const phonenumber = marker.options.phonenumber;
+                const address = marker.options.address; // Add this line to get the address
+                const openinghours = marker.options.openinghours;
 
-        updateInfo(name, description, rating, address, website, phonenumber);
-    });
+                updateInfo(id, name, description, rating, address, website, phonenumber, openinghours);
+            });
 
-    return marker;
-}
+            return marker;
+        }
+
+        function fetchfarms() {
+            return fetch('/fetch-farms')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch farms');
+                    }
+                    return response.json();
+                });
+        }
+
+        function showLatLonPopup() {
+            const lat = prompt("Please enter latitude:");
+            const lon = prompt("Please enter longitude:");
+            if (lat === null || lon === null) {
+                return;
+            }
+            const latitude = parseFloat(lat);
+            const longitude = parseFloat(lon);
+
+            if (isNaN(latitude) || isNaN(longitude)) {
+                alert("Invalid latitude or longitude. Please enter valid numbers.");
+                return;
+            }
+
+            fetchDataAndAddMarkers(latitude, longitude)
+                .then(() => {
+                    const latlng = L.latLng(latitude, longitude);
+                    map.setView(latlng, 8);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
 
 
-function fetchfarms() {
-        return fetch('/fetch-farms')
+        function showLocationPopup() {
+            const location = prompt("Please enter city name:");
+            if (location==null) {
+                return;
+            }
+            callApiPingLocation(location)
+                .then(() => {
+                    updateFarms();
+                    /*const latlng = L.latLng();
+                    map.setView(latlng, 8);*/
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            }
+
+        function callApiPing(lat, lon) {
+            return fetch(`/new-farms?lat=${lat}&lon=${lon}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
             .then(response => {
                 if (!response.ok) {
-                    throw new Error('Failed to fetch farms');
+                    throw new Error('Failed to call API');
+                }
+            });
+        }
+
+        function callApiPingLocation(location) {
+            if (location.length > 0){
+            return fetch(`/new-farms-city-name?city=${location}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to call API');
+                }
+            });
+        }
+        }        
+        async function fetchDataAndAddMarkers(latitude, longitude) {
+            try {
+                await callApiPing(latitude, longitude);
+                await updateFarms();
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+        function updateFarms() {
+            fetchfarms()
+                .then(farms => {
+                    addMarkers(farms);
+                })
+                .catch(error => {
+                    console.error('Error fetching farms:', error);
+                });
+        }
+
+        function updatefilteredFarms(farms) {
+            Object.values(markers).forEach(marker => map.removeLayer(marker));
+            addMarkers(farms);
+        }
+
+        function fetchOpeningHours(id) {
+            return fetch(`/fetch-opening-hours/${id}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ id: id })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to fetch opening hours');
                 }
                 return response.json();
+            })
+            .catch(error => {
+                console.error('Fetch opening hours error:', error);
             });
-    }
-    function showLatLonPopup() {
-    const lat = prompt("Please enter latitude:");
-    const lon = prompt("Please enter longitude:");
-    if (lat === null || lon === null) {
-        return;
-    }
-    const latitude = parseFloat(lat);
-    const longitude = parseFloat(lon);
+        }
 
-    if (isNaN(latitude) || isNaN(longitude)) {
-        alert("Invalid latitude or longitude. Please enter valid numbers.");
-        return;
-    }
-    
-    fetchDataAndAddMarkers(latitude,longitude)
-        .then(() => {
-            const latlng = L.latLng(latitude, longitude);
-            map.setView(latlng, 8);
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
-}
-
-function callApiPing(lat,lon) {
-        return fetch(`/new-farms?lat=${lat}&lon=${lon}`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Failed to call API');
-            }
-        });
-    }
-
-async function fetchDataAndAddMarkers(latitude, longitude) {
-    try {
-        await callApiPing(latitude, longitude);
-        await updateFarms();
-    } catch (error) {
-        console.error('Error:', error);
-    }
-}
-
-function updateFarms(){ //Denna hämtar alla farms från databasen och lägger till dem på kartan
-    fetchfarms()
-        .then(farms => {
-            addMarkers(farms);
-        })
-        .catch(error => {
-            console.error('Error fetching farms:', error);
-        });
-}
-
-function updatefilteredFarms(farms){
-    Object.values(markers).forEach(marker => map.removeLayer(marker));
-    addMarkers(farms);
-}
-
-
-updateFarms();  //Denna rad ser till att de ursprungliga farmsen läggs in när programmet startas
-
-
-
+        updateFarms();  // Ensure initial farms are loaded when the program starts
 
         function zoomToFarm() {
             var select = document.getElementById('farmSelect');
             var selectedOption = select.options[select.selectedIndex];
             var lat = selectedOption.getAttribute('data-lat');
             var lng = selectedOption.getAttribute('data-lng');
-            if(lat && lng) {
+            if (lat && lng) {
                 map.setView([lat, lng], 12);
                 markers[selectedOption.value].openPopup();
-                updateInfo(selectedOption.text, selectedOption.getAttribute('data-description'),selectedOption.getAttribute('data-rating'),selectedOption.getAttribute('data-address'),selectedOption.getAttribute('data-website'),selectedOption.getAttribute('data-phonenumber'));
+                updateInfo(
+                    selectedOption.value,
+                    selectedOption.text,
+                    selectedOption.getAttribute('data-description'),
+                    selectedOption.getAttribute('data-rating'),
+                    selectedOption.getAttribute('data-address'),
+                    selectedOption.getAttribute('data-website'),
+                    selectedOption.getAttribute('data-phonenumber'),
+                    selectedOption.getAttribute('data-openinghours')
+                );
             }
         }
-        
-        function updateInfo(name, description, rating, address, website, phonenumber) {
+
+        function updateInfo(id, name, description, rating, address, website, phonenumber, openinghoursPromise) {
             document.getElementById('farmName').textContent = name;
             var infoContainer = document.getElementById('farmInfo');
             infoContainer.innerHTML = '';
@@ -379,14 +460,45 @@ updateFarms();  //Denna rad ser till att de ursprungliga farmsen läggs in när 
             addressElement.textContent = 'Address: ' + address;
             infoContainer.appendChild(addressElement);
 
+            var openinghoursContainer = document.getElementById('openHoursInfo');
+            openinghoursContainer.innerHTML = '';
+
+            openinghoursPromise.then(openinghours => {
+                if (openinghours && openinghours[id]) {
+                    var openingHoursElement = document.createElement('div');
+                    var daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+
+                    daysOfWeek.forEach((day, index) => {
+                        var dayElement = document.createElement('p');
+                        var times = openinghours[id][index + 1];
+                        if (times && times.length === 2) {
+                            var openingTime = times[0];
+                            var closingTime = times[1];
+                            dayElement.textContent = `${day}: ${openingTime} - ${closingTime}`;
+                            openingHoursElement.appendChild(dayElement);
+                        } else {
+                            dayElement.textContent = `${day}: Closed`;
+                            openingHoursElement.appendChild(dayElement);
+                        }
+                    });
+                    openinghoursContainer.appendChild(openingHoursElement);
+                } else {
+                    openinghoursContainer.textContent = 'Opening hours not available';
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching opening hours:', error);
+            });
+            
+
             var contactInfoContainer = document.getElementById('contactInfo');
             contactInfoContainer.innerHTML = '';
 
-            if (website && website.trim() !== "" && website !== "None"){
-                var websiteLink = document.createElement('a'); 
-                websiteLink.href = website; // Denna gör länken till en faktisk länk
-                websiteLink.textContent = 'Link to Farm Website'; 
-                websiteLink.target = "_blank"; //Ser till att länken öppnas i nytt fönster
+            if (website && website.trim() !== "" && website !== "None") {
+                var websiteLink = document.createElement('a');
+                websiteLink.href = website;
+                websiteLink.textContent = 'Link to Farm Website';
+                websiteLink.target = "_blank"; // Ensure the link opens in a new window
             } else {
                 websiteLink = document.createElement('p');
                 websiteLink.textContent = 'Website not available';
@@ -394,28 +506,27 @@ updateFarms();  //Denna rad ser till att de ursprungliga farmsen läggs in när 
             contactInfoContainer.appendChild(websiteLink);
 
             var phoneNumberElement = document.createElement('p');
-            if (phonenumber && phonenumber.trim() !== "" && phonenumber !== "None") { 
+            if (phonenumber && phonenumber.trim() !== "" && phonenumber !== "None") {
                 phoneNumberElement.textContent = 'Phone Number: ' + phonenumber;
-            } else  {
+            } else {
                 phoneNumberElement.textContent = 'Phone number not available';
             }
             contactInfoContainer.appendChild(phoneNumberElement);
         }
 
-        // Här läggs checkboxes in 
         function populateCheckboxes(tags) {
             const tagDropdown = document.getElementById('tagDropdown');
             tagDropdown.innerHTML = "";
             tags.forEach(tag => {
                 const checkbox = document.createElement('input');
                 checkbox.type = 'checkbox';
-                checkbox.id = tag; 
+                checkbox.id = tag;
                 checkbox.name = 'tag';
                 checkbox.value = tag;
-                
+
                 const label = document.createElement('label');
-                label.setAttribute('for', tag); 
-                label.textContent = tag; 
+                label.setAttribute('for', tag);
+                label.textContent = tag;
 
                 tagDropdown.appendChild(checkbox);
                 tagDropdown.appendChild(label);
@@ -423,7 +534,6 @@ updateFarms();  //Denna rad ser till att de ursprungliga farmsen läggs in när 
             });
         }
 
-        // Här lägger vi in filtrering
         function applyFilter() {
             var selectedTags = [];
             var checkboxes = document.querySelectorAll('#tagDropdown input[type="checkbox"]');
@@ -432,15 +542,14 @@ updateFarms();  //Denna rad ser till att de ursprungliga farmsen läggs in när 
                     selectedTags.push(checkbox.value);
                 }
             });
-            if (selectedTags.length > 0){
-            filterSearchOptions(selectedTags);
-            }
-            else{
+            if (selectedTags.length > 0) {
+                filterSearchOptions(selectedTags);
+            } else {
                 updateFarms();
             }
         }
 
-        function filterSearchOptions(tags){
+        function filterSearchOptions(tags) {
             fetch('/fetch-farms-with-tags', {
                 method: 'POST',
                 headers: {
@@ -455,12 +564,11 @@ updateFarms();  //Denna rad ser till att de ursprungliga farmsen läggs in när 
                 return response.json();
             })
             .then(options => {
-                displaytags=[]
+                const displaytags = [];
                 options.forEach(option => {
-                    const id = option[0];
-                    displaytags.push(option)                    
+                    displaytags.push(option);
                 });
-                updatefilteredFarms(displaytags); 
+                updatefilteredFarms(displaytags);
             })
             .catch(error => {
                 console.error('Fetch filtered search options error:', error);
@@ -481,13 +589,14 @@ updateFarms();  //Denna rad ser till att de ursprungliga farmsen läggs in när 
                 console.error('Fetch tags error:', error);
             });
 
-        // Funktionalitet för att lyssna på input från sökfältet
+        // Listen to input from the search bar
         document.getElementById('searchBar').addEventListener('input', function(event) {
-            const searchTerm = event.target.value;
-            fetchSearchOptions(searchTerm);
-        });
+        const searchTerm = event.target.value;
+        fetchSearchOptions(searchTerm);
+    });
 
-        // Hämtar förslag från backend
+
+        // Fetch suggestions from backend
         function fetchSearchOptions(term) {
             fetch('/fetch-search-options', {
                 method: 'POST',
@@ -510,42 +619,57 @@ updateFarms();  //Denna rad ser till att de ursprungliga farmsen läggs in när 
             });
         }
 
-        // Visar förslagen
+/*         function fetchLocationSearchOptions(term) {
+        fetch('/new-farms-city-name', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ term: term, search_type: 'address' })  // Update to use 'address' as search_type
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to fetch location search options');
+            }
+            return response.json();
+        })
+        .then(options => {
+            console.log("Options received: ", options);
+            displayLocationSearchOptions(options);
+        })
+        .catch(error => {
+            console.error('Fetch location search options error:', error);
+        });
+    }
+*/
+
+        // Display suggestions
         function displaySearchOptions(options) {
             const searchSuggestions = document.getElementById('searchSuggestions');
-            searchSuggestions.innerHTML = ''; // Rensar tidigare förslag
+            searchSuggestions.innerHTML = ''; // Clear previous suggestions
 
             options.forEach(option => {
-                const [name, address] = [option[1],option[2]];  
+                const [id, name, address] = [option[0], option[1], option[2]];
                 const suggestion = document.createElement('div');
                 suggestion.textContent = `${name} - ${address}`;
                 suggestion.classList.add('suggestion');
 
-                // Här är vad som händer när ett sökalternativ väljs
+                // Event listener for suggestion click
                 suggestion.addEventListener('click', function() {
-                    // Hämtar info om en farm från kartan
-                    const marker = markers[option[0]];
-
-                    map.setView(marker.getLatLng(), 10);    //Zoomar in på den valda farmen
-                    markers[option[0]].openPopup();
+                    const marker = markers[id];
+                    map.setView(marker.getLatLng(), 10);
+                    marker.openPopup();
 
                     const description = marker.options.description || '';
-                    const rating = marker.options.rating || ''; 
-                    const website = marker.options.website || ''; 
-                    const phonenumber = marker.options.phonenumber || ''; 
+                    const rating = marker.options.rating || '';
+                    const website = marker.options.website || '';
+                    const phonenumber = marker.options.phonenumber || '';
 
-                    // Visar info om den farm som valts
-                
-                    updateInfo(name, description, rating, address, website, phonenumber);
-
+                    updateInfo(id, name, description, rating, address, website, phonenumber, marker.options.openinghours);
                 });
 
                 searchSuggestions.appendChild(suggestion);
             });
-        }
-
-        function toggleMode() {
-            document.body.classList.toggle('dark-mode'); 
         }
     </script>
 </body>

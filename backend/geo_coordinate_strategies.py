@@ -2,7 +2,6 @@ from .I_geo_strategies import GeolocationStrategy
 import requests
 
 class CityNameGeolocation(GeolocationStrategy):
-    class CityNameGeolocation(GeolocationStrategy):
         def get_coordinates(self, city_name):
             API_URL = "https://nominatim.openstreetmap.org/search"
             params = {

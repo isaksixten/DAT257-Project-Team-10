@@ -21,11 +21,18 @@ def home():
     return controller.display_home_page()
 
 @app.route('/new-farms', methods=["POST"])
-def api_ping():
+def api_ping_latlon():
     lat = request.args.get('lat')  # Get the 'lon' parameter from the request
     lon = request.args.get('lon')  # Get the 'lat' parameter from the request
-    controller.update_locations_from_search(lat, lon)
+    controller.update_locations_from_latlon(lat, lon)
     return 'Success', 200  # Return a success message with status code 200
+
+@app.route('/new-farms-city-name', methods=['POST'])
+def api_ping_city_name():
+    city = request.args.get('city')
+    controller.update_locations_from_searchterm(city)
+    return 'Success', 200
+
 
 @app.route('/fetch-farms')
 def fetch_farms():
@@ -53,6 +60,10 @@ def fetch_continous_farmtags():
     data = request.get_json()
     tags = data.get('tags', [])
     return controller.get_farmtags(tags)
+
+@app.route('/fetch-opening-hours/<id>', methods=['POST'])
+def fetch_opening_hours(id):
+    return controller.fetch_opening_hours(id)
 
 if __name__ == "__main__":
     app.run(debug=True)
