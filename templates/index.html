@@ -43,6 +43,9 @@
             font-size: 2.5em; /* Increase font size */
             color: #954535; /* Farmy brown color */
         }
+        .banner-text.dark-mode {
+        color: #ffffff; /* White color in dark mode */
+        }
 
         .banner-button {
             margin-left: auto;
@@ -134,9 +137,9 @@
             background-color: #f0f0f0; /*Byter färg på det alternativ som nu är valt*/
         }
 
-        .dark-mode, .dark-mode div, .dark-mode .banner {
-            background-color: #2f4f4f;
-            color: #FFFFFF;
+        .dark-mode, .dark-mode .banner, .dark-mode .banner-text {
+        background-color: #2f4f4f;
+        color: #FFFFFF;
         }
 
         .dark-mode .banner2 {
@@ -179,6 +182,42 @@
         .suggestions li:hover {
             background: #eee;
         }
+
+        .popup {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 60px;
+        }
+
+        .popup-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -208,9 +247,14 @@
         </div>
 
         <div class="lowerRightSection">
-            <div class="dropdown">
-                <button id="locationbutton" onclick="showLocationPopup()">Find more farms using city name</button>
-            </div>
+            <button id="findFarmsButton" onclick="showPopup()">Find farms close to me</button>
+        </div>
+    </div>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <button onclick="showLocationPopup()">Find more farms using city name</button>
             <button onclick="showLatLonPopup()">Search using Lat and Lon</button>
         </div>
     </div>
@@ -253,6 +297,14 @@
         }).addTo(map);
 
         var markers = {};
+
+        function showPopup() {
+            document.getElementById("popup").style.display = "block";
+        }
+
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
 
         function addMarkers(farms) {
             Object.values(markers).forEach(marker => map.removeLayer(marker)); // Detta löser apply filter bugget som händer om man trycker flera gånger
@@ -333,21 +385,30 @@
         }
 
 
-        function showLocationPopup() {
-            const location = prompt("Please enter city name:");
-            if (location==null) {
-                return;
+    async function showLocationPopup() {
+        const location = prompt("Please enter city name:");
+        if (location == null) {
+            return;
+        }
+        try {
+            const response = await fetch(`/new-farms-city-name?city=${location}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            if (!response.ok) {
+                throw new Error('Failed to call API');
             }
-            callApiPingLocation(location)
-                .then(() => {
-                    updateFarms();
-                    /*const latlng = L.latLng();
-                    map.setView(latlng, 8);*/
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                });
-            }
+            const data = await response.json();
+            const [latitude, longitude] = [data.latitude, data.longitude];
+            updateFarms();
+            map.setView([latitude, longitude], 8);
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    }
+
 
         function callApiPing(lat, lon) {
             return fetch(`/new-farms?lat=${lat}&lon=${lon}`, {
@@ -363,21 +424,6 @@
             });
         }
 
-        function callApiPingLocation(location) {
-            if (location.length > 0){
-            return fetch(`/new-farms-city-name?city=${location}`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Failed to call API');
-                }
-            });
-        }
-        }        
         async function fetchDataAndAddMarkers(latitude, longitude) {
             try {
                 await callApiPing(latitude, longitude);
@@ -568,7 +614,6 @@
                 return response.json();
             })
             .then(options => {
-                console.log(options);
                 updatefilteredFarms(options);
                 displaySearchOptions(options);
             })
@@ -673,7 +718,41 @@
                 searchSuggestions.appendChild(suggestion);
             });
         }
+         function toggleMode() {
+            const body = document.body;
+            if (body.classList.contains('light-mode')) {
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+            } else {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+            }
+        }
 
+        function showLatLonPopup() {
+            closePopup();
+            const lat = prompt("Please enter latitude:");
+            const lon = prompt("Please enter longitude:");
+            if (lat === null || lon === null) {
+                return;
+            }
+            const latitude = parseFloat(lat);
+            const longitude = parseFloat(lon);
+
+            if (isNaN(latitude) || isNaN(longitude)) {
+                alert("Invalid latitude or longitude. Please enter valid numbers.");
+                return;
+            }
+
+    fetchDataAndAddMarkers(latitude, longitude)
+        .then(() => {
+            const latlng = L.latLng(latitude, longitude);
+            map.setView(latlng, 8);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+}
     </script>
 </body>
 </html>
