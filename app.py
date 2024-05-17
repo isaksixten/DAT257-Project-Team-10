@@ -1,5 +1,5 @@
 # app.py
-from flask import Flask, request, redirect, url_for
+from flask import Flask, request, redirect, url_for,jsonify
 from backend.local_food_map_controller import LocalFoodMapController
 from frontend.local_food_map_view import LocalFoodMapView
 from backend.query_machine import QueryMachine
@@ -30,8 +30,12 @@ def api_ping_latlon():
 @app.route('/new-farms-city-name', methods=['POST'])
 def api_ping_city_name():
     city = request.args.get('city')
-    controller.update_locations_from_searchterm(city)
-    return 'Success', 200
+    lat_lon_tuple = controller.update_locations_from_searchterm(city)
+    if lat_lon_tuple:
+        return jsonify({'latitude': lat_lon_tuple[0], 'longitude': lat_lon_tuple[1]})
+    else:
+        return jsonify({'error': 'City not found'}), 404
+
 
 
 @app.route('/fetch-farms')

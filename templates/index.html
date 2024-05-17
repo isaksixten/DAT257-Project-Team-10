@@ -333,21 +333,30 @@
         }
 
 
-        function showLocationPopup() {
-            const location = prompt("Please enter city name:");
-            if (location==null) {
-                return;
+    async function showLocationPopup() {
+        const location = prompt("Please enter city name:");
+        if (location == null) {
+            return;
+        }
+        try {
+            const response = await fetch(`/new-farms-city-name?city=${location}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            if (!response.ok) {
+                throw new Error('Failed to call API');
             }
-            callApiPingLocation(location)
-                .then(() => {
-                    updateFarms();
-                    /*const latlng = L.latLng();
-                    map.setView(latlng, 8);*/
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                });
-            }
+            const data = await response.json();
+            const [latitude, longitude] = [data.latitude, data.longitude];
+            updateFarms();
+            map.setView([latitude, longitude], 8);
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    }
+
 
         function callApiPing(lat, lon) {
             return fetch(`/new-farms?lat=${lat}&lon=${lon}`, {
@@ -364,18 +373,28 @@
         }
 
         function callApiPingLocation(location) {
-            if (location.length > 0){
-            return fetch(`/new-farms-city-name?city=${location}`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Failed to call API');
-                }
-            });
+            if (location.length > 0) {
+                return fetch(`/new-farms-city-name?city=${location}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to call API');
+                    }
+                    console.log(response);
+                    return response.json();
+                })
+                .then(data => {
+                    // Assuming the response is an object like { latitude: 10, longitude: 20 }
+                    return [data.latitude, data.longitude]; // Return as a tuple
+                })
+                .catch(error => {
+                    console.error('API error:', error);
+                    throw error;
+                });
         }
         }        
         async function fetchDataAndAddMarkers(latitude, longitude) {
