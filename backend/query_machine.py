@@ -16,9 +16,9 @@ class QueryMachine:
     def createDatabase(self):
         try:
             with self.conn.cursor() as cur:
-                tables = open(r".\database\tables.sql")
-                inserts = open(r".\database\exampleinserts.sql")
-                views = open(r".\database\views.sql")
+                tables = open(r"./database/tables.sql")
+                inserts = open(r"./database/exampleinserts.sql")
+                views = open(r"./database/views.sql")
                 cur.execute(tables.read())
                 cur.execute(inserts.read())
                 cur.execute(views.read())
@@ -30,10 +30,10 @@ class QueryMachine:
 
     def createDatabaseFromScratch(self): #For testing purposes
         with self.conn.cursor() as cur:
-            dropschema = open(r".\database\createdb.sql")
-            tables = open(r".\database\tables.sql")
-            inserts = open(r".\database\exampleinserts.sql")
-            views = open(r".\database\views.sql")
+            dropschema = open(r"./database/createdb.sql")
+            tables = open(r"./database/tables.sql")
+            inserts = open(r"./database/exampleinserts.sql")
+            views = open(r"./database/views.sql")
             cur.execute(dropschema.read())
             cur.execute(tables.read())
             cur.execute(inserts.read())
