@@ -43,6 +43,9 @@
             font-size: 2.5em; /* Increase font size */
             color: #954535; /* Farmy brown color */
         }
+        .banner-text.dark-mode {
+        color: #ffffff; /* White color in dark mode */
+        }
 
         .banner-button {
             margin-left: auto;
@@ -134,9 +137,9 @@
             background-color: #f0f0f0; /*Byter färg på det alternativ som nu är valt*/
         }
 
-        .dark-mode, .dark-mode div, .dark-mode .banner {
-            background-color: #2f4f4f;
-            color: #FFFFFF;
+        .dark-mode, .dark-mode .banner, .dark-mode .banner-text {
+        background-color: #2f4f4f;
+        color: #FFFFFF;
         }
 
         .dark-mode .banner2 {
@@ -691,6 +694,16 @@
 
                 searchSuggestions.appendChild(suggestion);
             });
+        }
+         function toggleMode() {
+            const body = document.body;
+            if (body.classList.contains('light-mode')) {
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+            } else {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+            }
         }
 
     </script>
