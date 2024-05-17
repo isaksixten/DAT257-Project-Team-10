@@ -16,18 +16,18 @@ class QueryMachine:
     def createDatabase(self):
         try:
             with self.conn.cursor() as cur:
-                cur.execute(open(r".\database\tables.sql").read())
-                cur.execute(open(r".\database\exampleinserts.sql").read())
-                cur.execute(open(r".\database\views.sql").read())
+                cur.execute(open(r"./database/tables.sql").read())
+                cur.execute(open(r"./database/exampleinserts.sql").read())
+                cur.execute(open(r"./database/views.sql").read())
         except psycopg2.Error as e:
             print("Database is already created")
 
     def createDatabaseFromScratch(self): #For testing purposes
         with self.conn.cursor() as cur:
-            cur.execute(open(r".\database\createdb.sql").read())
-            cur.execute(open(r".\database\tables.sql").read())
-            cur.execute(open(r".\database\exampleinserts.sql").read())
-            cur.execute(open(r".\database\views.sql").read())
+            cur.execute(open(r"./database/createdb.sql").read())
+            cur.execute(open(r"./database/tables.sql").read())
+            cur.execute(open(r"./database/exampleinserts.sql").read())
+            cur.execute(open(r"./database/views.sql").read())
 
     def fetch_location(self, id):
         with self.conn.cursor() as cur:
