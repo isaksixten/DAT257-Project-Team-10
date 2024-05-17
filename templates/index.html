@@ -615,7 +615,13 @@
             })
             .then(options => {
                 updatefilteredFarms(options);
-                displaySearchOptions(options);
+                let optionList = [];
+                options.forEach(option => {
+                    // Access the keys directly from the option object
+                    const { id, name, address } = option;
+                    optionList.push([id, name, address]);
+                });
+                displaySearchOptions(optionList);
             })
             .catch(error => {
                 console.error('Fetch filtered search options error:', error);
