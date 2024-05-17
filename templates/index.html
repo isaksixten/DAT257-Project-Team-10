@@ -424,31 +424,6 @@
             });
         }
 
-        function callApiPingLocation(location) {
-            if (location.length > 0) {
-                return fetch(`/new-farms-city-name?city=${location}`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Failed to call API');
-                    }
-                    console.log(response);
-                    return response.json();
-                })
-                .then(data => {
-                    // Assuming the response is an object like { latitude: 10, longitude: 20 }
-                    return [data.latitude, data.longitude]; // Return as a tuple
-                })
-                .catch(error => {
-                    console.error('API error:', error);
-                    throw error;
-                });
-        }
-        }        
         async function fetchDataAndAddMarkers(latitude, longitude) {
             try {
                 await callApiPing(latitude, longitude);
@@ -639,7 +614,6 @@
                 return response.json();
             })
             .then(options => {
-                console.log(options);
                 updatefilteredFarms(options);
                 displaySearchOptions(options);
             })
@@ -779,22 +753,6 @@
             console.error('Error:', error);
         });
 }
-
-        function showLocationPopup() {
-            closePopup();
-            const location = prompt("Please enter city name:");
-            if (location == null) {
-                return;
-            }
-            callApiPingLocation(location)
-                .then(() => {
-                    updateFarms();
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                });
-        }
-
     </script>
 </body>
 </html>
