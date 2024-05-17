@@ -10,6 +10,7 @@ class LocalFoodMapController:
     def __init__(self, view):
         self.view : LocalFoodMapView = view
         self.query_machine=QueryMachine()  # Use FarmModel to manage farms
+        self.query_machine.createDatabase()
         self.geolocation_strategy = None
 
     def create_farm(self, name, description, latitude, longitude):

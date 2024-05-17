@@ -7,6 +7,7 @@ class TestQueryMachine(unittest.TestCase):
     def __init__(self, *args, **kwargs):
         super(TestQueryMachine, self).__init__(*args, **kwargs)
         self.query = QueryMachine()
+        self.query.createDatabaseFromScratch()
 
     def testFetchAllLocationType(self):
         self.query.add_location('abc', 'Bertils slakt och grönt', 'Bästa slaktaren i staden',5, -37.33056, 48.64247,'FakeStreet 1','fake1.se','+123')
@@ -56,11 +57,40 @@ class TestQueryMachine(unittest.TestCase):
 
     def testAddTagToFarm(self):
         a = self.query.fetch_farms_tag('a')
-        self.query.add_tag('open_now')
-        self.query.add_farmtag('a', 'open_now')
+        self.query.add_tag('Open now')
+        self.query.add_farmtag('a', 'Open now')
         b = self.query.fetch_farms_tag('a')
         self.assertNotEqual(a, b)
-        self.query.delete_farm_tag('a', 'open_now')
+        self.query.delete_farm_tag('a', 'Open now')
+
+    def testUpdateOpenNowDelete(self):
+        self.query.add_location('bdc', 'Bertils slakt och grönt', 'Bästa slaktaren i staden',5, -37.33056, 48.64247,'FakeStreet 1','fake1.se','+123')
+        self.query.add_opening_hours('bdc', 1, '0200', '0400')
+        self.query.add_opening_hours('bdc', 2, '0200', '0400')
+        self.query.add_opening_hours('bdc', 3, '0200', '0400')
+        self.query.add_opening_hours('bdc', 4, '0200', '0400')
+        self.query.add_opening_hours('bdc', 5, '0200', '0400')
+        self.query.add_opening_hours('bdc', 6, '0200', '0400')
+        self.query.add_opening_hours('bdc', 7, '0200', '0400')
+        self.query.add_farmtag('bdc', 'Open now')
+        a = self.query.fetch_farms_tag('bdc')
+        self.query.update_open_now('bdc')
+        b = self.query.fetch_farms_tag('bdc')
+        self.assertNotEqual(a, b)
+
+    def testUpdateOpenNowInsert(self):
+        self.query.add_location('bcd', 'Bertils slakt och grönt', 'Bästa slaktaren i staden',5, -37.33056, 48.64247,'FakeStreet 1','fake1.se','+123')
+        self.query.add_opening_hours('bcd', 1, '0000', '2400')
+        self.query.add_opening_hours('bcd', 2, '0000', '2400')
+        self.query.add_opening_hours('bcd', 3, '0000', '2400')
+        self.query.add_opening_hours('bcd', 4, '0000', '2400')
+        self.query.add_opening_hours('bcd', 5, '0000', '2400')
+        self.query.add_opening_hours('bcd', 6, '0000', '2400')
+        self.query.add_opening_hours('bcd', 7, '0000', '2400')
+        a = self.query.fetch_farms_tag('bcd')
+        self.query.update_open_now('bcd') 
+        b = self.query.fetch_farms_tag('bcd')
+        self.assertNotEqual(a, b)
 
 
 if __name__ == "__main__":

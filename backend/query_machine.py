@@ -2,7 +2,7 @@ import datetime
 
 import psycopg2
 from datetime import datetime
-current_time = datetime.now()
+
 
 
 class QueryMachine:
@@ -12,6 +12,22 @@ class QueryMachine:
             user = "postgres",
             password = "postgres")
         self.conn.autocommit = True
+
+    def createDatabase(self):
+        try:
+            with self.conn.cursor() as cur:
+                cur.execute(open(r".\database\tables.sql").read())
+                cur.execute(open(r".\database\exampleinserts.sql").read())
+                cur.execute(open(r".\database\views.sql").read())
+        except psycopg2.Error as e:
+            print("Database is already created")
+
+    def createDatabaseFromScratch(self): #For testing purposes
+        with self.conn.cursor() as cur:
+            cur.execute(open(r".\database\createdb.sql").read())
+            cur.execute(open(r".\database\tables.sql").read())
+            cur.execute(open(r".\database\exampleinserts.sql").read())
+            cur.execute(open(r".\database\views.sql").read())
 
     def fetch_location(self, id):
         with self.conn.cursor() as cur:
@@ -131,13 +147,13 @@ class QueryMachine:
 
     def fetch_farms_tag(self, id):
         with self.conn.cursor() as cur:
-            sql = """ SELECT * FROM Farm_Tags WHERE farm=%s"""
-            cur.execute(sql, id)
+            sql = """ SELECT * FROM Farm_Tags WHERE farm = %s"""
+            cur.execute(sql, (id,))
             res = cur.fetchall()
             a_list = []
             if res:
                 for i in res:
-                    a_list.append(i[1])
+                    a_list.append((i[0], i[1]))
                 return a_list
             else:
                 return []
@@ -164,21 +180,21 @@ class QueryMachine:
 
     def update_open_now(self, farmid):
         # fix with weekday
-        current_date = datetime.date.today()
-        weekday = current_date.weekday()
+        current_time = datetime.now().strftime("%H:%M")
+        weekday = datetime.today().weekday() + 1
         with self.conn.cursor() as cur:
-            sql = """ SELECT farm_id, open_time, close_time FROM Opening_Hours WHERE farmid = %s AND weekday = %s"""
+            sql = """ SELECT farm_id, open_time, close_time FROM Opening_Hours WHERE Opening_hours.farm_id = %s AND weekday = %s"""
             cur.execute(sql, (farmid, weekday))
             res = cur.fetchall()
             for i in res:
                 if i[1] > current_time or current_time > i[2]:
-                    with self.conn.cursor() as cur2:
-                        sql = """ DELETE farm, tag FROM Farm_tag WHERE farm_id = %s AND tag = "open_now" """
-                        cur2.execute(sql, (i[0],))
+                    #with self.conn.cursor() as cur2:
+                        sql = """ DELETE FROM Farm_tags WHERE farm_tags.farm = %s AND tag = 'Open now' """
+                        cur.execute(sql, (i[0],))
                 else:
-                    with self.conn.cursor() as cur2:
-                        sql = """ INSERT INTO Farm_tag VALUES (%s,  %s, %s) """
-                        cur2.execute(sql, (i[0], i[1], i[2]))
+                    #with self.conn.cursor() as cur2:
+                        sql = """ INSERT INTO Farm_tags VALUES (%s,  'Open now') """
+                        cur.execute(sql, (i[0],))
 
             
     def fetch_by_search(self, term): # Can search for both name and address. Only returns name and adress to search bar as of now....
