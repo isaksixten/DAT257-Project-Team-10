@@ -46,9 +46,9 @@ def farms_to_database(id, dict):
             dict['geometry']['location']['lng'],dict['formatted_address'],dict['website'],dict['international_phone_number'])
         
         if dict['wheelchair_accessible_entrance'] != None:
-            query.add_farmtag(id, 'wheelchair')
+            query.add_farmtag(id, 'Wheelchair Accessible')
         if dict['open_now'] != None:
-            query.add_farmtag(id, 'open_now')
+            query.add_farmtag(id, 'Open now') 
         if dict['opening_hours'] != None:
             for day in range(len(dict['opening_hours']["periods"])):
                 cur_day = dict['opening_hours']["periods"][day]

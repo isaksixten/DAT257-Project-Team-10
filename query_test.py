@@ -15,6 +15,8 @@ class TestQueryMachine(unittest.TestCase):
 
     def testFetchAllLocationValuesType(self):
         self.query.add_location('abc', 'Bertils slakt och grönt', 'Bästa slaktaren i staden',5, -37.33056, 48.64247,'FakeStreet 1','fake1.se','+123')
+        self.query.add_location('acd', 'Bertils slakt och grönt', 'Bästa slaktaren i staden',5, -37.33056, 48.64247,'FakeStreet 1','fake1.se','+123')
+        self.query.add_location('bac', 'Bertils slakt och grönt', 'Bästa slaktaren i staden',5, -37.33056, 48.64247,'FakeStreet 1','fake1.se','+123')
         res = self.query.fetch_all_locations()
         for elem in res:
             self.assertIsInstance(elem, dict)
