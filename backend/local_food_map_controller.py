@@ -28,7 +28,7 @@ class LocalFoodMapController:
         local_farms_sweden(float(lat),float(lon))
 
     def update_locations_from_searchterm(self,searchterm):
-        local_farms_from_location(searchterm)
+        return local_farms_from_location(searchterm)
 
     def fetch_farms(self):
         return self.query_machine.fetch_all_locations()

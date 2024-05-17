@@ -116,4 +116,5 @@ def local_farms_startingpoint():
 def local_farms_from_location(search_string: str):
     latlon=get_latlon_from_location(search_string)
     local_farms_sweden(latlon[0],latlon[1])
+    return tuple(latlon)
     
