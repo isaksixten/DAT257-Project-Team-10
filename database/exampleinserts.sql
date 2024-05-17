@@ -3,6 +3,5 @@ INSERT INTO Farms VALUES ('abb', 'Meat Lovers', 'Specializes in meat, that you l
 INSERT INTO Farms VALUES ('acb', 'Vegan Lovers', 'Specializes in vegan food, that you love!',5, 57.689605, 11.974247, 'FakeStreet 3','fake3.se','+125');
 INSERT INTO Tags VALUES ('Wheelchair Accessible');
 INSERT INTO Tags VALUES ('Open Now');
-INSERT INTO Farm_Tags VALUES ('abc', 'Wheelchair Accessible');
-INSERT INTO Farm_Tags VALUES ('abc', 'Open Now');
+
 

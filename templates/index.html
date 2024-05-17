@@ -255,6 +255,7 @@
         var markers = {};
 
         function addMarkers(farms) {
+            Object.values(markers).forEach(marker => map.removeLayer(marker)); // Detta löser apply filter bugget som händer om man trycker flera gånger
             farms.forEach(function(farm) {
                 markers[farm.id] = add_marker(
                     farm.id,
@@ -389,6 +390,7 @@
         function updateFarms() {
             fetchfarms()
                 .then(farms => {
+
                     addMarkers(farms);
                 })
                 .catch(error => {
@@ -421,6 +423,7 @@
         }
 
         updateFarms();  // Ensure initial farms are loaded when the program starts
+        fetchSearchOptions(); // Get recommendations without having to input something in search first
 
         function zoomToFarm() {
             var select = document.getElementById('farmSelect');
@@ -546,6 +549,7 @@
                 filterSearchOptions(selectedTags);
             } else {
                 updateFarms();
+                fetchSearchOptions('');
             }
         }
 
@@ -564,11 +568,9 @@
                 return response.json();
             })
             .then(options => {
-                const displaytags = [];
-                options.forEach(option => {
-                    displaytags.push(option);
-                });
-                updatefilteredFarms(displaytags);
+                console.log(options);
+                updatefilteredFarms(options);
+                displaySearchOptions(options);
             })
             .catch(error => {
                 console.error('Fetch filtered search options error:', error);
@@ -671,6 +673,7 @@
                 searchSuggestions.appendChild(suggestion);
             });
         }
+
     </script>
 </body>
 </html>
