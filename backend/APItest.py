@@ -47,8 +47,11 @@ def farms_to_database(id, dict):
         
         if dict['wheelchair_accessible_entrance'] != None:
             query.add_farmtag(id, 'Wheelchair Accessible')
-        if dict['open_now'] != None:
-            query.add_farmtag(id, 'Open now') 
+        try:
+            if dict['opening_hours']['open_now'] == True:
+                query.add_farmtag(id, 'Open now') 
+        except TypeError:
+            print("No opening hours so cant determine if open")
         if dict['opening_hours'] != None:
             for day in range(len(dict['opening_hours']["periods"])):
                 cur_day = dict['opening_hours']["periods"][day]

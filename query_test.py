@@ -3,10 +3,12 @@ import unittest
 
 
 class TestQueryMachine(unittest.TestCase):
-    
+
     def __init__(self, *args, **kwargs):
         super(TestQueryMachine, self).__init__(*args, **kwargs)
         self.query = QueryMachine()
+
+    def setUp(self):
         self.query.createDatabaseFromScratch()
 
     def testFetchAllLocationType(self):
@@ -15,7 +17,6 @@ class TestQueryMachine(unittest.TestCase):
         self.assertIsInstance(res, list)
 
     def testFetchAllLocationValuesType(self):
-        self.query.add_location('abc', 'Bertils slakt och grönt', 'Bästa slaktaren i staden',5, -37.33056, 48.64247,'FakeStreet 1','fake1.se','+123')
         self.query.add_location('acd', 'Bertils slakt och grönt', 'Bästa slaktaren i staden',5, -37.33056, 48.64247,'FakeStreet 1','fake1.se','+123')
         self.query.add_location('bac', 'Bertils slakt och grönt', 'Bästa slaktaren i staden',5, -37.33056, 48.64247,'FakeStreet 1','fake1.se','+123')
         res = self.query.fetch_all_locations()
@@ -23,7 +24,7 @@ class TestQueryMachine(unittest.TestCase):
             self.assertIsInstance(elem, dict)
 
     def testErrorForWrongInsert(self):
-        self.assertIn("failed", self.query.add_location("abc", "Location", "cool location", "5", "302", "401", 2, "www.com.com", 104))
+        self.assertRaises(TypeError, self.query.add_location("cab", "Location", "cool location", "5", "302", "401", 2, "www.com.com", 104))
 
     def testAddLocation(self):
         self.query.add_location('a', 'b', 'c', 5, 10, 11, 'd', 'e', 0)
@@ -53,9 +54,9 @@ class TestQueryMachine(unittest.TestCase):
         self.query.add_tag('ö')
         b = self.query.fetch_tags()
         self.assertNotEqual(a, b)
-        self.query.delete_tag('ö')
 
     def testAddTagToFarm(self):
+        self.query.add_location('a', 'b', 'c', 5, 10, 11, 'd', 'e', 0)
         a = self.query.fetch_farms_tag('a')
         self.query.add_tag('Open now')
         self.query.add_farmtag('a', 'Open now')
@@ -77,6 +78,7 @@ class TestQueryMachine(unittest.TestCase):
         self.query.update_open_now('bdc')
         b = self.query.fetch_farms_tag('bdc')
         self.assertNotEqual(a, b)
+        
 
     def testUpdateOpenNowInsert(self):
         self.query.add_location('bcd', 'Bertils slakt och grönt', 'Bästa slaktaren i staden',5, -37.33056, 48.64247,'FakeStreet 1','fake1.se','+123')
@@ -92,6 +94,18 @@ class TestQueryMachine(unittest.TestCase):
         b = self.query.fetch_farms_tag('bcd')
         self.assertNotEqual(a, b)
 
+    def testFetchBySearch(self):
+        self.query.add_location('abc', 'Bertils slakt och grönt', 'Bästa slaktaren i staden',5, -37.33056, 48.64247,'FakeStreet 1','fake1.se','+123')
+        self.query.add_location('acb', 'Bertils slakt och grönt', 'Bästa slaktaren i staden',5, -37.33056, 48.64247,'FakeStreet 1','fake1.se','+123')
+        self.query.add_location('adc', 'Bertils slakt och grönt', 'Bästa slaktaren i staden',5, -37.33056, 48.64247,'FakeStreet 1','fake1.se','+123')
+        res = self.query.fetch_by_search('Be')
+        self.assertEqual(3, len(res))
+
+    def testFetchOpeningHours(self):
+        self.query.add_location('abc', 'Bertils slakt och grönt', 'Bästa slaktaren i staden',5, -37.33056, 48.64247,'FakeStreet 1','fake1.se','+123')
+        self.query.add_opening_hours('abc', 1, "1000", "1500")
+        a = self.query.fetch_opening_hours('abc')
+        self.assertEqual('10:00', a['abc'][1][0])
 
 if __name__ == "__main__":
     unittest.main()

@@ -16,18 +16,32 @@ class QueryMachine:
     def createDatabase(self):
         try:
             with self.conn.cursor() as cur:
-                cur.execute(open(r".\database\tables.sql").read())
-                cur.execute(open(r".\database\exampleinserts.sql").read())
-                cur.execute(open(r".\database\views.sql").read())
+                tables = open(r".\database\tables.sql")
+                inserts = open(r".\database\exampleinserts.sql")
+                views = open(r".\database\views.sql")
+                cur.execute(tables.read())
+                cur.execute(inserts.read())
+                cur.execute(views.read())
+                tables.close()
+                inserts.close()
+                views.close()
         except psycopg2.Error as e:
             print("Database is already created")
 
     def createDatabaseFromScratch(self): #For testing purposes
         with self.conn.cursor() as cur:
-            cur.execute(open(r".\database\createdb.sql").read())
-            cur.execute(open(r".\database\tables.sql").read())
-            cur.execute(open(r".\database\exampleinserts.sql").read())
-            cur.execute(open(r".\database\views.sql").read())
+            dropschema = open(r".\database\createdb.sql")
+            tables = open(r".\database\tables.sql")
+            inserts = open(r".\database\exampleinserts.sql")
+            views = open(r".\database\views.sql")
+            cur.execute(dropschema.read())
+            cur.execute(tables.read())
+            cur.execute(inserts.read())
+            cur.execute(views.read())
+            dropschema.close()
+            tables.close()
+            inserts.close()
+            views.close()
 
     def fetch_location(self, id):
         with self.conn.cursor() as cur:
@@ -222,4 +236,16 @@ class QueryMachine:
                     innerdict[location[1]] = [location[2], location[3]]
                     dict[location[0]] = innerdict
         return dict # Bör returnera en dict med key som är farm ID och value som är en lista av [Weekday, opening_time, closing_time].
-
+    
+    def fetch_all_opening_hours(self): # Fetches all opening_hours for all locations in the database.
+        with self.conn.cursor() as cur:
+            sql = """ SELECT * FROM Opening_Hours """
+            cur.execute(sql)
+            res = cur.fetchall()
+            dict = {}
+            innerdict = {}
+            if res:
+                for location in res:
+                    innerdict[location[1]] = [location[2], location[3]]
+                    dict[location[0]] = innerdict
+        return dict
