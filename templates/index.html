@@ -314,7 +314,7 @@
                     farm.latitude,
                     farm.longitude,
                     farm.name,
-                    //farm.description,
+                    farm.description,
                     farm.rating,
                     farm.address,
                     farm.website,
@@ -328,7 +328,7 @@
             var marker = L.marker([latitude, longitude]).addTo(map).bindPopup("<b>" + name + "</b><br>" + description);
 
             // Set marker options
-            //marker.options.description = description || '';
+            marker.options.description = description || '';
             marker.options.rating = rating || '';
             marker.options.website = website || '';
             marker.options.phonenumber = phonenumber || '';
@@ -337,7 +337,7 @@
 
             // Add event listener to marker
             marker.on('click', function() {
-                //const description = marker.options.description;
+                const description = marker.options.description;
                 const rating = marker.options.rating;
                 const website = marker.options.website;
                 const phonenumber = marker.options.phonenumber;
@@ -501,12 +501,12 @@
             ratingElement.textContent = 'Rating: ' + rating;
             infoContainer.appendChild(ratingElement);
 
-            /*var descriptionElement = document.createElement('p');
-            descriptionElement.textContent = 'Description: ' + description;
+            var descriptionElement = document.createElement('p');
+            //descriptionElement.textContent = 'Description: ' + description; 
             infoContainer.appendChild(descriptionElement);
-*/
+
             var addressElement = document.createElement('p');
-            addressElement.textContent = 'Website: ' + address;
+            addressElement.textContent = 'Address: ' + address;
             infoContainer.appendChild(addressElement);
 
             var openinghoursContainer = document.getElementById('openHoursInfo');
@@ -713,7 +713,7 @@
                     map.setView(marker.getLatLng(), 10);
                     marker.openPopup();
 
-                    //const description = marker.options.description || '';
+                    const description = marker.options.description || '';
                     const rating = marker.options.rating || '';
                     const website = marker.options.website || '';
                     const phonenumber = marker.options.phonenumber || '';
