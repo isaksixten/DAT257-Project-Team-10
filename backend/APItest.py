@@ -46,9 +46,12 @@ def farms_to_database(id, dict):
             dict['geometry']['location']['lng'],dict['formatted_address'],dict['website'],dict['international_phone_number'])
         
         if dict['wheelchair_accessible_entrance'] != None:
-            query.add_farmtag(id, 'wheelchair')
-        if dict['open_now'] != None:
-            query.add_farmtag(id, 'open_now')
+            query.add_farmtag(id, 'Wheelchair Accessible')
+        try:
+            if dict['opening_hours']['open_now'] == True:
+                query.add_farmtag(id, 'Open now') 
+        except TypeError:
+            print("No opening hours so cant determine if open")
         if dict['opening_hours'] != None:
             for day in range(len(dict['opening_hours']["periods"])):
                 cur_day = dict['opening_hours']["periods"][day]
@@ -116,4 +119,5 @@ def local_farms_startingpoint():
 def local_farms_from_location(search_string: str):
     latlon=get_latlon_from_location(search_string)
     local_farms_sweden(latlon[0],latlon[1])
+    return tuple(latlon)
     
